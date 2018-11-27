@@ -1,10 +1,10 @@
-#必不可少的 PPT 制作
+# 必不可少的 PPT 制作
 
 <font color=gray size=3>这两天正好和朋友聊起自已的职业，说来说去给他最终的印象就是个做 PPT 的，其实每个公司或企业都是由个人组成，每个人的认识也多多少少影响着公司或企业的判断，很多国内的企业对于这个职位的认识并没有清晰的定位与界限，所以制作 PPT 有时也就显得必不可少。</font>
 <br />
 <font color=gray size=3>大都数人在制作 PPT 前很喜欢寻找不同风格的模板，其实 PPT 的实用性就在于说明观点，专业的 PPT 制作大多都是以简驭繁，简单明了地说明内容，无论如何酷炫都脱离不了 **一切为内容服务，从内容出发** 的本质。内容的层次，除了通过文字的逻辑表述还可以通过视觉化的传达。</font>
 <br />
-<center><img src='https://web.opendrive.com/api/v1/download/file.json/ODhfNzYyMTUxNF8?inline=1' align='center' style=' width:30px;height:30 px'/></center>
+<center><img src='https://web.opendrive.com/api/v1/download/file.json/ODhfNzYyMTUxNF8?inline=1' align='center' style=' width:3px;height:3 px'/></center>
 <center><table><tr><td bgcolor=black><font color=white size=3>**注意留白**</font></td></tr></table></center>
 <center><font color=black size=2>**思维能力1**</center></font>
 <br />
