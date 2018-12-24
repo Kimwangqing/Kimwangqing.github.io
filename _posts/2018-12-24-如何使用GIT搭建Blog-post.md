@@ -30,10 +30,10 @@ comments: true
     
 3. 用户配置：
    Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，使用 Bash 命令完成。如下图所示：      
-![](img/config.png)
+![](../img/config.png)
    
    如果想查看用户和邮箱，使用 Bash 命令完成。如下图所示：   
-![](img/checkconfig.png)
+![](../img/checkconfig.png)
     
 ** 以上 1、2 步骤无先后顺序。**
 
@@ -45,7 +45,7 @@ comments: true
 * 通过 Git 的图形化界面来创建；
   在 Kim.github.io 的目录下右键选择 Git GUI Here –> 选择 Create New Repository。      
 * 通过 Bash 命令完成。如下图所示：    
-![](img/ini.png)
+![](../img/ini.png)
       
  ** 创建本地仓库后，本地目录里多了一个 .git 文件，有时是隐藏状态。**
 
@@ -93,24 +93,24 @@ end
 1. 先将写好的文档保至暂时区： 
  
  a. 查看文档状态，使用 `git status` 命令完成。如下图所示  
-![](img/status.png)
+![](../img/status.png)
 文件是红色，这是说明我们这个文件已经做了修改，但是还未保存到暂存区。
 
  b. 执行保存，使用 `git add ./文件名` 命令完成：
  
   * 保存所有文件，使用 `git add .` 命令。如下图所示:     
-![](img/add.png)
+![](../img/add.png)
  **add 与点符之间有一个空格。** 
 
  * 保存单个文件，使用 `git add 文件名` 命令。如下图所示：
-![](img/addsinglefile.png)
+![](../img/addsinglefile.png)
 
  <font color=gray>*之后，可以再次使用 `git status` 查看状态。如下图所示：*</font> 
- ![](img/statusafteradd.png)
+ ![](../img/statusafteradd.png)
  此时，之前红色的文件都变成绿色。
  
 2. 将文档提交至本地仓库，执行提交，使用 `git commit -m "描述"/-a` 命令。如下图所示：
-![](img/commitsinglefile.png)
+![](../img/commitsinglefile.png)
 此为提交单个文件示例。
  * 使用 `git commit -m "描述"` 对应保存步骤，可以提交所有文件或单个文件，如果上一步使用 `git add .`，执行提交后，即可提交所有文件；
  * 使用 `git commit -m "描述"` 对应保存步骤，可以提交所有文件或单个文件，如果上一步使用 `git add 文件名`，执行提交后，即可提交单个文件；
@@ -158,50 +158,50 @@ clone 在本地的，叫 master，有种本地的本体的味道，因为本地�
 在本地仓库下运行命令 `git remote add origin gitSSH地址`，命令意思：在本地仓库添加一个远程仓库，并将本地的 master 分支跟踪到远程分支。
 
  a. 获取 SSH 地址，如下图所示：
- ![](img/SSHaddress.png)
+ ![](../img/SSHaddress.png)
  
  b. 执行以上命令，如下图所示：
- ![](img/connect.png)
+ ![](../img/connect.png)
     `git remote add origin gitSSH地址` 命令的意思是以添加 remote...，添加后，
     
 2. 推送
 在本地仓库下运行命令：
 `git push -u origin master` 命令。命令意思：将本地 master 分支跟踪到远程 origin master 分支，-u 意思是指定 origin master 分支为上游分支，如下图所示：
-![](img/push.png)
+![](../img/push.png)
 从现在起，只要本地作了提交，就可以通过命令：`git push origin master`。
 
 ### GitHub Pages 配置
 Github Pages 设计的初衷是为托管在 GitHub 上的项目提供介绍页面，开发者们可以通过 GitHub Pages 为他们的每一个项目创建一个用于介绍该项目的静态网站，不过由于他的空间免费而且稳定，因此用它搭建一个个人博客网站是再好不过了。
 
 1. 在仓库 Settings 里配置 GitHub Pages。如下图所示：
-   ![](img/githubpageconfig.png)
+   ![](../img/githubpageconfig.png)
 
 2. 保存配置后，会自动生成地址，通过址址即可访问自已的网页。如下图所示：
-   ![](img/githubpage.png)
+   ![](../img/githubpage.png)
  
 ## 有可能遇到的问题
 
 * 在使用 Git 对源代码进行 Push 到 GitHub 时，有可能会报错。如下图所示：
-  ![](img/pushreject.png)
+  ![](../img/pushreject.png)
  
  * 原因：
    本地的代码和远程 repository 中的文件个数不一致，即远程 repository 中存在本地项目中不存在的文件。如下图所示：
-   ![](img/withoutreadme.png)
+   ![](../img/withoutreadme.png)
    
  * 解决办法：
    将远程 repository 中的代码可以通过如下命令进行代码合并，注：pull = fetch + merge，使用命 `git pull --rebase origin master`，或者 强制提交代码，命令行的话加上 -f 参数，但不建议这样执行。
    **这一步操作前保证暂存区没有未提交的文件，之后关闭本地文件再行操作。**
    执行上面代码后可以看到本地代码库中多了 README.md 文件。如下图所示：
-   ![](img/existreadme.png)
+   ![](../img/existreadme.png)
 
 * GitHub 创建博客时报错 404 "There isn't a GitHub Pages site here"。如下图所示：
-  ![](img/githubpage404.png)
+  ![](../img/githubpage404.png)
   
  * 原因：
    可能是 GitHub 主题没有确定的原因。
    
  * 解决方法：
    在 Setting 页面时，找到主题并指定某个主题即可。如下图所示：
-   ![](img/githubpagetheme.png)
+   ![](../img/githubpagetheme.png)
    
 * Jekyll
