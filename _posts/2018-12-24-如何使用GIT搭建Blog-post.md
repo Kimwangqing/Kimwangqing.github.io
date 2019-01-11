@@ -15,7 +15,7 @@ comments: true
 
 3. 登录 Github 账户。
 
-### 远程仓库存 Git 的配置
+### 远程仓库及 Git 的配置
 1. 新建一个版本库，又名仓库（远程库 repository，之后远程库的名字就是 origin，这是 Git 默认的叫法）。
 **仓库命名格式：“你的名字.github.io”。**
 
@@ -162,8 +162,7 @@ clone 在本地的，叫 master，有种本地的本体的味道，因为本地�
  
  b. 执行以上命令，如下图所示：
  ![](../img/connect.png)
-    `git remote add origin gitSSH地址` 命令的意思是以添加 remote...，添加后，
-    
+        
 2. 推送
 在本地仓库下运行命令：
 `git push -u origin master` 命令。命令意思：将本地 master 分支跟踪到远程 origin master 分支，-u 意思是指定 origin master 分支为上游分支，如下图所示：
@@ -205,3 +204,4 @@ Github Pages 设计的初衷是为托管在 GitHub 上的项目提供介绍页�
    ![](../img/githubpagetheme.png)
    
 * Jekyll
+  Jekyll 是简单静态博客生成器。
