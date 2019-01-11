@@ -20,13 +20,23 @@ comments: true
 **仓库命名格式：“你的名字.github.io”。**
 
 2. 配置 SSH Key：
+   第一次安装或重装系统后要用 `ssh-keygen -t rsa -C "邮件地址@youremail.com` 命令生成新的SSH Key。
 
  a. 获取 SSH Key 有两种方式：
  
  * 在本地仓库所在的文件目录右键 --> Git GUI Here --> Help --> Show SSH Key；
  * 在 C:\Users 里找到 id_rsa.pub 文件，里面既是 SSH Key。
 	
- b. 配置 SSH Key：Settings --> SSH and GPG keys。
+ b. 添加 SSH Key：Settings --> SSH and GPG keys --> Add SSH Key，title 中输入密钥名称，key 中输入 id_rsa.pub 文件里的内容。
+    *id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥。*
+    
+ c. 测试
+    可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：
+    `ssh -T git@github.com`
+> The authenticity of host 'github.com (207.97.227.239)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)?  # 直接输入yes
+Hi cnfeat! You've successfully authenticated, but GitHub does not provide shell access.
     
 3. 用户配置：
    Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，使用 Bash 命令完成。如下图所示：      
