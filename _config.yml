@@ -1,7 +1,7 @@
 # Site
-title:              Kim
-bio:                'Minimal, one column jekyll theme.'
-description:        "Moon is a minimal, one column jekyll theme for your blog."
+title:              Kim's Blog
+bio:                'Capriccio Moon'
+description:        "Tech-writing on the way."
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
@@ -26,7 +26,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   taylantatli
+disqus_shortname:   Kim
 
 # Social
 # if you don't have any of social below, comment the line.
@@ -38,24 +38,25 @@ disqus_shortname:   taylantatli
   #ad-slot:
 #bing-verify:
 #email:
-twitter:            username
-facebook:           username
-github-url:         username
+twitter:            Kim_wangqing
+# facebook:           username
+github-url:         Kimwangqing
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
-#xing:              username
-instagram:          username
+# xing:              username
+weixin:             s?__biz=Mzg3ODAzNjIyMw==&tempkey=OTk0X2VyOE1VMjlJWWlDUlJKNUpHRHpSZlJtMEhFQUZNRzFZUmIwd2RkOUFEVkVqWEsyUVdLYlpOTVd6UnRmQ2NhZ0M3ZEZDaDNfTDhvOHF1Rm1YVjJwMGxBNEduSDFUOWttT0pJcGhtUkFjMENzeHc2el8zMHpVR0Mtd3h2NmY0OU1sMmlTV1FOVklhTmFFYnQzQmpzS3J5NW85ZTFSWURDQU53M3RUQXd%2Bfg%3D%3D&chksm=4f189498786f1d8ec953c41acac69bb38a5ad591adeaace26a2b791df2cc9557d88dfc36dffb&scene=0&xtrack=1&previewkey=iHs%252FJwfIPVjX3Smen8kjEcNS9bJajjJKzz%252F0By7ITJA%253D&subscene=131#wechat_redirect
+# instagram:          username
 #lastfm:            username
 #tumblr:            username
 #medium:            '@username'
 #pinterest:         username
 #foursquare:        username
-steam:              username
+# steam:              username
 #dribbble:          username
 #youtube:           username
 #youtube-channel:   channel
 #soundcloud:        username
-#weibo:             username
+# weibo:              username
 #flickr:            username
 #codepen:           username
 #keybase:           username
