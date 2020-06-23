@@ -6,6 +6,7 @@ excerpt: "Webinar by Tom"
 tags: [sample post, images, test]
 comments: true
 mermaid: true
+feature: /assets/img/webinar.jpg
 ---
 # Webinar by Tom
 ## The primary authoring tool for creating documentation
