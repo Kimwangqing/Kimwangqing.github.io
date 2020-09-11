@@ -71,13 +71,13 @@ The description to use for meta tags and navigation menu.
 
 #### url
 
-Used to generate absolute urls in `sitemap.xml`, `feed.xml`, and for generating canonical URLs in `<head>`. When developing locally either comment this out or use something like `http://localhost:4000` so all assets load properly. *Don't include a trailing `/`*.
+Used to generate absolute urls in `sitemap.xml`, `feed.xml`, and for generating canonical URLs in `<head>`. When developing locally either comment this out or use something like `http://localhost:5000` so all assets load properly. *Don't include a trailing `/`*.
 
 Examples:
 
 {% highlight yaml %}
 url: https://kimwangqing.github.io
-url: http://localhost:4000
+url: http://localhost:5000
 url: //cooldude.github.io
 url:
 {% endhighlight %}
