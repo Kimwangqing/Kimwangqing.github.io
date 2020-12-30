@@ -54,7 +54,7 @@ Better not to **change the primary key** when it inserted into the form. Because
 * A primary key column doesn't relate to business. Because business is easy to be changed as to scenarios. These keys, such as ID, phone number and email address, which seems that they have unique properties, actually, they will be changed as to scenarios, cannot be assigned as primary keys.
 * A primary key column cannot contain `NULL` value.
 * A primary key is always defined as “id", the most common types are: 
-	* BIGINT 自增整数类型 Data base will alocate one BIGINT when inserting data, which cannot be created in advance, and we don't wary the primary key will be repeated. This type of id can meet requirements for most applications. gi 
+	* BIGINT(自增整数类型) Database allocates one BIGINT when inserting each record, in this way, we don't worry the primary key will be repeated, and also cannot be created in advance. This type of id can meet requirements for most applications. 
 	* 全局唯一 GUID 类型
 
 #### Composite Keys (联合主键)
@@ -138,6 +138,7 @@ or can be added a unique constraint to the column to keep the uniqueness of the 
 For example,  
 `SELECT * FROM students WHERE score >= '80' AND NOT class_id = '2';`
 (`AND` `NOT` can be used together.)
+
 * `NOT class_id = 2` same as `class_id <> 2`, so `NOT` format is not often be used. 
 `SELECT * FROM students WHERE score >= 80 AND class_id <> 2;`
 
@@ -177,24 +178,37 @@ For example, `SELECT id, score, name FROM students WHERE gender = 'M';
 
 ### Ascending Order
 * Query results in a normal order by using `ORDER BY ... ASC`, which is same with `ORDER BY ...`.
+
 * If there are same data occourred, to order them by adding the column name. 
   For example, `SELECT id, name, gender,score FROM students ORDER BY score DESC;` 
   ![](https://github.com/Kimwangqing/pictures/blob/master/score%20order%20without%20gender.jpg?raw=true)
   (Male is prior to Female by default.)
   ![](https://github.com/Kimwangqing/pictures/blob/master/score%20order%20with%20gender.jpg?raw=true)
   (Female is prior to Male by adding the  gender in ORDER BY.)
+  
+* `SELECT class_id, gender, score FROM test.students GROUP BY class_id, gender ORDER BY score DESC; `
+  
+  Put `ORDER BY` behind of `GROUP BY`.  
 
 ### ORDER BY with WHERE
 * Put `ORDER BY` behind of `WHERE`.
 For example, `SELECT * FROM students WHERE class_id = 1 ORDER BY score DESC;`
 
+### ORDER BY with GROUP BY
+For example, `SELECT class_id, gender, name, max(score) from test.students group by class_id, gender order by class_id;`
+
 ## Select Data and Split on Pages
 * Use `LIMIT <M> OFFSET <N>` to perform.
-  For example, `SELECT * FROM students LIMIT 3 OFFSET 0;`, that means the max of selection is 3 records on each page and index from 0 (SQL index from 0 but counts from 0 + 1).
+  For example, `SELECT * FROM students LIMIT 3 OFFSET 0;`, that means the max of selection is 3 records on each page and index from 0 (SQL index from 0 but counts from 0 + 1), and show the first page only. 
+  
+  If wants to show the second page, use LIMIT 3  OFFSET 3.
+  
 * OFFSET = pageSize * (pageIndex - 1) 
 	* pageSize = LIMIT 
 	* pageIndex is the current page number and is different with OFFSET. pageIndex counts from 1.
+	
 * `LIMIT <M> OFFSET <N>` can be simplified as `LIMIT <N>,<M>;` 
+
 * Use `SELECT COUNT(*) FROM students;` to get the total number of records of the table. 
   ![](https://github.com/Kimwangqing/pictures/blob/master/count(id).jpg?raw=true)
 
@@ -204,7 +218,7 @@ For example, `SELECT * FROM students WHERE class_id = 1 ORDER BY score DESC;`
 * `SELECT COUNT(*) FROM xxx` = `SELECT COUNT(id) FROM students;`
 * Give another name to `COUNT(*)` by adding a name besides of `COUNT(*)`.
   For example, `SELECT COUNT(*) num FROM students;`
-* can perform with WHERE.
+* Can perform with WHERE.
   For example, `SELECT COUNT(*) boy From students WHERE gender = 'M' (The single quotes are must for gender. )
 
 ### Other Aggregate Selection
@@ -216,7 +230,11 @@ For example, `SELECT * FROM students WHERE class_id = 1 ORDER BY score DESC;`
 |MIN|Get the minimum value of the column. Not limited to be numbers. For strings will get the last row. For example,`SELECT MIN(name) FROM students;`|
 
 * Use `SELECT CEILING(COUNT(id)/<limit number>) FROM xxx;` to get the total number of the splitted pages. 
-  ![](https://github.com/Kimwangqing/pictures/blob/master/ceiling(count(id).jpg?raw=true) 
+  ![](https://github.com/Kimwangqing/pictures/blob/master/ceiling(count(id).jpg?raw=true)   
+For example, 
+  `select class_id [班级], gender [性别], max(score) [最高分]  from students
+  GROUP BY class_id, gender
+  ORDER BY max(score) desc`
   
 ### Aggregate Selection Perform with WHERE
 * `SELECT AVG(score) FROM students WHERE gender = 'M'`
@@ -256,7 +274,6 @@ To simplify:
       c.id cid,
       c.name cname
   FROM students s, classes c;
-  
 ### Select Multiple Tables with WHERE
 Multi-table Selection with WHERE
 For example:
@@ -270,47 +287,157 @@ The syntax is `INNER JOIN`,
 1. Set the principle table first. 
 2. Set the table needs to be connected by using `INNER JOIN`.
 3. Set the condition by using `ON <condition>`. 
-   `s.class_id = c.id` means the  column of `class_id` from students and the column of `id` from classes need to connect with the same column number. 
+   `s.class_id = c.id` means the column of `class_id` from students and the column of `id` from classes need to connect with the same column number. 
 4. `WHERE` `ORDER BY` can be added then. 
-`SELECT s.id, s.class_id, c.name, s.name, s.gender, s.score FROM students s INNER JOIN classes c ON s.class_id=c.id;`
-Means the table will join connect the table of classes when  the number of s.class_id and c_id are same. 
+`SELECT s.id, s.class_id, c.name, s.name, s.gender, s.score FROM students s INNER JOIN classes c ON s.class_id=c.id;
+Note: Though, select the both tables, classes c should be put `INNER JOIN`. `
+Means the table will be joined to connect to the table of students when the number of s.class_id and c_id are same. 
 
 `INNER JOIN` is the most common used, and returns the data exist on the both tables.
+
 #### OUTER JOIN
-`RIGHT OUTER JOIN` returns the data exist on the right table. When the data exist on the right table only, the return string will be `NULL` to make up.
-`LEFT OUTER JOIN` returns the data exist on the right table. When the data exist on the left table only, the return string will be `NULL` to make up.
-`FULL OUTER JOIN` returns the data exist on the both table. When the data exist on the left or the right table only, the return string will be `NULL` to make up.
+`RIGHT OUTER JOIN` returns the data exists on the right table(the table be compared with). When the data exist on the right table only, the return string will be `NULL` to make up. 
+`LEFT OUTER JOIN` returns the data exist on the left table(the original table). When the data exists on the left table only, the return string will be `NULL` to make up.
+`FULL OUTER JOIN` returns the data exists on the both table. When the data exists on the left or the right table only, the return string will be `NULL` to make up.
 
 ## Maintain Data
 Maintaining data includes CRUD, there are Creat, Retrieve, Update and Delete. 
 * INSERT
-* UPDATE
 * DELETE
+* UPDATE
+* REPLACE
 
 ### INSERT
-INSERT syntax is `INSERT INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`
+INSERT syntax is `INSERT INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`.
 * The sequence of strings can be casual, but the sequence of values must be consistant with strings. 
-* Execpt for number strings,  the string must add single quotes.
+* Execpt for number strings, the string must add single quotes.
+* More than one records can be added by using comma to connect. 
+  `INSERT INTO students (class_id, name, gender, score) VALUES
+   (1, '五五', 'M', 90),
+   (2, '六六', 'F', 80);`
+* If the row exists, INSER syntax will be acted as REPLACE to replace the original one. 
+* Always be inserted at the last row, and select the row by setting the order rules. 
+* Always be inserted all columns excepte for `id` that has a default value, if the column excepte for `id` isn't be included, will report an error that is Field <field name> doesn't have a default value. 
+* If a record including id the primary key duplicates one of the records, it reports an error, but if the record no including id and other columns are duplicated one of the records, it inserts the record at the last of the table.  
+
+### Replace 
+#### Insert or Replace
+* Use `REPLACE INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`, not to check if the record exists before deciding to delete and then insert the record. 
+* If no any row matches the condition, REPLACE syntax will be acted as **INSERT** to insert a new record, or the original record will be deleted and the new record replaces the original one. 
+* Always be replaced all columns, if the column isn't be included, it reports an error that is Field <field name> doesn't have a default value. `
+* For example, `REPLACE INTO test.students (id, class_id, name, gender, score) VALUES (9, 1, '小默', 'M', 98);`, the record allocates at 9 which there is a vacancy of 9 in the original table.
+* If a new number, it would be at the last row of the table. 
+
+#### Insert or Update
+Use `INSERT INTO <table name> (string1, string2, ...) VALUES (value1, values2, ...) ON DUPLICATE KEY UPDATE...` to solve repeatibility, and same with the replace syntax `REPLACE INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`.
+For example, `INSERT INTO test.students(id, class_id, name, gender, score) VALUES (4, 2, '小黄', 'M', 98) ON DUPLICATE KEY UPDATE name='小黄', gender='M', score=98;` to replace the original record 4. 
+Means to check if a record exists, if so, update the record, if not so, insert the record.
+**Common INSERT doesn't  include id, but for this syntax inclues id.**
+
+#### Insert or Ignore
+Use`INSERT IGNORE INTO <table name> (string1, string2, ...) VALUES (value1, value2, ...) to mean if the record exists to ignore it direactly. 
+
+### Delete
+The syntax is `DELETE FROM <table> WHERE...;`
+* Similar with UPDATE syntax, DELETE can delete more than one rows by using WHERE. 
+* If no any row matches the condition, no error code reports, only show "0 row(s) afftected." instead. 
+* If no WHERE conditions, all row will be deleted.
+* When using MySQL that's the real relationship databash, also will show the number of rows affected.
+* If two rows of records would be deleted, use `OR` instead of `AND` in WHERE condition. If use `AND`, 0 row would be affected. 
+* If more than two rows of records would be deleted, use `id> or id<`.
 
 ### UPDATE
-UPDATE syntax is `UPDATE <table name> SET string1=value1, string2=value2,... WHERE...;
+UPDATE syntax is `UPDATE <table name> SET <string1>=<value1>, <string2>=<value2>,... WHERE...;`
 * The sequence of strings can be casual, but the sequence of values must be consistant with strings. 
-* Execpt for number strings,  the string must add single quotes.
+* Execpt for number strings, the string must add single quotes.
 * More than one rows of records can be updated. 
- For example, `UPDATE students SET score=100 WHERE id>=5 AND id<=7;`
+  For example, `UPDATE students SET score=100 WHERE id>=5 AND id<=7;`
 * UPDATE could have nothing WHERE condition. 
- For example, `UPDATE students SET score=100;` means all scores will be changed to be 100.
-**First use SELECT ... WHERE to test if the records are you expected.**
+  For example, `UPDATE students SET score=100;` means all scores will be changed to be 100.
+* If no WHERE conditions, all rows will be updated.
+**First use SELECT... WHERE to test if the records are you expected.**
+* If no any row matches the condition, no error code reports, only show "0 row(s) afftected." instead. 
 
-#### Expression Used 
+#### Expression to be Used 
 For example, add 10 score for each person who's score is under 80. 
 `UPDATE students SET score=score+10 WHERE score<80;`
 
-### DELETE
-The syntax is `DELETE FROM <table> WHERE...;`
+## MySQL
+* Besides of MySQL Server the real server of MySQL, there is MySQL Client that's a client to entry the command after logging in.
+* `mysql` is the command for MySQL Client, and `mysqld` is the command for MySQL Server to be performed on the backend.
 
+### Manage MySQL
+* To manage MySQL by using the Workbench which is in a visulized way to select, create, update data, but that's a graphical client and operate MySQL through SQL syntax. So they are all clients to interact with MySQL by using SQL which is the only interface between. 
+* Though MySQL can be managed by MySQL Workbench, it is only uses SQL commands when remote connection by SSH for many times.
 
+### Database
+* Actually, it can be created more than one database on a server performming MySQL. 
+* To show all databases to use `SHOW DATABASES`.
+* 'information_schema', 'mysql', 'performance_schema' and 'sys' are all system databases. Don't touch them. Others are databases created by users. 
 
+#### Create Databases
+* Use `CREATE DATABASE <database name>;`
+
+#### Delete Databases
+* Use `DROP DATABASE <database name>;`
+
+#### Show Databases
+* Use `SHOW databases;`
+
+#### Switch Databases
+* Use `USE <database name>;`
+
+### Tables
+#### Show All Tables within A Database
+* Use `SHOW TABLES;`. 
+**If use this command in workbench, switch the database you expect first by using `USE <databse>.**
+
+#### Check Tables Structure
+* Use `DESC <table name>;` = `describe <table name>`
+  The results:
+	*	Filed: Filed name
+	*	Type: Data type
+	*	Null: IS NULL and IS NOT NULL
+	*	Key: Priciple key
+	*	Default: Default value
+	*	Extra: Extra attribute
+* Or use `SHOW CREATE TALBE <table name>;`
+* Data type
+	* https://www.runoob.com/mysql/mysql-data-types.html
+	* Check "init-test-data" for the common types of strings. 
+	* Number type
+	|Type name|Des.|Byte requirement|
+	|-------|---|---|
+	|FLOAT|a single precision 32 bit|4 bytes|
+	|DOUBLE|a double precision 64 bit, doulbe storage stored in memory than FLOAT|8 bytes|
+  
+#### Alter Talbes
+##### Add Column
+* Use `ALTER TALBE <table name> ADD COLUMN <column name> <data type> <NULL or NOT NULL>;`.
+  For example, `ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;`.
+  **VARCHAR is a required.**
+
+##### Delete Column
+* Use `ALTER TABLE <table name> DROP COLUMN <column name>;`
+
+#### Snapshot
+Snapshot from the original table to a created table.
+* Use `CREATE TABLE <table name> SELECT * FROM <original table name> WHERE <condition>;`.
+* The database structure of snapshot is same with the original one.  
+
+#### Write Select Results from Other Table
+Connect with `INSERT` and `SELECT`to insert the selected result into a resigned table. 
+For example, create `students3`table  first to input the score average for each class. 
+`CREATE TABLE students3 (id BIGINT NOT NULL AUTO_INCREMENT,
+class_id BIGINT NOT NULL, 
+average DOUBLE NOT NULL,
+PRIMARY (id));
+`INSERT INTO students3 (class_id, average) SELECET class_id, AVG(score) FROM students GROUP BY class_id ORDER  by AVG(score) ASC;`.
+
+## Business
+Database business means to execute multi secentences as one unit, in where, all SQL sentences would be executed together, that means if the first SQL sentence executed but the second one failed, and the all process would be cancelled together. 
+
+ACID 
 
 
 
