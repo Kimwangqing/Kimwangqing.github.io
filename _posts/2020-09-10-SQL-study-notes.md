@@ -157,7 +157,7 @@ If don't use brackets (), consitions to be performed by the priority from `NOT`,
 
 ## Query Projections
 * Use query projections to select specified column. 
-* Use comma to seleprate each column query. 
+* Use comma to seperate each column query. 
   For example, `SELECT id, score, name FROM students;`
 
 ### Give Another Name to Column
@@ -274,6 +274,7 @@ To simplify:
       c.id cid,
       c.name cname
   FROM students s, classes c;
+  
 ### Select Multiple Tables with WHERE
 Multi-table Selection with WHERE
 For example:
