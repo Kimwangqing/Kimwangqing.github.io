@@ -85,6 +85,7 @@ The use of the index is to speed up inqueries by locating records that match que
 * The index is senseless if the column values are same mostly, such as the value of gender.
 * More than one index can be created in one table, but they make the speed slow down when the table inserts, deletes, updates records meanwhile the index should be modified simutaneously. 
 * The relationship database creates the index to the primary key automatically. The efficiency is the highest to use the primary key index. 
+
 #### Unique Index and Primary Key
 **A column containing unique values, such as an identity ID and a mobile number which relates to business, cannot be defined as a primary key, but it can be added a unique index to make sure the uniqueness.**
 >`ALTER TABLE` students
@@ -115,13 +116,13 @@ or can be added a unique constraint to the column to keep the uniqueness of the 
 ## Query Data
 * Query language: `SELECT * FROM <the name of the table>
 	* `SELECT` means will perform a query.
-	*  `*` means all columns.
-	*  `FROM` means which table to be checked. 
-	* `...`  means the name of the table.
-	*  `SELECT` can perform calculation
+	* `*` means all columns.
+	* `FROM` means which table to be checked. 
+	* `...` means the name of the table.
+	* `SELECT` can perform calculation
        perform `select 100+200`
        get result `300`
-   * Perform `SELECT 1` to check if the data base has been collected. 
+    * Perform `SELECT 1` to check if the data base has been collected. 
 
 ## Query Conditions
 * Run `SELECT * FROM <name of the talbe> WHERE <condition>`
@@ -146,7 +147,7 @@ For example,
 For example, `SELECT * FROM students WHERE (score < 80 OR score > 90) AND gender = 'M';`
 
 ### Query Conditions - Priority
-If don't use brackets (), consitions to be performed by the priority from `NOT`, `AND` to `OR`, but the brackets () can break the priority. 
+If don't use brackets (), conditions to be performed by the priority from `NOT`, `AND` to `OR`, but the brackets () can break the priority. 
 
 ### Query Conditions - LIKE
 `LIKE` means similarity. For example, `name LIKE 'ab%'`, `%` means any character;
@@ -161,8 +162,8 @@ If don't use brackets (), consitions to be performed by the priority from `NOT`,
   For example, `SELECT id, score, name FROM students;`
 
 ### Give Another Name to Column
-  *  Give another name to the column by putting another name besides of the original one. 
-    For example, `SELECT id, score points, name FROM students;` `points` is the alias of score. 
+* Give another name to the column by putting another name besides of the original one. 
+  For example, `SELECT id, score points, name FROM students;` `points` is the alias of score. 
 
 ### Query Projections with WHERE conditions
 Query projections can combine with WHERE conditions to perfom complex query. 
@@ -186,7 +187,7 @@ For example, `SELECT id, score, name FROM students WHERE gender = 'M';
   ![](https://github.com/Kimwangqing/pictures/blob/master/score%20order%20with%20gender.jpg?raw=true)
   (Female is prior to Male by adding the  gender in ORDER BY.)
   
-* `SELECT class_id, gender, score FROM test.students GROUP BY class_id, gender ORDER BY score DESC; `
+* `SELECT class_id, gender, score FROM test.students GROUP BY class_id, gender ORDER BY score DESC;`
   
   Put `ORDER BY` behind of `GROUP BY`.  
 
@@ -229,15 +230,16 @@ For example, `SELECT class_id, gender, name, max(score) from test.students group
 |MAX|Get the maximum value of the column. Not limited to be numbers. For strings will get the first row. For example,`SELECT MAX(name) FROM students;`|
 |MIN|Get the minimum value of the column. Not limited to be numbers. For strings will get the last row. For example,`SELECT MIN(name) FROM students;`|
 
-* Use `SELECT CEILING(COUNT(id)/<limit number>) FROM xxx;` to get the total number of the splitted pages. 
-  ![](https://github.com/Kimwangqing/pictures/blob/master/ceiling(count(id).jpg?raw=true)   
+* Use `SELECT CEILING(COUNT(id)/<limit number>) FROM xxx;` or `SELECT CEILING(COUNT(*)/<limit number>) FROM xxx;` to get the total number of the splitted pages. 
+  ![](https://github.com/Kimwangqing/pictures/blob/master/ceiling(count(id).jpg?raw=true) 
+  (**CEILING(X) or CEIL(X) means to get the integer upward（向上取整）.**)
 For example, 
   `select class_id [班级], gender [性别], max(score) [最高分]  from students
   GROUP BY class_id, gender
   ORDER BY max(score) desc`
   
 ### Aggregate Selection Perform with WHERE
-* `SELECT AVG(score) FROM students WHERE gender = 'M'`
+* `SELECT AVG(score) FROM students WHERE gender = 'M'`。
 
 ### GROUP BY
 * Use `GROUP BY` to instead WHERE condition, because it doesn't need write WHERE when each condition changed, and get each group of result instead of only one result. 
@@ -316,24 +318,35 @@ INSERT syntax is `INSERT INTO <table name> (string1, string2,...) VALUES (value1
   `INSERT INTO students (class_id, name, gender, score) VALUES
    (1, '五五', 'M', 90),
    (2, '六六', 'F', 80);`
-* If the row exists, INSER syntax will be acted as REPLACE to replace the original one. 
-* Always be inserted at the last row, and select the row by setting the order rules. 
-* Always be inserted all columns excepte for `id` that has a default value, if the column excepte for `id` isn't be included, will report an error that is Field <field name> doesn't have a default value. 
-* If a record including id the primary key duplicates one of the records, it reports an error, but if the record no including id and other columns are duplicated one of the records, it inserts the record at the last of the table.  
+* All columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
+* If the row exists:
+	* A duplicate (no including ID) inserts, the record acts as a new record at the last row whatever it is a duplicate or there is difference.
+	* A duplicate (including ID) inserts, an error reports that is "Duplicate entry "12" for key 'students PRIMARY'.  
+	* A duplicate (including ID) inserts but there is an difference execept for id, an error reports that is "Duplicate entry "12" for key 'students PRIMARY'.
+* If the row doesn't exist:
+	* No including ID, the record acts as a new record as the last row.
+	* Including ID, if the ID is a vacancy, insert the record into the vacancy, if not, insert the record at the last row. 
 
 ### Replace 
-#### Insert or Replace
-* Use `REPLACE INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`, not to check if the record exists before deciding to delete and then insert the record. 
-* If no any row matches the condition, REPLACE syntax will be acted as **INSERT** to insert a new record, or the original record will be deleted and the new record replaces the original one. 
-* Always be replaced all columns, if the column isn't be included, it reports an error that is Field <field name> doesn't have a default value. `
+#### Insert or Replace  
+* Use `REPLACE INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`. 
+* All columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
+* If the row exists:
+	* Including ID, and if the ID exists, the record replaces the existed one.
+	* No including ID REPLACE syntax acts as **INSERT** to insert a new record at the last row.
+* If the row doesn't exists:
+	* No including ID, REPLACE syntax acts as **INSERT** to insert a new record.
+	* Including ID, REPLACE syntax acts as **INSERT** to insert a new record.
 * For example, `REPLACE INTO test.students (id, class_id, name, gender, score) VALUES (9, 1, '小默', 'M', 98);`, the record allocates at 9 which there is a vacancy of 9 in the original table.
-* If a new number, it would be at the last row of the table. 
 
-#### Insert or Update
-Use `INSERT INTO <table name> (string1, string2, ...) VALUES (value1, values2, ...) ON DUPLICATE KEY UPDATE...` to solve repeatibility, and same with the replace syntax `REPLACE INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`.
-For example, `INSERT INTO test.students(id, class_id, name, gender, score) VALUES (4, 2, '小黄', 'M', 98) ON DUPLICATE KEY UPDATE name='小黄', gender='M', score=98;` to replace the original record 4. 
-Means to check if a record exists, if so, update the record, if not so, insert the record.
-**Common INSERT doesn't  include id, but for this syntax inclues id.**
+#### Update or Insert
+Use `INSERT INTO <table name> (string1, string2, ...) VALUES (value1, values2, ...) ON DUPLICATE KEY UPDATE value=1, value=2, value=3...; to solve repeatibility, and the updated strings would be defined in `UPDATE`. The syntax is same with the replace syntax .
+For example, `INSERT INTO test.students(id, class_id, name, gender, score) VALUES (4, 2, '小黄', 'M', 98) ON DUPLICATE KEY UPDATE name='小黄', gender='M', score=98;` to replace the original record 4.`
+* All columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
+Update:
+Including id and other columns, the syntax acts as replace to replace ther original record. If no including one of other clumns, it reports an error: Field xxx doesn't have a default value.
+Insert:
+No including id but including other columns, the syntax acts as insert to add the record at the last row. If no including one of other clumns, it reports an error: Field xxx doesn't have a default value.
 
 #### Insert or Ignore
 Use`INSERT IGNORE INTO <table name> (string1, string2, ...) VALUES (value1, value2, ...) to mean if the record exists to ignore it direactly. 
@@ -348,15 +361,15 @@ The syntax is `DELETE FROM <table> WHERE...;`
 * If more than two rows of records would be deleted, use `id> or id<`.
 
 ### UPDATE
-UPDATE syntax is `UPDATE <table name> SET <string1>=<value1>, <string2>=<value2>,... WHERE...;`
+UPDATE syntax is `UPDATE <table name> SET <string1>=<value1>, <string2>=<value2>,... WHERE...;`.
 * The sequence of strings can be casual, but the sequence of values must be consistant with strings. 
 * Execpt for number strings, the string must add single quotes.
 * More than one rows of records can be updated. 
   For example, `UPDATE students SET score=100 WHERE id>=5 AND id<=7;`
-* UPDATE could have nothing WHERE condition. 
+* UPDATE could have no WHERE condition. 
   For example, `UPDATE students SET score=100;` means all scores will be changed to be 100.
 * If no WHERE conditions, all rows will be updated.
-**First use SELECT... WHERE to test if the records are you expected.**
+**First use SELECT... WHERE to check if the records are you expected.**
 * If no any row matches the condition, no error code reports, only show "0 row(s) afftected." instead. 
 
 #### Expression to be Used 
@@ -393,6 +406,26 @@ For example, add 10 score for each person who's score is under 80.
 * Use `SHOW TABLES;`. 
 **If use this command in workbench, switch the database you expect first by using `USE <databse>.**
 
+#### Drop Table and Delete Table
+* Drop Table <table name> means to delete the table with the table structure.
+* Delete xx from <table name> where means to delete the table only with the table content.
+
+#### Create Table
+##### Snapshot
+Snapshot from the original table to a created table.
+* Use `CREATE TABLE <table name> SELECT * FROM <original table name> WHERE <condition>;`.
+* The database structure of snapshot is same with the original one.  
+
+##### Write Select Results from Other Tables
+Connect with `INSERT` and `SELECT`to insert the selected result into a resigned table. 
+For example, create the table of `students3` first, and then input the average score for each class. 
+`CREATE TABLE students3 (id BIGINT NOT NULL AUTO_INCREMENT,
+class_id BIGINT NOT NULL, 
+average DOUBLE NOT NULL,
+PRIMARY key(id));
+`INSERT INTO students3 (class_id, average) SELECET class_id, AVG(score) FROM students GROUP BY class_id ORDER by AVG(score) ASC;`.
+**no include id, because the string of id in students3 duplicates the string of id in students.**
+
 #### Check Tables Structure
 * Use `DESC <table name>;` = `describe <table name>`
   The results:
@@ -411,29 +444,18 @@ For example, add 10 score for each person who's score is under 80.
 	|-------|---|---|
 	|FLOAT|a single precision 32 bit|4 bytes|
 	|DOUBLE|a double precision 64 bit, doulbe storage stored in memory than FLOAT|8 bytes|
-  
+
 #### Alter Talbes
 ##### Add Column
 * Use `ALTER TALBE <table name> ADD COLUMN <column name> <data type> <NULL or NOT NULL>;`.
   For example, `ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;`.
-  **VARCHAR is a required.**
+	* VARCHAR is available to define strings with variable length, which is a common type of string data type. 
+	* CHAR is available to define strings with unvariable length.
+  **VARCHAR is required.**
+  
 
 ##### Delete Column
 * Use `ALTER TABLE <table name> DROP COLUMN <column name>;`
-
-#### Snapshot
-Snapshot from the original table to a created table.
-* Use `CREATE TABLE <table name> SELECT * FROM <original table name> WHERE <condition>;`.
-* The database structure of snapshot is same with the original one.  
-
-#### Write Select Results from Other Table
-Connect with `INSERT` and `SELECT`to insert the selected result into a resigned table. 
-For example, create `students3`table  first to input the score average for each class. 
-`CREATE TABLE students3 (id BIGINT NOT NULL AUTO_INCREMENT,
-class_id BIGINT NOT NULL, 
-average DOUBLE NOT NULL,
-PRIMARY (id));
-`INSERT INTO students3 (class_id, average) SELECET class_id, AVG(score) FROM students GROUP BY class_id ORDER  by AVG(score) ASC;`.
 
 ## Business
 Database business means to execute multi secentences as one unit, in where, all SQL sentences would be executed together, that means if the first SQL sentence executed but the second one failed, and the all process would be cancelled together. 
