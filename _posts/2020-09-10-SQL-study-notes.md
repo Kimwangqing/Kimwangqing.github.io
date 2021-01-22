@@ -51,7 +51,7 @@ Better not to **change the primary key** when it inserted into the form. Because
 
 #### Principle
 **The principle of selecting the primary key is**
-* A primary key column doesn't relate to business. Because business is easy to be changed as to scenarios. These keys, such as ID, phone number and email address, which seems that they have unique properties, actually, they will be changed as to scenarios, cannot be assigned as primary keys.
+* A primary key column doesn't relate to transactions. Because transactions are easy to be changed as to scenarios. These keys, such as ID, phone number and email address, which seems that they have unique properties, actually, they will be changed as to scenarios, cannot be assigned as primary keys.
 * A primary key column cannot contain `NULL` value.
 * A primary key is always defined as “id", the most common types are: 
 	* BIGINT(自增整数类型) Database allocates one BIGINT when inserting each record, in this way, we don't worry the primary key will be repeated, and also cannot be created in advance. This type of id can meet requirements for most applications. 
@@ -87,7 +87,7 @@ The use of the index is to speed up inqueries by locating records that match que
 * The relationship database creates the index to the primary key automatically. The efficiency is the highest to use the primary key index. 
 
 #### Unique Index and Primary Key
-**A column containing unique values, such as an identity ID and a mobile number which relates to business, cannot be defined as a primary key, but it can be added a unique index to make sure the uniqueness.**
+**A column containing unique values, such as an identity ID and a mobile number which relates to transactions, cannot be defined as a primary key, but it can be added a unique index to make sure the uniqueness.**
 >`ALTER TABLE` students
 >`ADD UNIQUE INDEX` uni_name  (name);
 
@@ -339,14 +339,17 @@ INSERT syntax is `INSERT INTO <table name> (string1, string2,...) VALUES (value1
 	* Including ID, REPLACE syntax acts as **INSERT** to insert a new record.
 * For example, `REPLACE INTO test.students (id, class_id, name, gender, score) VALUES (9, 1, '小默', 'M', 98);`, the record allocates at 9 which there is a vacancy of 9 in the original table.
 
-#### Update or Insert
+#### Update or Insert (can update more than one values)
 Use `INSERT INTO <table name> (string1, string2, ...) VALUES (value1, values2, ...) ON DUPLICATE KEY UPDATE value=1, value=2, value=3...; to solve repeatibility, and the updated strings would be defined in `UPDATE`. The syntax is same with the replace syntax .
 For example, `INSERT INTO test.students(id, class_id, name, gender, score) VALUES (4, 2, '小黄', 'M', 98) ON DUPLICATE KEY UPDATE name='小黄', gender='M', score=98;` to replace the original record 4.`
-* All columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
-Update:
-Including id and other columns, the syntax acts as replace to replace ther original record. If no including one of other clumns, it reports an error: Field xxx doesn't have a default value.
-Insert:
-No including id but including other columns, the syntax acts as insert to add the record at the last row. If no including one of other clumns, it reports an error: Field xxx doesn't have a default value.
+* String and Values should be corresponding, and all columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
+* The modified values put in `on duplicate key update`.
+* Update:
+Including id and other columns, the syntax acts as replace to replace the original record. If no including one of other clumns, it reports an error: Field xxx doesn't have a default value.
+* Insert:
+No including id but including other columns, the syntax acts as insert to add the record at the last row, and id number is incremented sequentially by default.  If no including one of other clumns, it reports an error: Field xxx doesn't have a default value.
+* To update one of colunms:
+For example, `insert into students (id, class_id, name, gender, score) values(10, 2, 'kk', 'M', 60) on duplicate key update score=50;` only update one of columns.
 
 #### Insert or Ignore
 Use`INSERT IGNORE INTO <table name> (string1, string2, ...) VALUES (value1, value2, ...) to mean if the record exists to ignore it direactly. 
@@ -360,7 +363,7 @@ The syntax is `DELETE FROM <table> WHERE...;`
 * If two rows of records would be deleted, use `OR` instead of `AND` in WHERE condition. If use `AND`, 0 row would be affected. 
 * If more than two rows of records would be deleted, use `id> or id<`.
 
-### UPDATE
+### UPDATE (can update only one value)
 UPDATE syntax is `UPDATE <table name> SET <string1>=<value1>, <string2>=<value2>,... WHERE...;`.
 * The sequence of strings can be casual, but the sequence of values must be consistant with strings. 
 * Execpt for number strings, the string must add single quotes.
@@ -425,10 +428,18 @@ average DOUBLE NOT NULL,
 PRIMARY key(id));
 `INSERT INTO students3 (class_id, average) SELECET class_id, AVG(score) FROM students GROUP BY class_id ORDER by AVG(score) ASC;`.
 **no include id, because the string of id in students3 duplicates the string of id in students.**
+* Only one column to insert
+For example, 
+`Insert into rt (id, name) select id, name from students4 where id=5;`.
+Get the result:
+|id | name |
+|-|------|
+| 5 | 小白|
 
 #### Check Tables Structure
 * Use `DESC <table name>;` = `describe <table name>`
   The results:
+	
 	*	Filed: Filed name
 	*	Type: Data type
 	*	Null: IS NULL and IS NOT NULL
@@ -445,7 +456,7 @@ PRIMARY key(id));
 	|FLOAT|a single precision 32 bit|4 bytes|
 	|DOUBLE|a double precision 64 bit, doulbe storage stored in memory than FLOAT|8 bytes|
 
-#### Alter Talbes
+#### Alter Tables
 ##### Add Column
 * Use `ALTER TALBE <table name> ADD COLUMN <column name> <data type> <NULL or NOT NULL>;`.
   For example, `ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;`.
@@ -453,14 +464,47 @@ PRIMARY key(id));
 	* CHAR is available to define strings with unvariable length.
   **VARCHAR is required.**
   
-
 ##### Delete Column
 * Use `ALTER TABLE <table name> DROP COLUMN <column name>;`
 
-## Business
-Database business means to execute multi secentences as one unit, in where, all SQL sentences would be executed together, that means if the first SQL sentence executed but the second one failed, and the all process would be cancelled together. 
+### Force Index
+For example, 
+`SELECT * FROM students FORCE INDEX (idx_class_id) WHERE class_id = 1 ORDER BY id DESC;`.
 
-ACID 
+## Transactions
+Database transctions means to execute multi secentences as one unit, in where, all SQL sentences would be executed together, that means if the first SQL sentence executed but the second one failed, and the all process would be cancelled together. 
+* ACID:
+	* Atomic: To perform in Atomic units, that is all perform or all are not performed.
+	* Consistent: All data status are consistent.
+	* Isolation: This transaction is isolation from other transaction.
+	* Duration: The modified data should be persisted.
+* One SQL sentence is performed as one transaction which is called implicit transaction. 
+* Perform SQL sentences manually into one transaction which is called explicit transaction, in which the perform needs to use `BEING` to start a transaction and use `COMMIT` to submit a transaction.
+* Use `ROLLBACK` to make the transaction undo. 
+* For two concurrent transactions, when they execute the same record, maybe some problems occur, because there is inconsistance caused by the concurrent transactions, including Dirty Read, Non Repeatable Read, Phantom Read. So, database supplies the following isolation level to avoid from data inconsistance. 
+	* Read Uncommitted
+	* Read committed
+	* Repeatable Read
+	* Serializable
+* End the transaction use `response. end`
+
+### Read Uncommitted
+It is the lowest isolation level, in which a transaction can read another transaction updates before committed. If another transaction rolls back, the transaction Dirty Read the data.
+Practise:
+Open two MYSQL clients, one is command client, another is workbench. 
+To perform as the following steps:
+![](https://github.com/Kimwangqing/pictures/blob/master/read%20committed%20level.png?raw=true)
+
+### Read Committed
+
+
+
+### Repeatable Read
+### Serializable
+
+
+
+
 
 
 
