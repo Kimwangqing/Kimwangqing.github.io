@@ -492,13 +492,14 @@ Database transctions means to execute multi secentences as one unit, in where, a
 It is the lowest isolation level, in which a transaction can read another transaction updates before committed. If another transaction rolls back, the transaction Dirty Read the data.
 Practise:
 Open two MYSQL clients, one is command client, another is workbench. 
-To perform as the following steps:
+to perform as the following steps:
 ![](https://github.com/Kimwangqing/pictures/blob/master/read%20committed%20level.png?raw=true)
 
 ### Read Committed
-
-
-
+The isolation level can read another transaction upates after committed. 
+Open two MYSQL Clients, one is command cliend, another is workbench, to perform as the following steps:
+![]
+(https://github.com/Kimwangqing/pictures/blob/master/read%20uncommitted%20level.png?raw=true)
 ### Repeatable Read
 ### Serializable
 
