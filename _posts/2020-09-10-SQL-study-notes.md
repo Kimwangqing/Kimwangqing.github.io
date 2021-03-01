@@ -88,6 +88,7 @@ The use of the index is to speed up inqueries by locating records that match que
 
 #### Unique Index and Primary Key
 **A column containing unique values, such as an identity ID and a mobile number which relates to transactions, cannot be defined as a primary key, but it can be added a unique index to make sure the uniqueness.**
+
 >`ALTER TABLE` students
 >`ADD UNIQUE INDEX` uni_name  (name);
 
@@ -237,7 +238,6 @@ For example,
   `select class_id [班级], gender [性别], max(score) [最高分]  from students
   GROUP BY class_id, gender
   ORDER BY max(score) desc`
-  
 ### Aggregate Selection Perform with WHERE
 * `SELECT AVG(score) FROM students WHERE gender = 'M'`。
 
@@ -342,6 +342,7 @@ INSERT syntax is `INSERT INTO <table name> (string1, string2,...) VALUES (value1
 #### Update or Insert (can update more than one values)
 Use `INSERT INTO <table name> (string1, string2, ...) VALUES (value1, values2, ...) ON DUPLICATE KEY UPDATE value=1, value=2, value=3...; to solve repeatibility, and the updated strings would be defined in `UPDATE`. The syntax is same with the replace syntax .
 For example, `INSERT INTO test.students(id, class_id, name, gender, score) VALUES (4, 2, '小黄', 'M', 98) ON DUPLICATE KEY UPDATE name='小黄', gender='M', score=98;` to replace the original record 4.`
+
 * String and Values should be corresponding, and all columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
 * The modified values put in `on duplicate key update`.
 * Update:
@@ -364,7 +365,8 @@ The syntax is `DELETE FROM <table> WHERE...;`
 * If more than two rows of records would be deleted, use `id> or id<`.
 
 ### UPDATE (can update only one value)
-UPDATE syntax is `UPDATE <table name> SET <string1>=<value1>, <string2>=<value2>,... WHERE...;`.
+
+UPDATE syntax is `UPDATE <table name> SET <string1>=<value1>, <string2>=<value2>,... WHERE...;`
 * The sequence of strings can be casual, but the sequence of values must be consistant with strings. 
 * Execpt for number strings, the string must add single quotes.
 * More than one rows of records can be updated. 
@@ -500,8 +502,13 @@ The isolation level can read another transaction upates after committed.
 Open two MYSQL Clients, one is command cliend, another is workbench, to perform as the following steps:
 ![]
 (https://github.com/Kimwangqing/pictures/blob/master/read%20uncommitted%20level.png?raw=true)
+
 ### Repeatable Read
+Under the repeatable read isolation level, a transaction may meet Phantom Read.
+A phantom read means one record cann't be select when the first selection, but when update the unexisted record and select the same one record, it succeeds.
+
 ### Serializable
+It is the most higest isolation level, no Dirty Read, Unrepeatable Read and Phantom read, and suggest not to use this isolation level. 
 
 
 

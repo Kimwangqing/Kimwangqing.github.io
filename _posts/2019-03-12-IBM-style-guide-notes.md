@@ -11,6 +11,7 @@ comments: true
 * Choose the indefinite article *a* or *an* before an abbreviation. 
 * If can be plural, by adding a lowercase following an abbreviation. 
   `IDs` 
+  
   >Microsoft: Microsoft Foundation Classes (MFC)
 * For a unit of measurement, an abbreviation is both singular and plural.
   `1 mm`
@@ -73,10 +74,10 @@ i.e.|use *"that is"*.
 * Avoid using abbreviations in headings and titles, unless an abbreviation is well known or the spelled-out form is too long. 
   `Creating Unified Modeling Language diagrams`
   `You can use Unified Modeling Language (UML) diagrams to model complex systems.`
-   
+  
   `Creating UML diagrams`
   `You can use Unified Modeling Language (UML) diagrams to model complex systems.`
- 
+
   `Creating Unified Modeling Language (UML) diagrams`
  `You can use UML diagrams to model complex systems.`
 
@@ -136,7 +137,7 @@ Headings, captions, lables, or interface elements follow sentence-style capitali
 This style is predominantly lowercase; capitalize only the initial letter of the first word in the text and other words that require capitalization, such as proper
 nouns. Examples of proper nouns include the names of specific people, places, companies, languages, protocols, and products.(专有名词也需要大写，但这里没说明是句式类大写还是标题类大写)
   `Requirements for Linux and UNIX operating systems`
- 
+
 In general, use sentence-style capitalization for headings.
 * Figure captions
 * Glossary definitions
@@ -249,7 +250,7 @@ Use an uppercase in the following items:
  `Double the letter m in the word programming.`
 * If you refer t a letter and the capitalization is irrelevant, use an uppercase letter.
  `Beginner typists often mistype P's and Z's.` 
-  
+
 ### Do not use uppercase letters for the follows
 * Do not use uppercase letters for emphasis.
 Do Not change the default settings.(incorrect)
@@ -379,7 +380,7 @@ If certain publications are distributed in regions that use UK English, decide w
  `Important: Save the file... (correct)`
  `If you were to save the file... (incorrect)`
  `If you save the file... (correct)
- 
+
 ### Person
 
 #### First person
@@ -416,9 +417,9 @@ If certain publications are distributed in regions that use UK English, decide w
 * Passive voice is acceptable when the following conditions:
  * The systme perform the action.
  * It is more appropriate to focus on the receiver of the action.
-  `The file is saved when you press Enter.`
+    `The file is saved when you press Enter.`
  * It is more appropriate to avoid blaming the user for an error, such as in an error message.
-  `Error: An incorrect value was entered.`
+    `Error: An incorrect value was entered.`
 
 ---
 
