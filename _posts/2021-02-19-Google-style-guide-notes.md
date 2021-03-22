@@ -245,18 +245,18 @@ Sometimes okay: This might require you to fence failed nodes(sometimes referred 
 Many non-inclusive terms are in wide use in the industry, such as *whitelist*. If replacing an established term could cause confusion for reader, you can directly refer to the non-inclusive term on the first use, and put it in parentheses. Then use the inclusive, replacement term throughout the rest of the document. 
 Recommended: To make sure that administrators get the notification, add them to an allowlist(sometimes called a *whitelist*). Anyone who isn't on the allowlist is blocked...
 Not recommended: You can allowlist a range of IP addresses by entering a CIDR block instead of a single address in the field. 
-Recommended: You can allow requests from a range of IP addresses by entering a CIDR block instead of a single addrss in the field. 
+Recommended: You can allow requests from a range of IP addresses by entering a CIDR block instead of a single address in the field. 
 
 #### Write around non-inclusive code terms
-In some cases, non-inclusive terms are embedded in code (or smilar) as names or keywords, and you can't simply ignore those terms and use different terminology. What you can do, however, is minimize your use of the term (hence avoid propagating it as a term of art), while still providing clear documentation to your readers. Don't use a non-inclusive name or keyword unless it's in code font. 
+In some cases, non-inclusive terms are embedded in code (or similar) as names or keywords, and you can't simply ignore those terms and use different terminology. What you can do, however, is minimize your use of the term (hence avoid propagating it as a term of art), while still providing clear documentation to your readers. Don't use a non-inclusive name or keyword unless it's in code font. 
 
 One scenario is if you're documenting an existing system in which an entity is already named using a non-inclusive term. 
-!(https://github.com/Kimwangqing/pictures/blob/master/an%20existing%20system.png?raw=true)
+![](https://github.com/Kimwangqing/pictures/blob/master/an%20existing%20system.png?raw=true)
 
 Recommended: The configuration file helps you create a parent node (which is named `master` in the file).
 
 Another scenario is if your documentation includes a non-inclusive term that's an established keyword, such as the keyword `SLAVE` in dialects of SQL.
-!(https://github.com/Kimwangqing/pictures/blob/master/established%20non-inclusive%20term.png?raw=true)
+![](https://github.com/Kimwangqing/pictures/blob/master/established%20non-inclusive%20term.png?raw=true)
 Recommended: Start the replica by using `START SLAVE` statement.
 
 ## Link text
