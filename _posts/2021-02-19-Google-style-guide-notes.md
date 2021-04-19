@@ -6,14 +6,6 @@ excerpt: "Google style guide notes"
 tags: Tech-writing
 comments: true
 ---
-## Language and grammar
-* Use second person.
-* Use active voice.
-* Use American spelling.
-* Put conditional clauses before introductions, not after.
-Not recommended: Click `Delete` if you want to delete the entire document.
-Recommended:  To delete the entire document, click `Delete`.
-
 ## Formatting, punctuation, and organization
 * Use sentence case for document titles and section headings.
 * Use sentence case for document titles and section headings. 
@@ -76,7 +68,7 @@ Not apk.
 In general, use app instead of application when referring to programs for end users, especially in the context of mobile or web software. It's OK to use **application** to convey a sense of greater complexity, such as **application programming interface**.
 
 ## Product names
-Use the full trademarked product name, except for cases where you are following the UI or are limited by sapce constraints ( as in a table heading)
+Use the full trademarked product name, except for cases where you are following the UI or are limited by space constraints ( as in a table heading)
 * Company- and product-name possessives
 Add **'s** to the end of the name. 
 * Don't use **the** before a product name unless you're using the name to qualify something else. Don't use **the** before tool and API names. 
@@ -89,7 +81,7 @@ Recommended: The `gcloud` command-line tool
 * To refer to Google products as services, such as **the Google Kubernetes Engine services** or **the Compute Engine service*. However, if the term services leads to ambiguty, use the product names.
 
 ## Text-formatting summary
-* Use **bold** formatting for UI elements and at the begining of notices.
+* Use **bold** formatting for UI elements and at the beginning of notices.
 * Italicize the following words:
 	* When defining terms or using words as words, titles of books, movies, web services and other full-length. 
 	* Parameter names. For example, when you refer to the parameters of a method like 
@@ -226,7 +218,7 @@ Recommended: This API might be just what your globally conscious company needs t
 
 ### Avoid unnecessarily violent language
 Avoid graphically violent or harmful terms. For example, avoid using the term *STONITH*, instead, describe the process used to stop an errant node in context using more specific terms. 
-If it's unavoidable and you must mention a violent or hamful term such as *STONITH*, mention it once when you first explain the relevant feature, but phrase it in a way that de-emphasizes the term. 
+If it's unavoidable and you must mention a violent or harmful term such as *STONITH*, mention it once when you first explain the relevant feature, but phrase it in a way that de-emphasizes the term. 
 Recommended: This might require you to fence failed nodes. 
 Sometimes okay: This might require you to fence failed nodes(sometimes referred to as STONITH). 
 
@@ -243,7 +235,7 @@ Sometimes okay: This might require you to fence failed nodes(sometimes referred 
 
 ### Replace or writer around non-inclusive terms
 Many non-inclusive terms are in wide use in the industry, such as *whitelist*. If replacing an established term could cause confusion for reader, you can directly refer to the non-inclusive term on the first use, and put it in parentheses. Then use the inclusive, replacement term throughout the rest of the document. 
-Recommended: To make sure that administrators get the notification, add them to an allowlist(sometimes called a *whitelist*). Anyone who isn't on the allowlist is blocked...
+Recommended: To make sure that administrators get the notification, add them to an allowlist (sometimes called a *whitelist*). Anyone who isn't on the allowlist is blocked...
 Not recommended: You can allowlist a range of IP addresses by entering a CIDR block instead of a single address in the field. 
 Recommended: You can allow requests from a range of IP addresses by entering a CIDR block instead of a single address in the field. 
 
@@ -258,6 +250,54 @@ Recommended: The configuration file helps you create a parent node (which is nam
 Another scenario is if your documentation includes a non-inclusive term that's an established keyword, such as the keyword `SLAVE` in dialects of SQL.
 ![](https://github.com/Kimwangqing/pictures/blob/master/established%20non-inclusive%20term.png?raw=true)
 Recommended: Start the replica by using `START SLAVE` statement.
+
+#### Avoid bias and harm when discussing disability and accessibility
+* Don't describe people without disabilities as "normal" or "healthy". Instead, use terms such as: *nondisabled person*, *sighted person*, *hearing person*, *person without disabilities*.
+* Research the ways the people you're writing about prefer to be identified and the terms they prefer in many cases, avoid terms that remove personhood, or that define people by their disability. For example, avoid terms such as: *the disabled*, *a quadriplegic*. Instead, use terms such as: *people with disabilities*, *a quadriplegic person*. 
+* Avoid terms that reflect or project feelings and judgments about a person's disability, such as: *victim of*, *suffering from*. Instead, use neutral terms such as: *experiencing*, *living with*. 
+* Avoid euphemisms or patronizing terms such as: *special*, *differently abled*. 
+
+## Third party sources
+* Don't copy content from another source because it might violate copyright. Instead, paraphrase and link to their content. Content includes the following types:
+	* Text
+	* Image
+	* Code
+	* Logos
+	* Speech
+![](https://github.com/Kimwangqing/pictures/blob/master/third%20party%20source%20recommended&unrecommended.png?raw=true)
+
+### Avoiding third-party content
+Unless you are sure that your company owns the assets, avoid copying from these sources:
+* Third-party sources: This list includes documentation, websites, books, blogs, videos, images, podcats, and more.
+
+* Reference sources: Avoid copying from dictionaries, encyclopedias, and Wikipedia.
+
+* Open source product documentation: OSS has different license options, which can range from no reuse without attribution to complete freedom to use the material. It's not safe to assume that you can reuse this content freely. 
+
+* Git content: Different GitHub uses might adopt different licenses for their content. It's not safe to assume that you can reuse this content freely. 
+
+### Reusing content
+You can reuse content if you are the source of that content.
+
+## Voice and tone
+* Without being overly colloquial, a voice that's casual and natural and approachable, not pedantic or pushy. Try to sound like a knowledgeable friend who understands what the developer wants to do. 
+* Don't try to write the way you speak.
+* Don't try to be super-entertaining. 
+
+### Some techniques and approaches to consider
+* Use transitions between sentences. Phrases like *Though* or *This way* can make paragraph less stilted.
+  (Then again, sometimes transitions like *However* or *Nonetheless* can make paragraphs more stilted).
+
+### Politeness and use of *please*
+* It' s great to be polite, but using *please* in a set of instructions is overdoing the politeness. 
+Not recommended: To view the document, please click **View**. 
+Recommended: To view the document, clike **View**. 
+Not recommended: For more information, please see [link to other document].
+Recommneded: For more information, see [link to other document].
+|Too informal|Just about right|Too formal|
+|--|--|--|
+|Dube! This API is totally awesome!|This API lets you collect data about what your users like.|The API documented by this page may enable the acquisition of information pertaining to user preferences.|
+|Just like a certain pop star, this call gets your telephone number. The easy way to ask from someone's digits!|To get the user's phone number, call `user.phoneNumber.get()`.|The telephone number can be retrieved by the developer via the simple expedient of using the `get()` method on the user object's `phoneNumber` property. |
 
 ## Link text
 		* For example: For more information, see Load balancing and scaling. 
@@ -302,8 +342,57 @@ Recommended: Start the replica by using `START SLAVE` statement.
 		* MD sample		
 		  `![Alt description](/../images/xxx.png)`
 
+## Language and grammar
+### Abbreviations
+Abbriviations include acronyms, initialisms, shortened words, and contractions. 
+In most contexts, the technical distinction between acronyms and initialisms isn't relevant; it's fine to use the word *acornym* to refer to both. 
+* An acronym is formed from the first letters of words in a phrase, but it pronounced as if it were a word itself:
+	* NATO for North Atlantic Treaty Organizaion
+
+* An initialism is also formed from the first letters of words in a phrase, but each letter is pronounced seperately:
+	* CIA for Central Intelligence Agency
+	* FYI for For You Information
+* A shortened word is just part of a word or phrase, sometimes with a period at the end:
+	* Dr. for doctor
+	* etc. for et cetera
+	* min for minutes
+	* CA for Califonia
+* Some abbreviations can be either acronyms or initialisms depending on the speakers's preference; examples includes *FAQ* and *SQL*. In some cases, the pronunciation determines whether to use *a* or *an*.
+* Don't create your own abbreviations. Use recognizable and industry standand abbreviations. 
+* Making abbreviations plural. In general, treat abbreviations as regular words when making them plural, for example, *APIs*, *SKEs*, and *IDEs*. If the abbreviation ends in *s*, *sh*, *ch*, or *x*, then add *es*, for example, *OSes*, *DISHes*, *DCCHes*, *BMXes*. 
+* Spell out a term. When an abbreviations is likely to be unfamiliar to the audience, spell out the first mention of the term and immediately follow with the abbreviation in parentheses, as in the following examples:
+	* Border Gateway Protocal (BGP) 
+	* elliptic-curve cryptography (ECC)
+  For all subsequence mentions of the abbreviation, use the abbreviation by itselft. 
+* Consider your audience to decide to spell out a term. If the majority of your audience is 
+
+#### Long and short version of a word
+* Some words have a long version or short version, for example:\
+	* *application* and *app*
+	* *demonstration* and *demo*
+	* *synchronize* and *sync*
+ * The short versions of the words are not abbreviations, and if you use them, you don't need to put a period after them.
+ * If you're not sure whether a word is an abbreviation or just a short version of a longer word, use the speaking test: if you speak the short version as a word, for example, *This is a demo version of the product*, you can usually treat it as a word and not an abbreviation. 
+* Capitalize the spelled-out version of the abbreviation only if the long form is a proper noun or is convertionally capitalized. Don't capitalize it only because the abbreviation includes capital letters. 
+* If the firdst mention of a term occurs in a heading or title, you can use the abbreviation and then spell out it in the first paragraph that follows the heading or title. 
+* 
+
+
+
+
+* Use second person.
+* Use active voice.
+* Use American spelling.
+* Put conditional clauses before introductions, not after.
+Not recommended: Click `Delete` if you want to delete the entire document.
+Recommended:  To delete the entire document, click `Delete`.
+* 
+
+
 ## API documentation
 * API documentation has traditionally included a brief explanation of REST. As knowledge of REST becomes more widespread, we might be able to assume that readers already know about it, and can remove those brief explanations.
+
+
 
 
 
