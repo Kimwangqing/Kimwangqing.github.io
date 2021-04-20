@@ -269,11 +269,8 @@ Recommended: Start the replica by using `START SLAVE` statement.
 ### Avoiding third-party content
 Unless you are sure that your company owns the assets, avoid copying from these sources:
 * Third-party sources: This list includes documentation, websites, books, blogs, videos, images, podcats, and more.
-
 * Reference sources: Avoid copying from dictionaries, encyclopedias, and Wikipedia.
-
 * Open source product documentation: OSS has different license options, which can range from no reuse without attribution to complete freedom to use the material. It's not safe to assume that you can reuse this content freely. 
-
 * Git content: Different GitHub uses might adopt different licenses for their content. It's not safe to assume that you can reuse this content freely. 
 
 ### Reusing content
@@ -359,7 +356,6 @@ In most contexts, the technical distinction between acronyms and initialisms isn
 	* CA for Califonia
 * Some abbreviations can be either acronyms or initialisms depending on the speakers's preference; examples includes *FAQ* and *SQL*. In some cases, the pronunciation determines whether to use *a* or *an*.
 * Don't create your own abbreviations. Use recognizable and industry standand abbreviations. 
-* Making abbreviations plural. In general, treat abbreviations as regular words when making them plural, for example, *APIs*, *SKEs*, and *IDEs*. If the abbreviation ends in *s*, *sh*, *ch*, or *x*, then add *es*, for example, *OSes*, *DISHes*, *DCCHes*, *BMXes*. 
 * Spell out a term. When an abbreviations is likely to be unfamiliar to the audience, spell out the first mention of the term and immediately follow with the abbreviation in parentheses, as in the following examples:
 	* Border Gateway Protocal (BGP) 
 	* elliptic-curve cryptography (ECC)
@@ -374,8 +370,66 @@ In most contexts, the technical distinction between acronyms and initialisms isn
  * The short versions of the words are not abbreviations, and if you use them, you don't need to put a period after them.
  * If you're not sure whether a word is an abbreviation or just a short version of a longer word, use the speaking test: if you speak the short version as a word, for example, *This is a demo version of the product*, you can usually treat it as a word and not an abbreviation. 
 * Capitalize the spelled-out version of the abbreviation only if the long form is a proper noun or is convertionally capitalized. Don't capitalize it only because the abbreviation includes capital letters. 
-* If the firdst mention of a term occurs in a heading or title, you can use the abbreviation and then spell out it in the first paragraph that follows the heading or title. 
-* 
+
+#### Creating abbreviations
+Don't create your own abbreviations. Use recoginizable and industry standard acronyms and initialisms. 
+
+#### Making abbreviations plural
+Making abbreviations plural. In general, treat abbreviations as regular words when making them plural, for example, *APIs*, *SKEs*, and *IDEs*. If the abbreviation ends in *s*, *sh*, *ch*, or *x*, then add *es*, for example, *OSes*, *DISHes*, *DCCHes*, *BMXes*. 
+
+#### When to spell out a term
+* In general, when an abbreviation is likely to be unfamiliar to the audience, spell out the first mention of the term and immediately follow with the abbreviation in parentheses, as in the follow examples:
+	* *Border Gateway Protocol (BGP)*
+	* *elliptic-curve cryptography (ECC)*
+		* For all subsequent mentions of the abbreviation, use the abbreviation by itself.
+		* Capitalize the spelled-out version  of the abbreviation only if the long form is a proper noun or is conventionally capitalized. 
+		* Don't capitalize it only because the abbreviation includes capital letters. 
+* If the first mention of a term occurs in a heading or title, you can use the abbreviation and then spell out the abbreviation in the first paragraph that follows the heading or title. 
+* When deciding to spell out a term, consider your audience. If the majority of your audience is likely to recognize and understand the term, then you don't need to spell it out. For example, *API* you don't need to spell out application programming interface. 
+	* If you're explaining the general concept of an API to someone with no programming experience, spelling out the abbreviation can be helpful. 
+* The following abbreviations rarely need to be spelled out:
+	* API
+	* DVD
+	* PDF or XML
+	* HTML
+	* PC
+	* RAM
+	* REST
+	* Units of measurement such as MB or GB
+	* URL
+	* USB
+
+#### Abbreviations not to use
+* Prefer English terms over Latin abbreviations. Don't use *i.e.* or *e.g.*; instead, use *that is* or *for example*, respectively.
+* Don't use internet slang abbreviations such as *RTFM* means read the fucking manual.
+* If the full spelled-out word is common and easily understandable, use that rather than abbreviating. For example, write *approximately* instead of *approx*.
+
+#### Periods with abbreviations
+* Don't use periods with acronyms or initialisms.
+* Put a period at the end of a shortened word, except for date and time abbreviations. 
+* If you write or say an abbreviation as a word, for example *app* or *sync*, don't put a period after it. 
+* Don't use a period with an abbreviation for the name of a country, US state. 
+
+#### Abbreviations as verb
+* Don't use acronyms, initialisms, or shortened words as verbs.
+
+### Active voice
+In general, use active voice, in which the grammatical subject of the sentence is the person or thing perfoming the action, instead of passive voice, inwhich the grammatical subject of the sentence is the person or thing being acted upon. 
+* One reason is that it's easy to neglect to indicate who or what is performing a particular action, and it's ofter hard for readers to figure out who's supposed to do something. It's possible to indicate who's performing the action in passive voice using by, but the resulting prose is generally not as good as if you were to recast the sentence as active voice. So whenever possible, make the doer the subject of the sentence. 
+Not recommended: The service is queried, and acknowledgment is sent. 
+Recommended: Send a query to the service. The server sends an acknowledgment. 
+
+#### Exceptions
+For example, passive can be okay in the following instances:
+* To emphasize an object over an action.
+Recommended: The file is saved. 
+* To de-emphasize a subject or actor.
+Not recommended: You created over 50 conflicts in the file. 
+Recommended: Over 50 conflicts were found in the file. 
+* If your reader don't need to know who's responsible for the action. 
+Recommended: The database was purged in January. 
+
+
 
 
 
@@ -386,7 +440,7 @@ In most contexts, the technical distinction between acronyms and initialisms isn
 * Put conditional clauses before introductions, not after.
 Not recommended: Click `Delete` if you want to delete the entire document.
 Recommended:  To delete the entire document, click `Delete`.
-* 
+
 
 
 ## API documentation
