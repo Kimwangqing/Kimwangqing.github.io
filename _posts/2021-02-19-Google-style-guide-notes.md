@@ -268,7 +268,7 @@ Recommended: Start the replica by using `START SLAVE` statement.
 
 ### Avoiding third-party content
 Unless you are sure that your company owns the assets, avoid copying from these sources:
-* Third-party sources: This list includes documentation, websites, books, blogs, videos, images, podcats, and more.
+* Third-party sources: This list includes documentation, websites, books, blogs, videos, images, podcasts, and more.
 * Reference sources: Avoid copying from dictionaries, encyclopedias, and Wikipedia.
 * Open source product documentation: OSS has different license options, which can range from no reuse without attribution to complete freedom to use the material. It's not safe to assume that you can reuse this content freely. 
 * Git content: Different GitHub uses might adopt different licenses for their content. It's not safe to assume that you can reuse this content freely. 
@@ -341,23 +341,24 @@ Recommneded: For more information, see [link to other document].
 
 ## Language and grammar
 ### Abbreviations
-Abbriviations include acronyms, initialisms, shortened words, and contractions. 
-In most contexts, the technical distinction between acronyms and initialisms isn't relevant; it's fine to use the word *acornym* to refer to both. 
-* An acronym is formed from the first letters of words in a phrase, but it pronounced as if it were a word itself:
-	* NATO for North Atlantic Treaty Organizaion
+Abbreviations include acronyms, initialisms, shortened words, and contractions. 
+In most contexts, the technical distinction between acronyms and initialisms isn't relevant; it's fine to use the word *acronym* to refer to both. 
 
-* An initialism is also formed from the first letters of words in a phrase, but each letter is pronounced seperately:
+* An acronym is formed from the first letters of words in a phrase, but it pronounced as if it were a word itself:
+	* NATO for North Atlantic Treaty Organization
+
+* An initialism is also formed from the first letters of words in a phrase, but each letter is pronounced separately:
 	* CIA for Central Intelligence Agency
 	* FYI for For You Information
 * A shortened word is just part of a word or phrase, sometimes with a period at the end:
 	* Dr. for doctor
 	* etc. for et cetera
 	* min for minutes
-	* CA for Califonia
-* Some abbreviations can be either acronyms or initialisms depending on the speakers's preference; examples includes *FAQ* and *SQL*. In some cases, the pronunciation determines whether to use *a* or *an*.
-* Don't create your own abbreviations. Use recognizable and industry standand abbreviations. 
+	* CA for California
+* Some abbreviations can be either acronyms or initialisms depending on the speaker's preference; examples includes *FAQ* and *SQL*. In some cases, the pronunciation determines whether to use *a* or *an*.
+* Don't create your own abbreviations. Use recognizable and industry standard abbreviations. 
 * Spell out a term. When an abbreviations is likely to be unfamiliar to the audience, spell out the first mention of the term and immediately follow with the abbreviation in parentheses, as in the following examples:
-	* Border Gateway Protocal (BGP) 
+	* Border Gateway Protocol (BGP) 
 	* elliptic-curve cryptography (ECC)
   For all subsequence mentions of the abbreviation, use the abbreviation by itselft. 
 * Consider your audience to decide to spell out a term. If the majority of your audience is 
@@ -369,10 +370,10 @@ In most contexts, the technical distinction between acronyms and initialisms isn
 	* *synchronize* and *sync*
  * The short versions of the words are not abbreviations, and if you use them, you don't need to put a period after them.
  * If you're not sure whether a word is an abbreviation or just a short version of a longer word, use the speaking test: if you speak the short version as a word, for example, *This is a demo version of the product*, you can usually treat it as a word and not an abbreviation. 
-* Capitalize the spelled-out version of the abbreviation only if the long form is a proper noun or is convertionally capitalized. Don't capitalize it only because the abbreviation includes capital letters. 
+* Capitalize the spelled-out version of the abbreviation only if the long form is a proper noun or is conventionally capitalized. Don't capitalize it only because the abbreviation includes capital letters. 
 
 #### Creating abbreviations
-Don't create your own abbreviations. Use recoginizable and industry standard acronyms and initialisms. 
+Don't create your own abbreviations. Use recognizable and industry standard acronyms and initialisms. 
 
 #### Making abbreviations plural
 Making abbreviations plural. In general, treat abbreviations as regular words when making them plural, for example, *APIs*, *SKEs*, and *IDEs*. If the abbreviation ends in *s*, *sh*, *ch*, or *x*, then add *es*, for example, *OSes*, *DISHes*, *DCCHes*, *BMXes*. 
@@ -401,7 +402,7 @@ Making abbreviations plural. In general, treat abbreviations as regular words wh
 
 #### Abbreviations not to use
 * Prefer English terms over Latin abbreviations. Don't use *i.e.* or *e.g.*; instead, use *that is* or *for example*, respectively.
-* Don't use internet slang abbreviations such as *RTFM* means read the fucking manual.
+* Don't use Internet slang abbreviations such as *RTFM* means read the fucking manual.
 * If the full spelled-out word is common and easily understandable, use that rather than abbreviating. For example, write *approximately* instead of *approx*.
 
 #### Periods with abbreviations
@@ -414,7 +415,7 @@ Making abbreviations plural. In general, treat abbreviations as regular words wh
 * Don't use acronyms, initialisms, or shortened words as verbs.
 
 ### Active voice
-In general, use active voice, in which the grammatical subject of the sentence is the person or thing perfoming the action, instead of passive voice, inwhich the grammatical subject of the sentence is the person or thing being acted upon. 
+In general, use active voice, in which the grammatical subject of the sentence is the person or thing performing the action, instead of passive voice, in which the grammatical subject of the sentence is the person or thing being acted upon. 
 * One reason is that it's easy to neglect to indicate who or what is performing a particular action, and it's ofter hard for readers to figure out who's supposed to do something. It's possible to indicate who's performing the action in passive voice using by, but the resulting prose is generally not as good as if you were to recast the sentence as active voice. So whenever possible, make the doer the subject of the sentence. 
 Not recommended: The service is queried, and acknowledgment is sent. 
 Recommended: Send a query to the service. The server sends an acknowledgment. 
@@ -429,17 +430,414 @@ Recommended: Over 50 conflicts were found in the file.
 * If your reader don't need to know who's responsible for the action. 
 Recommended: The database was purged in January. 
 
+### Anthropomorphism
+Don't attribute human qualities to software or hardware. 
+Recommended: The pc detects a new device. 
+Not recommended: The PC sees a new device. 
+
+### Articles(a, an, the)
+Some abbreviation can be both acronyms and initialisms, requiring **a** in one instance and **an** in the other. 
+For example, **FAQ**, which some pronounce "fak" and other spell out, requires **an** when spelled out and **a** when pronounced as a word. 
+The following is a list of these kinds of abbreviations with our recommendations for which article to use:
+
+* An SQL
+* An FAQ
+
+#### More materials about articles
+##### Nouns that need determiners
+  **Countable singular nouns**
+
+##### Nouns that don't need determiners: Plural nouns (not necessary)
+  Plurals can go without determiners, too. Although you can say "the cats", you can also say "cats", if you don't have any particular cats in mind. 
+
+##### Nouns that don't need determiners: Mass nouns (not necessary)
+Mass nouns, also called uncountable nouns, don't need a determiner, either. 
+*Fruit is on sale.*
+*The fruit is on sale.* is also fine. 
+
+##### Definite article 
+*The* is called definite article because you use it when you're talking about something that is distinguished from other things. 
+For example, 
+*The cat crossed the road.*
+It indicates:
+
+* this cat might be distinguished from other things.
+* Or just because it's the only cat mentioned earlier in the conversation. 
+*Thank you for taking the time to review my application.*
+It indicates you're talking about a definite amount of time, whatever amount of time it takes to review your application. 
+*Thank you for taking time to review my application.*
+It indicates you're thanking the readers for any amount of time they might take to review your application, even if it's a millisecond. 
+For the reason, *Thank you for taking the time* seems like the better option. 
+
+##### *A* the indefinite article
+You use it when you're talking about something that you're not trying to distinguish from other things. 
+For example,
+*A cat crossed the road.*
+It could be any cat. 
+
+Determiner
+* Countable singular nouns **have** to have a determiner.
+* Proper nouns, plural nouns, and mass nouns aren't necessary to have determiners. 
+
+##### Collective nouns
+Thought there is no rule state you must use a singular verb or a plural verb after a collective noun, it depends on you're thinking of the collective noun as a single unit or different unit separately. 
+For example, 
+*Tim's family are ranchers.* (is better, because talking about one family a bunch of separate individuals.)
+*Tim's family is rancher.*
+*Tim's family is wealthy.* (is better, because talking about one family one unit.)
+*Tim's family are wealthy* 
+
+###### Institutions and animate vs. inanimate nouns
+* Institution names, such as the United States, Congress, and the House of Lords, tend to use singular verbs, because we see these institutions as units and we don't think of the members as individuals. For example,
+*Congress is meeting today.*
+*The members of Congress are meeting today.* (If you want to emphasize the individuals in Congress.)
+* Institution names are animate, they can use a plural or a singular verb. 
+* Inanimate objects, such as *sugar* or *furniture* are called mass nouns or uncountable nouns, and are always singular. 
+  For example, 
+  *This sugar is very sweet.* or *My furniture is too old.*
+  You can't say, *My furniture are....* 
+  If you want to talk about individual grains of sugar or individual pieces of furniture, then you have to say something like *Eight grains of sugar were here.* or *These pieces of furniture are new.*
+
+###### Preposition phrases
+* When a prepositional phrase comes after a collective, the verb takes its cue from the subject of the sentence. 
+For example,
+*a large group of students*, *group* is the collective noun and the subject of the sentence, and the prepositional phrase *of students* comes after the collective noun.
+In this case, just ignore the prepositional phrase *of students* that modifies the subject and take you cue from the subject *a large of group*.
+* It depends on you're thinking of the collective noun as a single unit or different unit separately. 
+  * If you're in the United States and you're thinking of the group as a single unit, you'd generally use a singular verb. 
+    *A large group of students is arriving at soon.*
+  * If you're in Britain or are thinking of the students as individuals, you'd generally use a plural verb.
+    *A large group of students were listening.*
+
+###### Consistency
+It would be better to stick with all singular or all plural.
+For example,
+*The faculty is meeting today, but they are not happy to be meeting.* Here is a mixed structure with a singular verb and a plural verb. 
+
+### Capitalization
+* Follow the official capitalization for the names of brands, companies, software, products, services, features, and terms defined by companies and open source communities. 
+Recommended in Kubernetes context: A job creates one or more Pods.
+Recommended: The Cloud Scheduler job publishes a message to a Cloud Pub/Sub topic at one-minute intervals. 
+* If an official name begins with a lowercase letter, then put it in lowercase even at the start of a sentence. But it's better to revise the sentence to avoid putting a lowercase word at the start,if possible. 
+* Don't use all-uppercase, except in the following contexts:
+  * In official names;
+  * In abbreviations that are always written in all-caps;
+  * Or when referring to code that uses all-caps.
+* Don't use camel case, except in the following contexts:
+  * In official names;
+  * Or when referring to code that uses camel case. 
+
+#### Capitalization in titles and headings
+* Use sentence case in document titles and headings. 
+* Don't put a period at the end of a title or heading. 
+* Capitalize the first word in the following contexts:
+	* The first word in the title;
+	* The first word in a subheading after a colon;
+	* Any proper nouns or other terms that are always capitalized a certain way. 
+
+#### Capitalization in references to titles and headings
+* In references to any title or heading from a document that follows this guide, use sentence case even if the title or heading itself uses title case. 
+* That way, when the title or heading is eventually updated to sentence case, the reference will match. 
+* When you reference the title of any source that doesn't follow this guide, retain the original capitalization. 
+
+#### Capitalization and colons
+* Use a lowercase letter to begin the first word of the text immediately following a colon, unless the text is one of the following:
+	* A proper noun
+	  *Open source software: Istio*
+    * A heading
+    * A quotation
+      *Arthurian wit: "Bring me you sworde"
+    * Text that follows a label such as Caution or Note
+
+#### Capitalization and figures
+* Use sentence case for captions.
+* Use sentence case for labels, callouts, and other text in images and diagrams.
+  
+#### Capitalization in glossaries and indexes
+* Use lowercase for glossary and index terms unless the term is a proper noun or another reason to require capitalization.
+* Use sentence case for glossary definitions.
+
+#### Capitalization and hyphenated words
+* Capitalize only the first element in the word, unless a subsequent element is a proper noun or proper adjective. 
+
+#### Capitalization in lists
+* Use sentence case for  items in all types of lists. 
+
+#### Capitalization for tables in text
+* Use sentence case for all the elements in a table: contents, headings, labels, and captions. 
+
+### Clause order
+* Mention the circumstance or goal before you provide the instruction. 
+Recommended:
+* For more information, see [link to other document].
+Not recommended:
+* See [link to other document] for more information.
+Recommended:
+* To delete the entire document, click **Delete**.
+Not recommended:
+* Click **Delete** if you want to delete the entire document.
+Recommended:
+* If you app is located in one of the following regions, using custom domains might add noticeable latency to responses. 
+Not recommended:
+* Using custom domains might add noticeable latency to responses if your app is located in one of the following regions.
+
+### Contractions
+#### Negation contractions
+* It's fine to use *-n't* contractions. such as *isn't*, *don't*, and *can't*.
+
+#### Noun + verb contractions
+* Avoid contractions formed from nounds and verbs.
+Reconmmended: The browser is fast, simple, and secure. 
+Not recommended: The browser's fast, simple, and secure. 
+Recommended: The following guides are a good way to learn to use Universal Analytics.
+
+#### Don't use double contractions
+* shouldn't've -- shouldn't have -- should not have
+* wouldn't 've -- wouldn't have -- would not have
+
+### Plurals in parentheses
+* Instead of putting optional plurals in parentheses, use either plural or singular constructions and keep things consistent throughout your documentation. 
+Recommended:
+* To find your API, visit the Creentials page. 
+Not recommended:
+* To find your API key(s), wait the Credential page. 
+Recommended;
+* The value of the parent depends on the values of its children. 
+Not recommended:
+* The value of the parent depends on the value(s) of its child(re).
+
+### Possessives
+* To form a possessives of a singular noun (regardless of whether it ends in *s* ), add  *'s*  to the end of the word.
+  For examples:
+  *alias's*
+  *application's*
+  *business's*  
+  *user's*
+* For a plural noun that 
+	* Doesn't end in *s*, add *'s* to the end of the word, add *'s* to the end of the word.
+	  For examples:
+	  *women's*
+    * Does end in *s*, add an apostrophe but no additional *s*.
+      For examples:
+      *the Williamses'*
+      *users'*
+* The possessive of *it* is a special case because it doesn't take an apostrophe. 
+ For example, *Each component has its own set of traits.*
+       
+#### Company-and product-name possessives
+* Avoid forming a possessive with a product name, regardless of who owns the product name. 
+Recommended: The capabilities of Search are vast.
+Not recommended: Search's capabilities are vast.
+* To form the possessive of a company name, add *'s* to the end of the name.
+Recommended: Google's new office is nearby. 
+
+### Prepositions
+* There's no rule against placing a preposition at the end of a sentence, place the preposition where it makes the most sense and makes the sentence easiest to read. 
+Recommended: For details, see the client library documentation for the language you're interacting with. 
+Not recommended: For details, see the client library documentation for the language with which you're interacting. 
+* Omit unnecessary prepositions, and don't clutter the sentence with too many prepositions. 
+Recommended: The icon for the connector manager turns green within a few minutes, and the connector instance is displayed shortly after. 
+
+### Present tense
+* In general, use present tense rather than future tense.
+* Try to avoid using *will* where possible. 
+Recommended: Send a query to the service. The server sends an acknowledgment. 
+Not recommended: Send a query to the service. The server will send an acknowledgment. 
+* Future tense is unavoidable where possible because you're talking about the future. 
+ For example, *The hedgehog will hibernate starting in October.* 
+* Also avoid the hypothetical future *would*. 
+Recommended: If you send an unsubscribe message, the server removes you from the mailing list. 
+Not recommended: If you send an unsubscribe message, the server would then remove you from the list. 
+
+### Pronoun
+#### Ambiguous pronoun references
+* Avoid vague and confusing reference between a pronoun and its antecedent. 
+Recommended: If you type text in the field, the text doesn't change. 
+Not recommended: If you type text in the field, it doesn't change. 
+Recommended: The name of the function to execute in the given script. The name doesn't include parentheses or parameters. 
+Not recommended: The name of the function to execute in the given script. It doesn't include parentheses or parameters. 
+* In many cases, it's best to use these types of words as adjectives modifying nouns instead of using them as pronouns. 
+Recommended: Set this value to true. 
+Not recommended: Set this to true. 
+
+#### Gender - neutral pronouns
+* Don't use gender-specific pronouns unless the person you're referring to is actually that gender. 
+* In particular, don't use *him*, *his*, or *her* as gender-neutral pronouns, and don't use *he*, *she* , or other such punctuational approaches. **Instead, use the singular *they* **. 
+* *Singular they* has been in use for a long time.
+  *Singular they* is the use in English of the pronoun they or its inflected or derivative forms, them, their, theirs, and themselves (or themself) as an epicene (gender-neutral) singular pronoun. It typically occurs with an unspecified antecedent, as in sentences such as:
+*Somebody left their umbrella in the office. *
+*But a journalist should not be forced to reveal their sources.*. 
+* For example, *Each student should save their questions until the end.*
+or use a plural noun: *Students should save their questions until the end.*
+or use the formal one: *One should save one's questions until the end.*
+or use *his or her*: * Each student should save his or her questions until the end.*
+
+#### Optional pronouns
+* To avoid ambiguity and clarity meaning in sentences. use optional pronouns, such as *that* and *who*. 
+Recommended: Make sure that all  the files are correct.
+Not recommended: Make sure all the files are correct. 
+Recommended: Right-click the link that you want to open. 
+Not recommended: Right-click the link you want to open. 
+
+#### Personal pronouns
+* Avoid first-person pronouns (*I*, *we*, *our*, and *ours*) except in the following contexts:
+	* The question in FAQs.
+	* A document whose author makes comments in the first person. 
+	* Using *we* to refer to your organization, after using your organization's name. For example, "Example Pet Store recommends that you feed your addrdvark Standardized Aardvark Treats. We cannot guarantee the happiness of your aardvark otherwise."
+* Use the second - person pronoun (*you*) whenever possible. 
+
+#### Relative pronouns
+* *That* and *Which* don't mean exactly the same thing, so don't substitute one fro the other. 
+* *That* introduces a restrictive clause. It isn't preceded by a comma. 
+   Recommended: The echidna that has a long snout is furry. 
+   This sentence describes a particular echidna, the one that has a long snout. 
+*  *Which* introduces a nonrestrictive clause and is preceded by a comma. 
+  Recommended: The echidna, which has a long snout, is furry. 
+  This sentence describes all echidnas, and mentions in passing that they all have long snouts. 
+* When referring to a person, use *who*, not *that*. 
+ Recommended: Grant access to the autherticated user who provides an invitation token. 
+ Not recommended: Grant access to the autherticated user that provides an invitation token. 
+* You can use *whose* to refer to people, animals, and things. *Whose* is the possessive form of both *who* and *which*. 
+ Recommended: Examine the variables whose values are set at compile time. 
+
+### Second person
+* In general, use second person rather than first person, that means *you* instead of *we*.
+* It's important to figure out who the *you* is that you're addressing and to be consistent about that. Make it clear to the reader who you expect them to be. 
+Recommended: If you're deleting multiple entries at a time. 
+Not recommended: If we're deleting multiple entries at a time. 
+* If you're telling the reader to do something, then use the imperative with an implicit *you*. 
+Recommended: Click **Submit**. 
+* This issue can also interact with tense. 
+Recommended: Create an XML entry. 
+Not recommended: You'll need to create an XML entry. 
+* It's best to avoid *our*.
+Recommended: For details, read *All About Pandas*. (All About Pandas is a hyperlink in blue)
+Also recommended: For details, read the documentation. (the document isn't a hyperlink)
+Not recommended: For details, read our documentation. 
+
+### Spelling
+* In general, in cases where American spelling differs from British spelling, use the American spelling.
+* When in doubt about the spelling, first see the word list, then see Merriam-Webster's Collegiate Dictionary. 
+Recommended: *color* not *colour*; *authorize* not *authorise*, *center* not *centre*
+*accessorize* not *accissorise*; *curb* not *kurb*...
+
+### Verb forms in reference documentation
+* In a specification, that's aimed at implementors of an API, it may make more sense to use the verb form without the *-s*, In that context, you're telling the reader what their implementation of the method should do (create a new task), whereas in reference docs aimed at developers, you're telling them what the existing method does (creates a new task).
+
+## Punctuation
+### Colons
+* When a colon introduces a list, the text that precedes the colon must be able to stand alone as a complete sentence. 
+Recommended: The fields are defined as follows:
+Not recommended: The fields are: 
+
+#### Bold colon
+* When non-italic text that precedes a colon is bold, make the colon bold too. 
+
+#### Code text preceding colon
+* When  text that precedes a colon is tagged as <code>, don't include the colon in the <code> tagging unless it is part of the code. 
+
+#### Colons within sentences
+* In general, the first word in the text that follows a colon should be in lowercase. 
+Recommended: Tone: concise, conversational, friendly, respectful. 
+Recommended: When you add or update content to an existing project, remember to take these steps: review the style guide, use checklists, enlist a fellow writer or an editor to copyedit your work, and request a developmental edit if you feel that it's warranted.
+
+### Commas
+#### Serial commas
+* In a series of three or more items, use a comma before the final *and* or *o*. 
+Recommended: I dedicate this book to my parents, Ayn Rand, and God. 
+Not recommended: I dedicate this book to my parents, Ayn Rand and God. 
+
+#### Commas after introductory words and phrases
+* In general, place a comma after an introductory word or phrase. 
+Recommended: Finally, only groups that contain parameters appear in this list. 
+Recommended: Based on the requirements of your game, you can implement this method to update game information. 
+
+#### Commas seperating two independent clauses
+When a coordinating conjunction (*and*, *but*, *or*, *nor*, *for*, *so*, or *yet*) separates two independent clauses, insert a comma after the first clause (before the conjunction) **unless both clauses are very short**.
+Recommended: The libraries make feed creation easier, and they ensure that only valid feeds are produced. 
+Not recommended: The libraries make feed creation easier and they ensure that only valid feeds are produced. 
+Recommended: Type your ID and click **OK**.
+Not recommended: Type your ID, and click **OK**. 
+
+#### Commas seperating independent from dependent clauses
+* When an independent clause and a dependent clause are separated by conjunction, insert a comma **only if the sentence could be misunderstood withoud one**. 
+Recommended: Direct-access flags are plain variables and can be read directly. 
+Not recommended: Direct-access flags are plain variables, and can be read directly.
+Recommended: The manager acknowledged the last team member who entered the room, and started the meeting. 
+Not recommended: The manager acknowledged the last team member who entered the room and started the meeting. 
+
+#### Setting off other kinds of clauses
+* To set off certain kinds of clauses with a comma or other punctuation for clarity. 
+* A  couple of specific placeds where commas are a good idea. 
+	* In general, put a comma before the word *which* at the start of a nonrestrictive clause. 
+	* in general, put a semicolon or a period or a dash before a conjunctive adverb, such as *otherwise*, or *therefore*, and put a comma after the conjunctive adverb. 
+* In general, don't use a comma before the causal conjunction *because* unless it is being used at the start of a nonrestrictive clause. 
+Recommended: Name of the group, which has a maximun length of 200 characters. 
+Not recommended: Name of the group which has a maximun length of 200 characters. 
+Recommended: The variable must have a value, otherwise, the server retures an error. 
+Not recommended: The variable must have a value otherwise the server retures an error. 
+Recommended: You can use the same key name in multyple backend services and backend buckets beacuse each set of keys is independent of the others. 
+Not recomended:  You can use the same key name in multyple backend services and backend buckets, beacuse each set of keys is independent of the others. 
+
+#### Punctuating numbers
+* In accordance with standard American number-formatting.
+* In numbers four or more digits long, use commas to set off groups of three digits. counting leftward from the dicimal point. 
+* For more decimal numbers, do not use any digit-group separators to the right of the decimal point.  
+|Recommend |Not recommended |
+| -- | -- |
+| The limt 1,532,782 bytes per day. | The limit is 1532782 bytes per day. |
+| The API supports up to 2,000 vertices. | The API supports up to 2000 vertices.|
+| $0.0316008/vCPU hour | $0.031 600 8/vCPU hour |
+
+#### Dimensions
+* Use a lowercase *x*  between the numbers in the dimensions, with no space between the numbers and the *x*. 
+Recommneded: 192x192
+Not recommended: 192 x 192
+
+#### Exponents
+* Don't use space between the base and the exponent. 
+Recommended: 2<sup>3</sup>
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+### Hyphen & dash
+* A hyphen (-) is a punctuation mark that's used to join words or parts of words. 
+* A dash is longer than a hyphen and is commonly used to indicate a range or a pause. The most common types of dashes are the **en dash**, and the **em dash*.
+
+#### Em dashes
+* Em dashes save other punctuation would be awkward. For example, em dashes can replace parentheses at the end of a sentence or when multiple commas appear in a parenthetical phrase. 
+After a split second of hesitation, the second baseman leaped for the ball (or, rather, limped for it).
+After a split second of hesitation, the second baseman leaped for the ball -or, rather, limped for it).
+Microsoft system: 2014 + alt + x
+
+#### En dashes
+En dashes are slightly shorter than em dashes. 
+* Using en dashes to indicate spans of time or ranges or numbers. 
+* Using endashes to indicate the connection between two words that are already hyphenated or when you are using a two-word phrase as a modifier, which is you create a compound word. 
+Microsoft system: 2013 + alt + x
+
+
+To find your API key(s), visit the Credentials page.
 * Use second person.
 * Use active voice.
 * Use American spelling.
 * Put conditional clauses before introductions, not after.
 Not recommended: Click `Delete` if you want to delete the entire document.
 Recommended:  To delete the entire document, click `Delete`.
+
 
 
 
