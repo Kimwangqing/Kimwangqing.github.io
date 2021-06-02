@@ -734,12 +734,18 @@ Not recommended: The fields are:
 * When non-italic text that precedes a colon is bold, make the colon bold too. 
 
 #### Code text preceding colon
-* When  text that precedes a colon is tagged as <code>, don't include the colon in the <code> tagging unless it is part of the code. 
+* When text that precedes a colon is tagged as <code>, don't include the colon in the <code> tagging unless it is part of the code. 
 
 #### Colons within sentences
 * In general, the first word in the text that follows a colon should be in lowercase. 
 Recommended: Tone: concise, conversational, friendly, respectful. 
 Recommended: When you add or update content to an existing project, remember to take these steps: review the style guide, use checklists, enlist a fellow writer or an editor to copyedit your work, and request a developmental edit if you feel that it's warranted.
+* Unless the text is one of the following conditions:
+	* A proper noun (Open source software: Istio)
+	* A heading (capitalize the first word in a subheading after a colon, and any proper nouns or other terms that are always capitalized a certain way)
+		* Even though you're using sentence case, don't put a period at the end of a title or heading. 
+	* A quotation (Arthurian wit:"Bring me you sworde")
+	* Text that follows a label, such as Caution or Note 
 
 ### Commas
 #### Serial commas
@@ -789,9 +795,170 @@ Not recomended:  You can use the same key name in multyple backend services and 
 | The API supports up to 2,000 vertices. | The API supports up to 2000 vertices.|
 | $0.0316008/vCPU hour | $0.031 600 8/vCPU hour |
 
+### Dashes
+(* A hyphen (-) is a punctuation mark that's used to join words or parts of words. 
+* A dash is longer than a hyphen and is commonly used to indicate a range or a pause. The most common types of dashes are the **en dash**, and the **em dash*.)
+
+#### Em dashes
+* Also known as a  long dash, to indicate a break in the flow of a sentence or an interruption.
+* Don't put a space before or after it. 
+(* Em dashes save other punctuation would be awkward. For example, em dashes can replace parentheses at the end of a sentence or when multiple commas appear in a parenthetical phrase. 
+After a split second of hesitation, the second baseman leaped for the ball (or, rather, limped for it).
+After a split second of hesitation, the second baseman leaped for the ball -or, rather, limped for it).
+Microsoft system: 2014 + alt + x)
+
+#### En dashes
+* Don't use. Instead, use a hyphen or the word *to*.
+* Range of numbers with units
+* Range of numbers
+(En dashes are slightly shorter than em dashes. 
+* Using endashes to indicate spans of time or ranges or numbers. 
+* Using endashes to indicate the connection between two words that are already hyphenated or when you are using a two-word phrase as a modifier, which is you create a compound word. 
+* Microsoft system: 2013 + alt + x)
+
+#### Colon instead of dashes in description lists
+* It's common but nonstandard method to use an em dash, an en dashes or a hyphen surrounded by spaces to separate an item and its description. 
+Recommended: Example: This is an example.
+Not recommended: Example - This is an example.
+
+### Ellipses
+* Ellipses is the plural of ellipsis. An ellipsis is made up of** three** contiguous periods. Technically, the dots in an ellipsis are ellipsis points, but for our purposes, you can think of them as periods. 
+* Ellipses indicate the omission of part of a sentence, paragraph, or larger block of text where the omission is not pertinent to the understanding of the subject at hand. 
+
+#### Ellipses in a user interface
+* When ellipses appear in a user interface, exclude them from the documentation describing the user interface unless their omission could cause confusion. For example, if the text on the button in the UI reads **Save...** document it as *click **Save** *. 
+
+#### Ellipses in text
+* Don't use ellipses in your written documentation. 
+* It's acceptable to use ellipses in quoted text (to replace a portion of the quoted text) except when they appear at the beginning or end of the text.
+Not Recommended: My high school English teacher made me learn that Shakespeare quote:"... all the men and women merely players."
+Not Recommended: My high school English teacher made me learn that Shakespear quote:"All the world's a stage, and all the men and women merely players..."
+Recommended: My high school English teacher made me learn that Shakespear quote:"All the world's a stage, .... And one man in his time plays many parts."
+
+#### Punctuation and spacing of ellipses
+* Keep all three ellipsis points together. 
+* Insert one space before and after the ellipsis unless a punctuation mark immediately follows the ellipsis, in this case, don't insert a space after the ellipsis. 
+Recommended: You don't need to understand all the other Python code in there ... we'll explain it all in class. 
+Recommended: You don't need to understand all the other Python code in there ...; we'll explain it all in class. 
+Not recommended: You don't need to understand all the other Python code in there...we'll explain it all in class. 
+
+### Exclamation points
+Don't use exclamation points in text except when thy're part of a code example. 
+
+### Hyphens
+#### Compound modifiers
+* Use hyphenated compound modifiers before a noun. 
+* A compound modifier acts as a single unit to modify the noun. 
+* When you use a compound modifier after a noun, don't hyphenate it.
+Recommended: The app uses Android-specific techniques.
+Recommended: The app uses techniques that are Android specific.
+
+#### Adverbs ending in *-ly*
+Don't hyphenate adverbs ending in *-ly* except where needed for clarity.
+Recommended: Free, simple, and publicly available implementations. 
+Not recommended: Free, simple, and publicly-available implementations. 
+Recommended: To get profile information for the currently authorized user. 
+Not recommended: To get profile information for the currently-authorized user. 
+
+#### When to hyphenate
+* Don't hyphenate a word that has a prefix or suffix except in the following situations:
+	* Where not doing so could cause confusion--for example, *re-count*, *re-mark*.
+	* When a number or capital letter follows the prefix--for example, *non-English*, *pre-1500*, *post-twelfth graders*.
+	* When the prefix ends in vowel, and the word it precedes starts with the same vowel--for example, *co-op*, *de-energize*. 
+	* When the prefix is self--for example, *self-aware*, *self-important*. 
+	* When the prefix is followed by a word that is already hyphenated.
+	* When the prefix is followed by a compound word that contains a space. In this case, the space is replaced with a hyphen--for example, *twentieth century* but *pre-twentieth-century music*. 
+
+#### Compound words
+* Compound words are two or more words that are joined to form a new word. To determine whether to hyphenate a compound word to check the word list. 
+
+#### Range of numbers
+* Use a hyphen, not an en dash to indicate a range of numbers. 
+* If a hyphen introduces ambiguity, use words *from*, *to*, *through* for clarity. 
+* Don't mix hyphens with words. 
+Recommended: 8-20 files. 
+Recommended: from 8 to 20 files
+Not recommended: from 8-20 files
+
+#### Space around hyphens
+* Never place a space on either side of a hyphen except when using a suspended hyphen, in which case you can leave a space after (bu not before) the hyphen. 
+
+#### Suspended hyphends
+* When two or more compound modifiers have a common base, you can keep the hyphens but leave out the base for all except the last modifier. 
+Recommended: You can set up the system to scan for new files at one- or two-hour intervals. 
+Recommended: You can set up the system to scan for new files at one-, two-, or three-hour intervals.
+
+### Parentheses
+* Don't put important information in parentheses.
+
+### Periods
+#### Periods with lists
+* Whether to end a list item with a period depends on several factors, including the kind of list that the item appears in. 
+
+##### Numbered, lettered, and bulleted lists
+* End each list item with a period or other appropriate sentence-ending punctuation, except in the following cases:
+	* If the items consists of a single word, don't add end punctuation.
+	* If the item doesn't include a verb, don't add end punctuation. 
+	* If the item is entirely in code font, don't add end punctuation.
+	* If the item is entirely link text or a doucment title, don't add end punctuation.
+Recommended:
+You can do any of the following by using the API:
+* Create an item.
+* Replace one item with another.
+* Update an item.
+* Delete an item.
+
+Recommended:
+The API supports the following actions:
+* Create
+* Replace
+* Update
+* Delete
+
+Recommended:
+The SDK supports the following UI elements:
+* Text box
+* Bulleted list
+* Button
+
+##### Description lists
+* in general, don't add an explanatory phrase to only a single list items. Instead, use a description list, and provide explanation list, and provide explanatory phrases for all items. 
+* In most contexts, start each term with a capital lette. 
+* Don't end the term with a period. Do generally put a period at the end of each description element. 
+
+Recommended:
+The following words are adjectives:
+**Big**
+A short word.
+**Relevant**
+A fancy word
+**Gratuitous**
+A long word
+
+Not recommended:
+The following words are adjectives:
+* Big
+* Relevant
+* Gratuitous
+
+##### Description lists that use run-in headings 
+**Run-in headings, the things like "Tip", "Note", etc.**
+* Start each term or phrase with a capital letter. For the descriptions, start text that follows period with a capital letter, and text that follows colons with a lowercase letter. 
+* End the introductory term or phrase with a period or colon. If a description follows a period, end the description with a period. If it followis a colon, depend on conditions, if it's a list of items or short phrases without verbs, don't include a period.          
+
+
+#### Description lists
+* Don't put a period at the end of a term
+* Don't put a period at the end of description
+
+#### Bulleted lists
+* In general, use a period at the end of each item in a bulleted list. 
+* Eexptions: single-word items, items entirely in code font, items with no verbs. 
+
+
 #### Dimensions
 * Use a lowercase *x*  between the numbers in the dimensions, with no space between the numbers and the *x*. 
-Recommneded: 192x192
+Recommended: 192x192
 Not recommended: 192 x 192
 
 #### Exponents
@@ -813,21 +980,8 @@ Recommended: 2<sup>3</sup>
 
 
 
-### Hyphen & dash
-* A hyphen (-) is a punctuation mark that's used to join words or parts of words. 
-* A dash is longer than a hyphen and is commonly used to indicate a range or a pause. The most common types of dashes are the **en dash**, and the **em dash*.
 
-#### Em dashes
-* Em dashes save other punctuation would be awkward. For example, em dashes can replace parentheses at the end of a sentence or when multiple commas appear in a parenthetical phrase. 
-After a split second of hesitation, the second baseman leaped for the ball (or, rather, limped for it).
-After a split second of hesitation, the second baseman leaped for the ball -or, rather, limped for it).
-Microsoft system: 2014 + alt + x
 
-#### En dashes
-En dashes are slightly shorter than em dashes. 
-* Using en dashes to indicate spans of time or ranges or numbers. 
-* Using endashes to indicate the connection between two words that are already hyphenated or when you are using a two-word phrase as a modifier, which is you create a compound word. 
-Microsoft system: 2013 + alt + x
 
 
 To find your API key(s), visit the Credentials page.
