@@ -766,7 +766,7 @@ Recommended: Type your ID and click **OK**.
 Not recommended: Type your ID, and click **OK**. 
 
 #### Commas seperating independent from dependent clauses
-* When an independent clause and a dependent clause are separated by conjunction, insert a comma **only if the sentence could be misunderstood withoud one**. 
+* When an independent clause and a dependent clause are separated by conjunction, insert a comma **only if**  the sentence could be misunderstood withoud one. 
 Recommended: Direct-access flags are plain variables and can be read directly. 
 Not recommended: Direct-access flags are plain variables, and can be read directly.
 Recommended: The manager acknowledged the last team member who entered the room, and started the meeting. 
@@ -774,7 +774,7 @@ Not recommended: The manager acknowledged the last team member who entered the r
 
 #### Setting off other kinds of clauses
 * To set off certain kinds of clauses with a comma or other punctuation for clarity. 
-* A  couple of specific placeds where commas are a good idea. 
+* A  couple of specific places where commas are a good idea. 
 	* In general, put a comma before the word *which* at the start of a nonrestrictive clause. 
 	* in general, put a semicolon or a period or a dash before a conjunctive adverb, such as *otherwise*, or *therefore*, and put a comma after the conjunctive adverb. 
 * In general, don't use a comma before the causal conjunction *because* unless it is being used at the start of a nonrestrictive clause. 
@@ -788,7 +788,7 @@ Not recomended:  You can use the same key name in multyple backend services and 
 #### Punctuating numbers
 * In accordance with standard American number-formatting.
 * In numbers four or more digits long, use commas to set off groups of three digits. counting leftward from the dicimal point. 
-* For more decimal numbers, do not use any digit-group separators to the right of the decimal point.  
+* For more decimal numbers, don't use any digit-group separators to the right of the decimal point.  
 |Recommend |Not recommended |
 | -- | -- |
 | The limt 1,532,782 bytes per day. | The limit is 1532782 bytes per day. |
@@ -895,8 +895,36 @@ Recommended: You can set up the system to scan for new files at one-, two-, or t
 #### Periods with lists
 * Whether to end a list item with a period depends on several factors, including the kind of list that the item appears in. 
 
-##### Numbered, lettered, and bulleted lists
-* End each list item with a period or other appropriate sentence-ending punctuation, except in the following cases:
+##### Descriptions lists
+* Don't put a period at the end of a term.
+* Do put a period at the end of a description.
+* In most contexts, start each term with a capital lette. 
+
+Recommended:
+The following words are adjectives:
+**Big**
+A short word.
+**Relevant**
+A fancy word.
+**Gratuitous**
+A long word.
+
+**Emu**
+The best kind of bird.
+**Crow**
+The other best kind of bird.
+**Peacock**
+Also the best kind of bird.
+
+Not recommended:
+The following words are adjectives:
+* Big
+* Relevant
+* Gratuitous
+* Purple--this is a color.
+
+##### Bulleted lists
+* In general, use a period at the end of each item in a bulleted list, except in the following cases:
 	* If the items consists of a single word, don't add end punctuation.
 	* If the item doesn't include a verb, don't add end punctuation. 
 	* If the item is entirely in code font, don't add end punctuation.
@@ -921,39 +949,105 @@ The SDK supports the following UI elements:
 * Bulleted list
 * Button
 
-##### Description lists
-* in general, don't add an explanatory phrase to only a single list items. Instead, use a description list, and provide explanation list, and provide explanatory phrases for all items. 
-* In most contexts, start each term with a capital lette. 
-* Don't end the term with a period. Do generally put a period at the end of each description element. 
+##### Numbered lists
+Use the same guidelines as for bulleted lists.
 
+#### Period with URLs
+* When a period follows a URL or a file path, it can be hard to tell whether the period is part of the URL. 
+* To indicate that the punctuating period isn't part of the URL, try one of the following techniques:
+	* Whenever possible, avoid putting URLs in text. 
+	* Rewrite the sentence so that the URL isn't at the end of the sentence. 
+	* Put the URL on a separate line from the text, omitting the final period. 
 Recommended:
-The following words are adjectives:
-**Big**
-A short word.
-**Relevant**
-A fancy word
-**Gratuitous**
-A long word
-
+We use the feedback to improve the API, in accordance with Example Pet Store's Privacy Policy: http://www?examplepetstore.com/privacy/
 Not recommended:
-The following words are adjectives:
-* Big
-* Relevant
-* Gratuitous
+We use the feedback to improve the API, in accordance with Example Pet Store's Privacy Policy at http://www?examplepetstore.com/privacy/.
 
+#### Periods with quotation marks
+* When a sentence ends with material inside quotation marks, place the period inside the quotation marks even if the period isn't part of the material inside the quoatation marks.
+If the material inside the quotation marks ends with a question mark or an exclamation mark, don't use a period. 
+Recommended: ...you might say "Fixed typo."
+Recommended: Children always ask "Why?"
+
+#### Periods with parentheses
+* If the last part of a sentence is contained inside parentheses, put the period after the closing parentheses.
+* If the parentheses contain a complete sentence, put the period inside the parentheses.
+Recommended: Your application could show a notific when a relevant file or folder has changed (even if that change occurs while your application isn't running).
+Recommended: App Engin applications are easy to create, easy to maintain, and easy to scale. (With App Engine, there are no servers for you to maintain.)
+
+#### Periods with headings
+* Don't end the headings with periods.
+
+#### Periods with numbers
+* Use a period to represent a decimal point.
+
+#### Periods with captions
+* In general, don't use periods with captions.
+
+#### Periods with abbreviations
+Abbreviations include acronyms, initialisms, shortened words, and contractions.
+##### Periods with acromys or initialisms
+* Don't put periods after the letters of an acronym or initialism.
+  For example, *NATO*, *CIA*. 
+  
+##### Periods with shortened words
+Sometimes put a period after a shortened word.
+* Put a period after a shortened word. For example, *Dr. for doctor*, *etc. for et cetera*, except for *date* and *time*. For example, *PM*, *AM*, *Jan*, *Feb*.
+* Don't put periods after the short version if some words have a long version and a short version.
+  For example, *app for application*, *min for minutes*, *demo for demonstration*
+* Don't use a period with an abbreviation for the name of a country. For example, *US state*, *the District of Columbia (DC)*. 
+
+### Quotation marks
+#### Commas and periods with quotation marks
+* Commas and periods go inside quotation marks in the standard American style, despite it being inconsistent with the standard British style. 
+American: See the section titled "Care and feeding of the emu."
+British (Not recommended): See the section titled "Care and feeding of the emu".
+* When you put a keyword or other literal string in quotation marks, put any other punctuation outside the quotation marks. 
+* Don't put quotation marks around an item that's in code font, unless the quotation marks are part of the item.
+Recommended: If you enter `escape`, the program crashes. 
+Acceptable: If you enter "escape", the program crashes.
+Not recommended: If you enter "escape," the program crashes.
+
+#### Straight and curly quotation marks
+Curly quotes are the quotation marks used in good typography. There are four curly quote characters: the opening single quote, the closing single quote, the opening double quote, and the closing double quote.
+Straight quote are a typewriter habit. In traditional printing, all quotation marks were curly. But typewriter character sets were limited by mechanical constraints and physical space. 
+
+* Most typefaces support two forms of quotation marks and apostrophes: straight marks and curly, or typographic marks. Some tools like Google Docs, automatically convert straight quotation marks and apostrophes to the curly versions. However, our guidance is to **always use straight quotation marks and straight apostrophes** for the following reasons:
+   * It's easy to get the direction of curly quotation marks (especially apostrophes) wrong. Using straight marks avoids this problem.
+   * Code requires straight marks.
+   * Coding tools (for example, Subversion)don't produce curly marks by default.
+   
+### Semicolons
+#### Between two independent clauses
+* Use a semicolon between two closely related independent clauses that are not quite unrelated enough to merit a period, but where a comma isn't quite enough. 
+Recommended: The Earth Engin image must have exactly one or three bands when exporting to GME; other images cause the export to fail.
+Recommended: You can easily test compatibility by computing the centroid; if it is on the opposite side of the planet, reverse the order of your vertices. 
+
+#### Before a conjunctive adverb
+* A semicolon precedes a conjunctive adverb that joint two independent clause. Conjunctive adverbs includes: *accordingly*, *also*, *besides*, *consequently*, *furthermore*, *hence*, *however*, *indeed*, *in face*, *likewise*, *similarly*, *therefore*, and *thus*.
+Recommended: The style of this button is up to your; however, you must still follow branding guidelines.
+Recommended: This setup places the head-tracked node below the Main Camera; therefore, only the stereo camera are affected by the user's head motion.
+
+#### Before an independent clause
+* A semicolon can appear before an independent clause that is introduced by a phrase such as *that is*, *for example*，or *namely*. 
+Recommended: The next polling interval to use; that is, the number of seconds before the client should contact the server again.
+Recommended: The URL from which a video ad loads; that is, the URL to use to fetch to the video ad. 
+
+#### Between complex items in a series
+* When you have a series of long or ocmplex items, such as items that themselves contain punctuation, use semicolons, rather than commas, as separators. 
+Recommend: If you don't have time, then focus on the improvements that will have the greatest benefit: what matters most to your users; what is most importatnt to fix; and what is easy or feasible to fix in the available time. 
+Recommended: Review your document one more time, checking for the following: present tense and active voice; typos, punctuations, and grammar; and whether you can shorten anything. 
+
+#### Single quotation marks
+* The only times to use single quotation marks are the following:
+   * In code examples, in language that use single quotation marks.
+   * When nesting a quotation inside another quotation.
+American (and Google): She said, "I heard him shout 'Help', and saw him floundering in the water".
+   
 ##### Description lists that use run-in headings 
 **Run-in headings, the things like "Tip", "Note", etc.**
 * Start each term or phrase with a capital letter. For the descriptions, start text that follows period with a capital letter, and text that follows colons with a lowercase letter. 
-* End the introductory term or phrase with a period or colon. If a description follows a period, end the description with a period. If it followis a colon, depend on conditions, if it's a list of items or short phrases without verbs, don't include a period.          
-
-
-#### Description lists
-* Don't put a period at the end of a term
-* Don't put a period at the end of description
-
-#### Bulleted lists
-* In general, use a period at the end of each item in a bulleted list. 
-* Eexptions: single-word items, items entirely in code font, items with no verbs. 
+* End the introductory term or phrase with a period or colon. If a description follows a period, end the description with a period. If it follows a colon, depend on conditions, if it's a list of items or short phrases without verbs, don't include a period. 
 
 
 #### Dimensions
