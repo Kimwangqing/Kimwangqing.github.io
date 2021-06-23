@@ -964,7 +964,7 @@ Not recommended:
 We use the feedback to improve the API, in accordance with Example Pet Store's Privacy Policy at http://www?examplepetstore.com/privacy/.
 
 #### Periods with quotation marks
-* When a sentence ends with material inside quotation marks, place the period inside the quotation marks even if the period isn't part of the material inside the quoatation marks.
+* When a sentence ends with material inside quotation marks, place the period inside the quotation marks even if the period isn't part of the material inside the quotation marks.
 If the material inside the quotation marks ends with a question mark or an exclamation mark, don't use a period. 
 Recommended: ...you might say "Fixed typo."
 Recommended: Children always ask "Why?"
@@ -985,11 +985,10 @@ Recommended: App Engin applications are easy to create, easy to maintain, and ea
 * In general, don't use periods with captions.
 
 #### Periods with abbreviations
-Abbreviations include acronyms, initialisms, shortened words, and contractions.
-##### Periods with acromys or initialisms
+Abbreviations include acronyms, initialismes, shortened words, and contractions.
+##### Periods with acronyms or  initialisms 
 * Don't put periods after the letters of an acronym or initialism.
   For example, *NATO*, *CIA*. 
-  
 ##### Periods with shortened words
 Sometimes put a period after a shortened word.
 * Put a period after a shortened word. For example, *Dr. for doctor*, *etc. for et cetera*, except for *date* and *time*. For example, *PM*, *AM*, *Jan*, *Feb*.
@@ -1020,7 +1019,7 @@ Straight quote are a typewriter habit. In traditional printing, all quotation ma
 ### Semicolons
 #### Between two independent clauses
 * Use a semicolon between two closely related independent clauses that are not quite unrelated enough to merit a period, but where a comma isn't quite enough. 
-Recommended: The Earth Engin image must have exactly one or three bands when exporting to GME; other images cause the export to fail.
+Recommended: The Earth Engine image must have exactly one or three bands when exporting to GME; other images cause the export to fail.
 Recommended: You can easily test compatibility by computing the centroid; if it is on the opposite side of the planet, reverse the order of your vertices. 
 
 #### Before a conjunctive adverb
@@ -1034,8 +1033,8 @@ Recommended: The next polling interval to use; that is, the number of seconds be
 Recommended: The URL from which a video ad loads; that is, the URL to use to fetch to the video ad. 
 
 #### Between complex items in a series
-* When you have a series of long or ocmplex items, such as items that themselves contain punctuation, use semicolons, rather than commas, as separators. 
-Recommend: If you don't have time, then focus on the improvements that will have the greatest benefit: what matters most to your users; what is most importatnt to fix; and what is easy or feasible to fix in the available time. 
+* When you have a series of long or complex items, such as items that themselves contain punctuation, use semicolons, rather than commas, as separators. 
+Recommend: If you don't have time, then focus on the improvements that will have the greatest benefit: what matters most to your users; what is most important to fix; and what is easy or feasible to fix in the available time. 
 Recommended: Review your document one more time, checking for the following: present tense and active voice; typos, punctuations, and grammar; and whether you can shorten anything. 
 
 #### Single quotation marks
