@@ -1043,6 +1043,36 @@ Recommended: Review your document one more time, checking for the following: pre
    * When nesting a quotation inside another quotation.
 American (and Google): She said, "I heard him shout 'Help', and saw him floundering in the water".
    
+### Slashes 
+#### Slashes with dates
+* Don't use date formats that rely on slashes.
+Recommended: Call this method five or six times.
+Not recommended: Call this method 5/6 times.
+
+#### Slashed with alternatives
+* Don't use slashes to separate alternatives.
+
+#### Slashes with file path and URLs
+* Use forward slashes , as appropriate, in computer file paths and URLs.
+Recommended:https://developers.google.com/cardboard/
+* Where very long URLs extend beyond a line, add a line break immediately after a slash. Don't ever insert an extraneous hyphen into a URL to break it between two lines. 
+Recommended: https://developers.google.com/
+cardboard/
+
+#### Slashes with fractions
+* Don't use slashes with fractions because they can be ambiguous.
+3/4 could be interpreted either as three-quarters or as stating that 4 is an alternative to 3.
+Recommended: 3/4
+Recommended: 0.75
+Recommended: 75%
+Not recommended: 3/4
+
+#### Slashes with abbreviations
+* Don't use abbreviations that rely on slashes. Instead, spell the words out. 
+Recommended: care of, with
+Not recommended: c/o, w/
+
+
 ##### Description lists that use run-in headings 
 **Run-in headings, the things like "Tip", "Note", etc.**
 * Start each term or phrase with a capital letter. For the descriptions, start text that follows period with a capital letter, and text that follows colons with a lowercase letter. 
