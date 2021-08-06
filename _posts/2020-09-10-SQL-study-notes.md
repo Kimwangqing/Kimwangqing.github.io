@@ -72,14 +72,14 @@ The Column associating to another form is called a foreign key.
 * The foreign key constraints reduces database performance. For the purpose of speed, most applications don't use the foreign key constraints. 
 * 关系数据库通过外键可以实现一对多、多对多和一对一的关系。外键既可以通过数据库来约束，也可以不设置约束，仅依靠应用程序的逻辑来保证。
 
-### Index(索引)
+### Index(索引) 
 The use of the index is to speed up inqueries by locating records that match query conditions, instead of scanning the entire tables. 
 * Creating Index by `ALTER TABLE ...` (table name)
                `ADD INDEX ...`(index name)
 例如：
 > `ALTER TABLE` students
 > `ADD INDEX` idx_score(score); (index_score is the index name which is arbitrary. If more than one column to index, the name should be written one by one, such as, 
-> `ALTER TALBE` students
+> `ALTER TABLE` students
 > `ADD INDEX` index_name_score (name, score).
 * If the more different about the column values, the higher inquery efficiency of the index.
 * The index is senseless if the column values are same mostly, such as the value of gender.
@@ -126,7 +126,7 @@ or can be added a unique constraint to the column to keep the uniqueness of the 
     * Perform `SELECT 1` to check if the data base has been collected. 
 
 ## Query Conditions
-* Run `SELECT * FROM <name of the talbe> WHERE <condition>`
+* Run `SELECT * FROM <name of the table> WHERE <condition>`
   For example, `SELECT * FROM students WHERE score >= 80;`
 
 ### Query Conditions - AND
@@ -171,7 +171,7 @@ Query projections can combine with WHERE conditions to perfom complex query.
 For example, `SELECT id, score, name FROM students WHERE gender = 'M';
 
 ## Query Order
-* Query results in an order of  by default. 
+* Query results in an order of by default. 
 * Use `ORDER BY` to sort in other conditions. 
   For example, `SELECT id FROM students ORDER BY score;`
   
@@ -182,7 +182,7 @@ For example, `SELECT id, score, name FROM students WHERE gender = 'M';
 * Query results in a normal order by using `ORDER BY ... ASC`, which is same with `ORDER BY ...`.
 
 * If there are same data occourred, to order them by adding the column name. 
-  For example, `SELECT id, name, gender,score FROM students ORDER BY score DESC;` 
+  For example, `SELECT id, name, gender, score FROM students ORDER BY score DESC;` 
   ![](https://github.com/Kimwangqing/pictures/blob/master/score%20order%20without%20gender.jpg?raw=true)
   (Male is prior to Female by default.)
   ![](https://github.com/Kimwangqing/pictures/blob/master/score%20order%20with%20gender.jpg?raw=true)
@@ -243,8 +243,13 @@ For example,
 
 ### GROUP BY
 * Use `GROUP BY` to instead WHERE condition, because it doesn't need write WHERE when each condition changed, and get each group of result instead of only one result. 
+* As usual, `group by` at the last of the syntax. 
 For example:
 ![](https://github.com/Kimwangqing/pictures/blob/master/group%20by%20classid.jpg?raw=true)
+
+#### Having clause
+The Having clause is often used with the Group By clause to filter gropus bases on specific conditions, which is like WHERE clause. 
+
 
 ### Practices
 ![](https://github.com/Kimwangqing/pictures/blob/master/group%20practice1.jpg?raw=true)
@@ -310,12 +315,18 @@ Maintaining data includes CRUD, there are Creat, Retrieve, Update and Delete.
 * UPDATE
 * REPLACE
 
+**Value and values are available for mysql syntax.**  
+
 ### INSERT
 INSERT syntax is `INSERT INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`.
 * The sequence of strings can be casual, but the sequence of values must be consistant with strings. 
 * Execpt for number strings, the string must add single quotes.
 * More than one records can be added by using comma to connect. 
   `INSERT INTO students (class_id, name, gender, score) VALUES
+   (1, '五五', 'M', 90),
+   (2, '六六', 'F', 80);`
+   OR
+   `INSERT INTO students values  
    (1, '五五', 'M', 90),
    (2, '六六', 'F', 80);`
 * All columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
@@ -328,6 +339,9 @@ INSERT syntax is `INSERT INTO <table name> (string1, string2,...) VALUES (value1
 	* Including ID, if the ID is a vacancy, insert the record into the vacancy, if not, insert the record at the last row. 
 
 ### Replace 
+* Replace syntax is to replace all values of the row of the data. 
+* Update has two kinds of syntax, one is to update part column of one row of the data, another is to update part column of muti rows of data. 
+
 #### Insert or Replace  
 * Use `REPLACE INTO <table name> (string1, string2,...) VALUES (value1, value2,...)`. 
 * All columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
@@ -336,12 +350,12 @@ INSERT syntax is `INSERT INTO <table name> (string1, string2,...) VALUES (value1
 	* No including ID REPLACE syntax acts as **INSERT** to insert a new record at the last row.
 * If the row doesn't exists:
 	* No including ID, REPLACE syntax acts as **INSERT** to insert a new record.
-	* Including ID, REPLACE syntax acts as **INSERT** to insert a new record.
-* For example, `REPLACE INTO test.students (id, class_id, name, gender, score) VALUES (9, 1, '小默', 'M', 98);`, the record allocates at 9 which there is a vacancy of 9 in the original table.
+	* Including ID, REPLACE syntax acts as **REPLACE** to replace the existed one.
+* For example, `REPLACE INTO test.students (id, class_id, name, gender, score) VALUES (9, 1, '小默', 'M', 98);`, the record allocates at 9 which there is a vacancy of 9 in the original table.  
 
 #### Update or Insert (can update more than one values)
 Use `INSERT INTO <table name> (string1, string2, ...) VALUES (value1, values2, ...) ON DUPLICATE KEY UPDATE value=1, value=2, value=3...; to solve repeatibility, and the updated strings would be defined in `UPDATE`. The syntax is same with the replace syntax .
-For example, `INSERT INTO test.students(id, class_id, name, gender, score) VALUES (4, 2, '小黄', 'M', 98) ON DUPLICATE KEY UPDATE name='小黄', gender='M', score=98;` to replace the original record 4.`
+For example, `INSERT INTO test.students(id, class_id, name, gender, score) VALUE (4, 2, '小黄', 'M', 98) ON DUPLICATE KEY UPDATE name='小黄', gender='M', score=98;` to replace the original record 4.`
 
 * String and Values should be corresponding, and all columns except for ID will be included, or it reports an error that is "Field xxx doesn't have a default value".
 * The modified values put in `on duplicate key update`.
@@ -350,7 +364,7 @@ Including id and other columns, the syntax acts as replace to replace the origin
 * Insert:
 No including id but including other columns, the syntax acts as insert to add the record at the last row, and id number is incremented sequentially by default.  If no including one of other clumns, it reports an error: Field xxx doesn't have a default value.
 * To update one of colunms:
-For example, `insert into students (id, class_id, name, gender, score) values(10, 2, 'kk', 'M', 60) on duplicate key update score=50;` only update one of columns.
+For example, `insert into students (id, class_id, name, gender, score) value (10, 2, 'kk', 'M', 60) on duplicate key update score=50;` to  update one of columns only.
 
 #### Insert or Ignore
 Use`INSERT IGNORE INTO <table name> (string1, string2, ...) VALUES (value1, value2, ...) to mean if the record exists to ignore it direactly. 
@@ -397,6 +411,9 @@ For example, add 10 score for each person who's score is under 80.
 #### Create Databases
 * Use `CREATE DATABASE <database name>;`
 
+#### Check Database Using on
+* Use `SELECT DATABASE();`
+
 #### Delete Databases
 * Use `DROP DATABASE <database name>;`
 
@@ -441,14 +458,13 @@ Get the result:
 #### Check Tables Structure
 * Use `DESC <table name>;` = `describe <table name>`
   The results:
-	
 	*	Filed: Filed name
 	*	Type: Data type
 	*	Null: IS NULL and IS NOT NULL
 	*	Key: Priciple key
 	*	Default: Default value
 	*	Extra: Extra attribute
-* Or use `SHOW CREATE TALBE <table name>;`
+* Or use `SHOW CREATE TABLE <table name>;`
 * Data type
 	* https://www.runoob.com/mysql/mysql-data-types.html
 	* Check "init-test-data" for the common types of strings. 
@@ -460,12 +476,13 @@ Get the result:
 
 #### Alter Tables
 ##### Add Column
-* Use `ALTER TALBE <table name> ADD COLUMN <column name> <data type> <NULL or NOT NULL>;`.
+* Use `ALTER TABLE <table name> ADD COLUMN <column name> <data type> <NULL or NOT NULL>;`.
   For example, `ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;`.
 	* VARCHAR is available to define strings with variable length, which is a common type of string data type. 
 	* CHAR is available to define strings with unvariable length.
   **VARCHAR is required.**
-  
+  *  char 表示定长，长度固定，varchar表示变长，即长度可变。当所插入的字符串超出它们的长度时，视情况来处理，如果是严格模式，则会拒绝插入并提示错误信息，如果是宽松模式，则会截取然后插入。如果插入的字符串长度小于定义长度时，则会以不同的方式来处理，如char（10），表示存储的是10个字符，无论你插入的是多少，都是10个，如果少于10个，则用空格填满。而varchar（10），小于10个的话，则插入多少个字符就存多少个。 
+
 ##### Delete Column
 * Use `ALTER TABLE <table name> DROP COLUMN <column name>;`
 
@@ -509,6 +526,45 @@ A phantom read means one record cann't be select when the first selection, but w
 
 ### Serializable
 It is the most higest isolation level, no Dirty Read, Unrepeatable Read and Phantom read, and suggest not to use this isolation level. 
+
+## Important notes
+* The sequence of using the key word to select:
+ from -> where -> group by-> having ->order by
+* `on` follows with conditons concerning with the related table.
+* `where` follows with conditions concerning with the primary table.
+* `INNER JOIN`=`JOIN`.
+
+## Common Command Lines
+### Check Constraint Foreign Keys
+Use `show create table <table name> to check the structure of the table including constratint foreign key.
+
+### Delete Constraint Foreign Keys
+Use 'alter table <table name> drop foreign key <constraint name>;'
+
+### Unequal to 
+Use `!=`
+
+### Include with 
+Use `like`
+For exmaple, to find out someone with the name begining with "S", "A" or "B".
+`select * from emp where ename like "A" or ename like "B" or ename like "S";`
+`select * from emp where ename like 'A' or ename like 'B' or ename like 'S';`
+**Double quotation marks or single quotation marks are available. **
+Use `not like' to mean doesn't include something.
+
+### Ordering more than one condistions
+Use comma to connect more than one orderring conditions.
+For example, to select informatoin in ascending name order and in descending salary order. 
+`select * from ename order by ename desc, sal asc;`
+
+### Distinct
+`DISTINCT` clause is used to remove duplicate records from the table and fetch only the unique records.
+**The DISTINCT clause is only used with the SELECT statement.**
+
+
+
+
+
 
 
 

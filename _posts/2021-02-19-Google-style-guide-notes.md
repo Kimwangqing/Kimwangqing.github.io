@@ -6,6 +6,8 @@ excerpt: "Google style guide notes"
 tags: Tech-writing
 comments: true
 ---
+[TOC]
+
 ## Formatting, punctuation, and organization
 * Use sentence case for document titles and section headings.
 * Use sentence case for document titles and section headings. 
@@ -78,7 +80,7 @@ Recommended: The Cloud Datastore options page
 Recommended; The Google Cloud Console
 Recommended: The Transcoder API
 Recommended: The `gcloud` command-line tool
-* To refer to Google products as services, such as **the Google Kubernetes Engine services** or **the Compute Engine service*. However, if the term services leads to ambiguty, use the product names.
+* To refer to Google products as services, such as **the Google Kubernetes Engine services** or **the Compute Engine service*. However, if the term services leads to ambiguity, use the product names.
 
 ## Text-formatting summary
 * Use **bold** formatting for UI elements and at the beginning of notices.
@@ -1053,7 +1055,7 @@ Not recommended: Call this method 5/6 times.
 * Don't use slashes to separate alternatives.
 
 #### Slashes with file path and URLs
-* Use forward slashes , as appropriate, in computer file paths and URLs.
+* Use forward slashes, as appropriate, in computer file paths and URLs.
 Recommended:https://developers.google.com/cardboard/
 * Where very long URLs extend beyond a line, add a line break immediately after a slash. Don't ever insert an extraneous hyphen into a URL to break it between two lines. 
 Recommended: https://developers.google.com/
@@ -1062,7 +1064,7 @@ cardboard/
 #### Slashes with fractions
 * Don't use slashes with fractions because they can be ambiguous.
 3/4 could be interpreted either as three-quarters or as stating that 4 is an alternative to 3.
-Recommended: 3/4
+Recommended: 3/4 (fractions format)
 Recommended: 0.75
 Recommended: 75%
 Not recommended: 3/4
@@ -1072,12 +1074,300 @@ Not recommended: 3/4
 Recommended: care of, with
 Not recommended: c/o, w/
 
+## Formatting and organization
+### Dates and times
+#### Expressing times
+* Use the 12-hour clock, except it required to use 24-hour time.
+* If the UI, a command, or a code sample uses the 24-hour format, use that format throughout the page for consistency. 
+* Use exact times when possible, but **noon** and **midnight** are OK.
+* Use hyphens in time range. Don't add spaces before or after the hyphens. 
+Recommended: 5-10 minutes ago.
+* Capitalize AM and PM, and leave one space between it and the time. 
+Recommended: 3:45 PM.
+* Remove the minutes from round hours.
+Recommended: 3 PM.
+
+##### Expressing time zones
+* Avoid using time zones unless in cases where you need to use a time zone-such as describing real events at real times-use the following guidelines:
+	* Let the reader know if the time is local to their time-for example, *10 AM your local time*. 
+	* If a time zone is necessary, use the timestamp format as seen in the user interface (if available).
+	* If using a specific time zone, spell out the region and include the UTC or GMT label as a parenthetical. For example:
+		* US and Canada Pacific Standard Time (UTC-8)
+		* US and Canada Pacific Daylight Time (UTC-7)
+	* Don't abbreviate the name of the time zone. 
+
+#### Expressing dates
+* In general, spell out the names of months and days of the week in full, Give the full four-digit year, not a two-digit abbreviation. 
+Recommended: January 19, 2017
+* If including the day of the week, add it before the month as follows: Day_OF_WEEK, MONTH_DAY, YEAR
+Recommended: Tuesday, April 27, 2021
+
+##### Partial dates and abbreviations
+* When giving only the month and year, don't use a comma.
+Recommended: She was born in January 2017.
+* In most cases, don't abbreviate the day of the week or the month. However, when conserving space, such as in a heading or table, it's okay to abbreviate the month and the day of the week to their three-letter abbreviations. Capitalize the first letter and don't add a period at the end of the abbreviation.
+* If you abbreviate, do so for the entire date. Don't mix written-out forms with abbreviated forms in the same date.
+* Be consistent in where you apply abbreviations throughout your documentation. If you choose to abbreviate in table cells, do so in all table cells.
+Recommended: Mon, Sep 3, 2019
+Not recommended: Mon, September 3, 2019
+
+##### Dates in the middle of a sentence
+* When a `MONTH_DAY, YEAR` date appears in the middle of a sentence, add a comma after the year. 
+Recommended: The January 19, 2019, release of...
+* However, if the date in the middle of the sentence consists of the month and year only, don't use a comma. 
+Recommended: The January 2019 release of...
+
+##### Why we prefer dates written out
+* Don't express months as numbers unless you don't have the option, because different regions of the world put parts of the date in a different order for numeric dates. 
+	* In the UK, the order is usually day, month, and then year.
+	* In the US, the order is usually month, day, and then year.
+	* In some other parts of the world, the order is year, month and then day.
+	Recommended: February 12, 2019
+	Recommended: Sunday, February 12, 2019
+	Not recommended: 02.12.2019
+	Not recommended: 02/12/2019
+	
+##### Numeric-only date format
+* If you must express a date in numerical date format, use the format `YYYY-NN-DD`,  and separate the elements by using hyphens. This conforms to ISO 8610 international standards for numerical date format. 
+Recommended: 2019-04-04
+Not recommended: 2019/04/05
+
+##### Expressing divisions of the year
+* Avoid referring to seasons. 
+
+### Figures and other images
+* Use imgage only  when they provide useful explaination, or for screenshots of UIs that are important to discuss. 
+* Use SVG files if possible because SVGs stay sharp when you zoom in on the image. If you do'nt have an SVG file, then save it as a PNG file. 
+* If you're exporting an image to a format that can include information on seperate layers (for example, PDF or TIFF), flatter the image an export. 
+* Don't use image maps, instead, provide a list of thext references following the image.  
+
+#### Creating and saving images
+* Don't use images of text, code samples, or terminal output, use actual text. 
+* Make your screenshots of windows looks like reeal windows, for example, include the windows 's title bar, and if the window has a drop shadow, then include the drop shadow. 
+* Don't include personally identifying information (PII). If a source screeshot includes PII, hide it with a solid-color overlay with 100% opacity. Don't rely on blurs, mosaic effects, such effects can be reversed to reveal the original information.
+
+#### Text associated with images
+* An introductory sentence should precede images. The sentence can end with a colon or a period:
+	* If it immediatetly precedes the image, ues a colon.
+	* If there's more material, such as a note paragraph between the introduction and the image. * You don't need to introduce screenshots that immediately follow procedural text that describes a UI.
+
+##### ALT text
+* A concise description of the image that can replace the image.in situations where the image isn't visible.
+* Alt text is used by assistive technologies, such as screen readers, and might appear if the image cannot load. 
+* If the image is decorative (not informative) or it's provided only as a visual aid for information, then provide empty alternative text `alt=''`
+* When using the `<img>` element, the `alt` attrubute is required, even if its assigned valued is an empty string. 
+* Don't include phrase like *image of* or *photo of*. 
+* Include puntuation. 
+* Use consistent alt text for repeated instances of an image, such as controls, status indicators, or icons that appear multiple times in your document.
+* When possible, avoid using alt-caps in alt text.
+* Don't introduce diagrams in the alt text. 
+* Use full sentences. 
+* Keep alt text length to 155 charatcters or less. 
+For example, An emu foot has three toes. 
+
+##### Figure caption
+* A description of the image that provides more information about the image, which are concise and comprehensive summaries of a figure or image. 
+* Figure captions attribute are optional. 
+* Use punctuation in figure captions.
+* When you refer to a figure, don't use spatial description such as "the imge below". Instead, mention it by number. 
+For example, "...as shown in figure 1." Don't capitalize the word *figure*.
+
+##### Figure descrition
+* A textual representation of the figure, the information that is conveyed in the image is captured in the text, and the information about what an image is trying to convey. 
+* Use when a figure caption doesn't convey the purpoes or complete information of the figure. 
+* Use punctuation in figure descriptions. 
+
+##### Text in figures
+* When possible, avoid using explanatory text in screenshot graphics.
+* If you must embed text in an image, then be sure to also provide the same information in a form that people with visual disablilities can use, such as a figure description.
+* Keep text brief. Avoid complete sentences and punctuation when possible. 
+* Don't include figure descriptions or captions in the figure or image. Instead, put figure descriptions and captions in text following the figure. 
+* Use sentence case. 
+* Use numbered callouts in figures to help you writer a figure description.
+* Use full trademarked product names. 
+
+#### Laying out image on one page
+* To place the image align left. 
+* Don't center the image on the page.
+* Don't make your image too small. It's fine for an image to take up the full width of a page. 
+* Don't use an image that's wider then the column it appears in. For example, the main-body column is 856px wide, so use images that are no wider then that. In that context, the high-resolution 2x version of the image should be no wider than 1712px. 
+* Screenshots at full resolution often take up too much space on the page, so you may have to resize them. 
+* If the images designers provide are wider than 856px, ask them to provide the relevant graphics as 856px/1712px pairs. 
+
+### Footenotes
+* Avoid using footnotes beacause they aren't accessible and can present challenges for localization efforts. 
+* Instead of a footnote, consider using the following formats to convey information:
+	* Add a link.
+	* Use a note.
+	* Put it in a parenthetical.
+* Use a symbol instead of a number, if the only way to convey this information is to use a footnote. Use symbols in the following order:	
+	* `*`	
+    * `#`
+Recommended: You want to add a footnote to this sentence.*
+Not recommended: You want to add a footnote. 1
+
+### Headings and titles
+* Use descriptive headings and titles because they help a user navigate their browser and the page. 
+
+#### Formatting a heading or title
+* Use sentence case for headings and titles. 
+* Use punctuation in heading sparingly. Punctuation can be a sign that your heading is too complicated. Consider rewriting. 
+* When using an abbreviation in a heading or title, spell out the abbreviation in the first paragraph that follows the heading or title. 
+* Avoid using code items in headings when possible. 
+* To change the visual formatting of a heading, use CSS rather than using a heading level that doesn't fit the hierarchy.
+* Don't put a link in a heading.
+* Don't skip levels of the heading hierarchy. 
+  Recommended: 
+  # Level 1
+  ## Level 2
+  Not recommeded:
+  # Level 1
+  ### Level 3
+* Don't use empty headings or headings with no associated content. 
+  Recommend:
+  ## Level 2
+  This level is considering to ...
+  Not recommended:
+  ## Level 2
+  ### Level 3
+  This level is considering to...
+#### Referring to subsections
+* In a section of the page that summarize the following subheadings-for example, an H2 section that discusses the following H3 sections-use the phrase *in the following sections* to connnect to heading together. 
+* Don't use the phrase *in this section* or *in these sections* because these phrases are too ambiguous. 
+
+### Key terms
+* When need to draw attention to a particular word or phrase in the prose of your documentation, such as when introducing a key concept or new word, or when discusssing a particular word, use italics. 
+Recommended: A *Clos network* is a kind of multistage circuit switching network...
+Not recommended:  A **Close network** is a kind of multistage circuit switching network...
+
+### Letters an letters (Pluralizing a single letter)
+To form the plural of a single letter, italicize the letter and add an apostrophe followed by the unitalicized letter s.
+Recommended: We called tech support because the printer wasn't printing uppercase *B*'s or lowercase *P*'s. 
+Recommended: Mind your *P*'s and *Q*‘s. 
+## Computer interfaces
+### API reference code comments
+* When you're documenting an API, provide a complete API reference. 
+
+### Documentation basics
+* The API reference **must** provide a description for each of the following:
+	* Every class, interface, struct, and any other similar member of the API (such as union types in C++).
+	* Every content, field, enum, typedef, etc. 
+	* Every method, with a description for each parameter, the return value, and any exceptions thrown. 
+### Classes, interfaces, structs
+* Make the first sentence unique and descriptive, yet short.
+	* Don't repeat the class name in the first sentence. 
+	* Don't say "this class will/does.."
+The following example is the first sentence of the description for Android's `ActionBar` class:
+*A primary toolbar within the activity that may display the activity title, application-level navigation affordances, and other interactive items.*
+
+### Method
+* In the first sentence for a method description, briefly state what actio the method performs. In subsequent sentences, explain why and how to use the method, state any prerequistes that must be met before caling it. 
+For example, here's the description for Android's `Activity.isChangingConfigurations()` method:
+*Checks whether this activity is in the process of being destroyed in order to be recreated with a new configuration. This is often used in `onStop()` to determine whether the state needs to be cleaned up or will be passed on to the next instance of the activity via `onRetainNonConfiguration().*
+* Use present tense for all descriptions.
+* 
+
+
+
+
+
+
+
+## HTML and CSS
+### HTML formatting
+The following are some basic guidelines, which apply to other documenation source files too, such as YAML and Markdown.
+* Don't use tabs to indent text, use spaces only. 
+* Indent by two spaces.
+* Use all-lowercase for elements and attributes.
+* Don't leave trailing spaces at the end of a line. 
+
+## Names and naming
+### Example domains and names
+#### Example domain names 
+* When you need a generic domain name in an example, use example.com, example.org, or example. net.
+
+#### Example email addresses
+* When you need a generic email address, use one of the domains listed in "Eample domain names"-for example, sara@example.com.
+
+### Filenames and types
+#### Types
+Recommended: `avoiding-cliches.jd`
+Recommended: `avoiding_cliches.jd`
+Not recommended: `avoidingcliches.jd`
+Not recommended: `avoidingCliches.jd`
+
+#### Consistency
+* If you're adding to a directory where everying else already uses underscores, and it's not feasible to change everything to hyphens, it's okay to use underscore to stay consistent. 
+For example, if the directory already has `lesson_1.jd`, it's okay to add your new file as `lesson_4.jd` instead of `lesson-4.jd`. 
+
+#### Other exceptions
+* It's okay to have some inconsistency in filenames if it can't otherwise be avoided. For example, sometimes tools that generate reference documentation product filenmaes based on different sytle requirements or based on the design and naming conventions.
+
+####Referring to filenames
+When referring to a specific file, do the following:
+* Use code font. 
+* Use the exact spelling of  the filename even if it doesn't follow naming guidelines. 
+Recommended: In the following `build.sh` file, modify the default values for all parameters. 
+
+#### Referring to file interactions
+* When interacting with files and file types, don't use the file types as a verb. 
+Recommended: Extract a zip file. 
+Not recommended: Unzip a zip file. 
+
+#### Referring to file types
+* Use the formal name of the type. 
+* Capitalize the file type name in all caps  bacause many file type names are acronyms or initialisms.
+* Don't use the filename extension to refer to the file type. 
+Recommended: a PNG file
+Not recommended: a `.png` file
+* The following tables lists exmples of filename extensions.
+|Extension|File type name|
+| -- | -- |
+|.csv|CSV file|
+|.exe|executable file|
+|.gif|GIF file|
+|.img|disk image file|
+|.json|JSON file|
+|.pdf|PDF file|
+|.ps|PowerShell file|
+|.py|Python file|
+|.sh|Bash file|
+|.sql|SQL file|
+|.tar|tar file|
+|.zip|zip file|
+
+### Trademarks
+#### Using trademarks as adjectives
+Using a trademark term as an adjectives, never as a  noun or a verb. Whenever possible, a trademark should be followed by a common descriptive name (noun) of the product it modifies. For example, APPLE computer, TIVO digital video recorder. 
+
+#### Possessives of trademarks
+* Add 's to the end of the name. 
+* Avoid forming a possessive with a product name, regardless of who owns the product name. 
+Recommended: Google's new offfice is nearby.
+Recommended: The capablities of Search are vast. 
+Not recommended: Search's capablities are vast. 
+
+
+
+
+
+
+
+
+
+
+
+​	  
+
+
+
+
 
 ##### Description lists that use run-in headings 
 **Run-in headings, the things like "Tip", "Note", etc.**
 * Start each term or phrase with a capital letter. For the descriptions, start text that follows period with a capital letter, and text that follows colons with a lowercase letter. 
-* End the introductory term or phrase with a period or colon. If a description follows a period, end the description with a period. If it follows a colon, depend on conditions, if it's a list of items or short phrases without verbs, don't include a period. 
-
+* End the introductory term or phrase with a period or colon. If a description follows a period, end the description with a period. If it follows a colon, depend on conditions, if it's a list of items or short phrases without verbs, don't include a period. Instead, use the month, quarter, or temperature (if relevant).
+Recommended: 
 
 #### Dimensions
 * Use a lowercase *x*  between the numbers in the dimensions, with no space between the numbers and the *x*. 
