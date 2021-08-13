@@ -300,8 +300,9 @@ The syntax is `INNER JOIN`,
 `SELECT s.id, s.class_id, c.name, s.name, s.gender, s.score FROM students s INNER JOIN classes c ON s.class_id=c.id;
 Note: Though, select the both tables, classes c should be put `INNER JOIN`. `
 Means the table will be joined to connect to the table of students when the number of s.class_id and c_id are same. 
-
 `INNER JOIN` is the most common used, and returns the data exist on the both tables.
+`INNER JOIN` isn't necessary to use, because it's same with `WHERE` syntax.
+`select * from tablea inner join tableb on a.id=b.id` = 'select * from talbea, tableb where a.id=b.id'
 
 #### OUTER JOIN
 `RIGHT OUTER JOIN` returns the data exists on the right table(the table be compared with). When the data exist on the right table only, the return string will be `NULL` to make up. 
@@ -533,6 +534,7 @@ It is the most higest isolation level, no Dirty Read, Unrepeatable Read and Phan
 * `on` follows with conditons concerning with the related table.
 * `where` follows with conditions concerning with the primary table.
 * `INNER JOIN`=`JOIN`.
+* `NATURAL JOIN` uses only `where` instead of `on`.
 
 ## Common Command Lines
 ### Check Constraint Foreign Keys
