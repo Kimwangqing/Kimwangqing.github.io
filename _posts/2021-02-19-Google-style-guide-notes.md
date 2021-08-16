@@ -1248,7 +1248,7 @@ Recommended: Mind your *P*'s and *Q*‘s.
 ### API reference code comments
 * When you're documenting an API, provide a complete API reference. 
 
-### Documentation basics
+#### Documentation basics
 * The API reference **must** provide a description for each of the following:
 	* Every class, interface, struct, and any other similar member of the API (such as union types in C++).
 	* Every content, field, enum, typedef, etc. 
@@ -1264,7 +1264,11 @@ The following example is the first sentence of the description for Android's `Ac
 * In the first sentence for a method description, briefly state what actio the method performs. In subsequent sentences, explain why and how to use the method, state any prerequistes that must be met before caling it. 
 For example, here's the description for Android's `Activity.isChangingConfigurations()` method:
 *Checks whether this activity is in the process of being destroyed in order to be recreated with a new configuration. This is often used in `onStop()` to determine whether the state needs to be cleaned up or will be passed on to the next instance of the activity via `onRetainNonConfiguration().*
-* Use present tense for all descriptions.
+* Use present tense for all descriptions. For example, *Adds a new bird to the omithology list.*
+
+
+
+
 * 
 
 
