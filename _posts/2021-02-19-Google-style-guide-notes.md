@@ -1521,9 +1521,26 @@ Not  recommended: Click the zippy to expand the **Advanced option** section.
 * Use sentence case. 
 | Guidance | Recommended |  Not recommended |
 | -- | -- | -- |
-|Use sentence case for all labels.| In the **New Project** window, select the **New Activity** checkbox, and then click **Next**. | In the New Project window, select "New Activity", and then click the "Next" button.|
+|Use sentence case and appropriate formatting and terminology for all labels.| In the **New Project** window or In **New project**, select the **New Activity** checkbox or select **New activity**, and then click **Next**. | In the New Project window, select "New Activity", and then click the "Next" button.|
 |When a label is all uppercase, use sentence case.| Click (<the refresh icon>) **Refresh**.| Click REFRESH. |
 |When referring to multiple labels that are inconsistently, use sentence case for all of the labels.| Click **New project**, and the click **New activity**.| Click **NEW PROJECT**, and then click **New Activity**. |
+
+#### Referring to UI elements
+* Don't use UI elements as if they were verbs or nouns.
+|Recommended| Not recommended|
+| -- | -- |
+| In the **Name** field, enter an account name.|Name the account.|
+| To save the settings, click **Save**.| **Save** the settings.|
+| In the **Service account ID** field, or in the **Service account ID**, enter a name. | Specify a **Service account ID**.|
+
+#### Terminology and usage
+* If you want to clarify for the reader, add the name of the UI element. For example, both of the following sentences are valid:
+Recommended: Go to **File > Tools**.
+Recommended: In the **File** menu, click ** Tools**. 
+
+#####  Windows, pages, dialogs and panes
+* A window is the entire application window in a desktop environment. 
+
 
 
 
