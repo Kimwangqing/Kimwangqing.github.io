@@ -39,6 +39,7 @@ The following versions incremented sequentially on price and function by MySQL a
 2. Run SQL with Windows command line. 
     1). Enter the file including MySQL.
     2). Run `mysql -u root -p`
+To restart mysql server, use `net start mysql`
 
 ## Relationship Model (关系模型)
 * Each row calls Record（记录）.

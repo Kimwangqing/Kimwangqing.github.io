@@ -1172,7 +1172,7 @@ For example, An emu foot has three toes.
 * When you refer to a figure, don't use spatial description such as "the imge below". Instead, mention it by number. 
 For example, "...as shown in figure 1." Don't capitalize the word *figure*.
 
-##### Figure descrition
+##### Figure description
 * A textual representation of the figure, the information that is conveyed in the image is captured in the text, and the information about what an image is trying to convey. 
 * Use when a figure caption doesn't convey the purpoes or complete information of the figure. 
 * Use punctuation in figure descriptions. 
@@ -1244,6 +1244,7 @@ Not recommended:  A **Close network** is a kind of multistage circuit switching 
 To form the plural of a single letter, italicize the letter and add an apostrophe followed by the unitalicized letter s.
 Recommended: We called tech support because the printer wasn't printing uppercase *B*'s or lowercase *P*'s. 
 Recommended: Mind your *P*'s and *Q*‘s. 
+
 ## Computer interfaces
 ### API reference code comments
 * When you're documenting an API, provide a complete API reference. 
@@ -1253,23 +1254,307 @@ Recommended: Mind your *P*'s and *Q*‘s.
 	* Every class, interface, struct, and any other similar member of the API (such as union types in C++).
 	* Every content, field, enum, typedef, etc. 
 	* Every method, with a description for each parameter, the return value, and any exceptions thrown. 
-### Classes, interfaces, structs
+	
+#### Classes, interfaces, structs
 * Make the first sentence unique and descriptive, yet short.
 	* Don't repeat the class name in the first sentence. 
 	* Don't say "this class will/does.."
 The following example is the first sentence of the description for Android's `ActionBar` class:
 *A primary toolbar within the activity that may display the activity title, application-level navigation affordances, and other interactive items.*
 
-### Method
+#### Method
 * In the first sentence for a method description, briefly state what actio the method performs. In subsequent sentences, explain why and how to use the method, state any prerequistes that must be met before caling it. 
-For example, here's the description for Android's `Activity.isChangingConfigurations()` method:
-*Checks whether this activity is in the process of being destroyed in order to be recreated with a new configuration. This is often used in `onStop()` to determine whether the state needs to be cleaned up or will be passed on to the next instance of the activity via `onRetainNonConfiguration().*
+  For example, here's the description for Android's `Activity.isChangingConfigurations()` method:
+  *Checks whether this activity is in the process of being destroyed in order to be recreated with a new configuration. This is often used in `onStop()` to determine whether the state needs to be cleaned up or will be passed on to the next instance of the activity via `onRetainNonConfiguration().*
 * Use present tense for all descriptions. For example, *Adds a new bird to the omithology list.*
 
+#### Description
+* If a method performs an operation and returns some data, start the description with a verb, for example: 
+*Adds a new bird to the omithology list and returns the ID of the new entry.*
+* If it 's a "getter" method and it returns a boolean, start with "Checks whether ..."
+* If it's a "getter" method and it returns something other than a boolean, start with "Gets the..."
+* If it has no return value, start with a verb like one of the folloowing:
+	* Turning on an ability or setting:"Sets the ..."
+	* Updating a property: "Updates the ..."
+	* Deleting something:"Deletes the ..."
+	* Registering a callback or other element for later reference:"Registers ..."
+	* For a callback: "Called by ..." For example, "Called by Android when ..."
+
+#### Parameters
+* Capitalize the first word, and end the sentence or phrase with a period. 
+* Begin descriptions of non-boolean parameters with "The" or "A" if possible:
+	* *The ID of the bird you want to get.*
+	* *A description of the bird. *
+* For boolean parameters for requesting an action, start sentences with "if ture ..." and "if false ..."
+	* *If true, turn traffic lines on. If false, turn them off. *
+* For boolean parameters for setting the state, use "True if ...", for example:
+	* *True if the zoom is set; false otherwise.*
+* Don't put the words "true" and "false" in code font or quotation marks.
+
+#### Return values
+* Be as breif as possible in the return value's description.
+* Put any detailed information in the class description.
+	* If the return value is anythins other than a boolean, start with "The ..", for example:
+		* *The bird specified by the given ID.*
+	* If the return value is a boolean, use the format "True if ..."; false otherwise, for example:
+		* *True if the bird is in the sanctuary; false otherwise.*
+
+#### Exceptions
+* Where the reference generator automatically insert the word "Throw", begin your description with "If ...", for example:
+	* *If no key is assigned.* 
+* Otherwise use "Throw when", for example:
+	* *Throw when no key is assigned." 
+
+#### Deprecations
+* Tell the user what to use as a replacement. For example:
+	* *Deprecated. Use #CameraPose instead.*
+	* *Deprecated. Access this field using the `getField()` method.
+
+### Code in text
+* In HTML, use <code> element.
+* In MD, use backticks (`).
+
+####  Method name
+* Omit the class name, for example:
+	* Recommended: To retrieve the zebra's metadata, call its `geet()` method.
+	* Not recommended: To retrieve the zebra's metadata, call its `animal.get()` method. 
+
+#### HTTP status codes
+* Call it a status code instead of a response code or error code, and put the number and the name in code font, Use the following formatting:
+  an HTTP `400 bAD Request` status cod
+* To refer to a range of codes , use the following form:
+  an HTTP `2xx` or `400` status code
+* If you prefer to specify an exact range, you can do so:
+  an HTTP status code in the `200` - `299` range. 
+
+#### Keywords
+* Don't use keywords as verbs or nouns.
+* Don't  try to inflect them.
+* Don't form pjurals and don;t make them possesive.
+* It's okay to use lowercase, plain text string to discuss the `string` dada type
+|Recommend |Not recommended |
+| -- | -- |
+| To retrieve the data, send a `GET` request. | Retrieve inofrmation by `GETting` the data.|
+| You can't close the file before opening it. | Close()ing the file requires you to have open()ed it first.|
+
+### Code samples
+* Don't use tab, instead, use spaces.
+* Mark code block as preformatted text. In HTML, use a `<pre>` element; In MD, indent every line of the code block by four spaces (**tested in haroopad and typora, both of them use four sapces to indent, and both of them can interpret html tag `<pre>`) or use a code fence (```)**.
+* For most programming, indent by two spaces per indentation level. However, for Python and the Android Open Source Project, use four spaces. 
+For example:
+<pre class="prettyprint">
+function helloWorld() {
+  alert('Hello, world! This sentence is so long that it wraps onto a second
+    line.');
+}
+</pre>
+
+    function helloWorld() {
+      alert('Hello, world! This sentence is so long that it wraps onto a       second
+        line.');
+    }
+
+#### Introductory statements
+* In most cases, precede a code sample with an introductory sentence or paragraph. 
+* The introduction can end with a colon or a period; usually a colon if it immediately precedes the sample; usually a period if there's more material between the introduction and the sample; or if the introduction paragraph ends in a sentence that isn't directly related to the sample.
+Recommended: The following code sample shows how to use the method. For more information about other methods, see [link]. (sample)
+Recommended: The following code sample shows how to use the method: (sample)  For more information about other methods, see [link].
+Not recommended: The following code sample shows how to use the method. For more information about other methods, see [link]: (sample)
+
+### Command-line syntax
+#### Formatting 
+* Use a `<pre>` element in HTML.
+* In MD, indent every line of the code block by four spaces (**tested in haroopad and typora, both of them use four sapces to indent, and both of them can interpret html tag `<pre>`) or use a code fence (```)**.
+* For multiple elements, do the following:
+	* When a line exceed 80 characters, add a line break before some characters, such as a single hyphen, double hyphen, underscore, or quotation marks.
+	* After the first line, indent each line by four spaces to vertically align each line that follows a line break.
+	* When you split a command line with a line break, each line except the last line must end with the command-continuation charatcter with which can work for commands.
+		* Linux or Cloud Shell: A backslash typically preceded with a space ( \)
+		* Windows: A caret preceded with a space ( ^)
+
+#### Command prompt
+* For the multiple-lines of input, then start each line of input with the `$` prompt symbol. 
+* Don't show the current directory path before the prompt, even if part of the instruction incluces changing direactories. 
+* If the overall context of the command interface changes, such as from the local machine to a remote machine, then add an additional prompt indicator for the new context.
+Recommended:
+`$ adb devices`
+Rcocommended:
+`$ adb shell
+shell@ $ screencap /sdcard/screen.png
+shell@ $ exit
+$ adb pull /sdcard/screen.png`
+* When showing a one-line command, the command prompt is optional for the `$` symbol.
+* If the document includes both multi-one and one-line commands, then using the command propt for all the commands for consistency. 
+* If the document includes a combination of input  lines, then using seperate code blocks for input and output. 
+Recommended:
+`$ cat ~/.ssh/my-ssh-key.pub`
+The output is similar to the following:
+Recommended:
+`ssh-rsa KEY_VALUE USERNAME`
+
+#### Required items
+* Use text without breakets or braces for commands and arguments (Depending on the circumstances), this is likely to be in code fond.
+Recommended: (in the following examples, all words and arguments are required)
+`gcloud compute project-info describe`
+`gcloud alpha functions get-logs FUNCTION_NAME`
+
+#### Optional arguments
+* Use square brackets around an optional argument. 
+* If there are more than one optional argument, enclose each item in its own set of square brackets.
+Recommended:
+`gcloud dns GROUP [GLOBAL_FLAG] [FILENAME]`
+
+####  Mutually exclusive arguments
+* Use curly braces to indicate that the use must choose one and only one of the items inside the braces. 
+* Use vertical bars (also known as pipes) to indicate the seperate the items. 
+* There can be more than two mutually exclusive choices, seperated from each other by pipes.
+Recommended (choose either of them)
+`{FILE_1|FILE_2}`
+Recommended (optional)
+* Lef side of pipe, if the souce code is deployed from a cloud repository, the following is requried:
+Recommended:
+`--source=CLOUD_SOURCE --source-url=SOURCE_URL`
+* Right side of pipe, if the source code is in a local directory:
+Recommended:
+`{--source=CLOUD_SOURCE} --source-url=SOURCE_URL | --bucket=BUCKET [--source=LOCAL_SOURCE]}`
+
+#### Repeat argument
+* Use an ellipsis (...) to indicate that the user can speicify multiple values for the argument.
+Recommended:
+`gcloud dns GROUP [GLOBAL_FLAG ...]
+
+#### Output from commands
+* Don't have to show the output for every command. 
+* Only add output if it adds value. 
+	* If the reader needs to copy a value from the output. 
+	* Or need to verify a value in the output. 
+* Seperate the command from the output. 
+Recommended:
+The output is similar to the following:
+The output is the following:
+
+#### Command line terminology
+* Avoid mapping nomenclature of the `gcloud` tool's commands to Linux commands.
+* Linex commands can describe what the entire command does. 
+
+##### gcloud commands
+* You can use commands alone or with one or more flags. For example:
+Command alone:
+`gcloud init`
+Command with a flag:
+`gcloud init --skip-diagnostics`
+
+##### Linux commands
+* Linux commands use options parameters, arguments, and a host of specialized syntax elements. 
+For example:
+`find /usr/src/linux -follow -type f -name '*.[ch]' | xargs grep -iHn pcnet`
+The command consists of the following elements:
+* `find` is the command name.
+* `/usr/src/linux` is an argument that specifies the path to look in. 
+* `-follow` is an option. The hyphen `-` often called a dash, is part of the option. 
+* `-type` is an option with a value of `f`.
+* `-name` is an option with a value of `*.[ch]`, where the asterisk (`*`) is a metacharacter signifying a wildcard. 
+	* Metacharacters are used in Linux shell commands for globbing or filename expansion. 
+	* In addition to the asterisk, metacharacters include the question mark (`?`) or caret (`^`).
+
+### Placeholders formatting
+#### Placeholder variables in inline text
+* In HTML, wrap placeholders in `<code><var> elements like this:
+  `<code><var>PLACEHOLDER_VARIABLE</var></code>`
+* In MD, wrap placeholders in backticks(`), and use asterisks before, like this:
+ (*`PLACEHOLDER_VARIABLE`*).
+
+#### Placeholder variables in blocks
+* In HTML, wrap the code block in a `<pre>`element, and tag placeholders with <var> elements.
+<pre class="devsite-click-to-copy">
+gcloud compute forwarding-rules create <var>FORWARDING_RULE_NAME</var> \
+    --global | --region=<var>REGION</var> \
+    --load-balancing-scheme=<var>LOAD_BALANCING_SCHEME</var> \
+    --network=<var>NETWORK</var> \
+    ...
+</pre>
+* In MD, wrap the code block in a code fence (```), like this:
+ ```
+ PLACEHOLDER_VARIABLE
+ ```
+#### Placeholder variable text
+* Use uppercase characters with underscore delimiters:
+In HTML:
+Recommended:
+https://developers.google.com/<var>API_NAME</var>
+Not recommended:
+https://developers.google.com/<var>API-name</var>
+In MD:
+Recommended:
+https://developers.google.com/*`API_NAME`*
+* Don't include possesive pronouns in placeholders.
+Not recommended:
+https://developers.google.com/<var>MY_API_NAME</var>
+
+#### Explaining placeholders
+* When you use a placeholder in text or code, include an explaination for the placeholder for the first time you use it. 
+The following is an example of a command that use a placeholder with an explanation of that placeholder:
+<pre class="devsite-click-to-copy">
+gcloud compute instances create <var>INSTANCE_NAME</var> \
+    --metadata enable-guest-attributes=TRUE
+</pre>
+
+<p>Replace <code><var>INSTANCE_NAME</var></code> with the name that
+you want your new VM instance to have.</p>
+
+### UI elements and interaction
+#### Focus on the task
+* What the user should accomplish, rather than focusing on the gestures when state instructions. 
+* Avoid to referring to UI elements, help the user understand the purpose of an instruction.
+Recommended: Refresh the page.
+Recommended: Click **Refresh**.
+Not recommended: Click the REFRESH button.
+Recommended: Expand the **Advanced options** section.
+Recommended: To expand the **Advanced options** section, click the expander arrow. 
+Not  recommended: Click the zippy to expand the **Advanced option** section. 
+
+#### Formatting names of UI elements
+* When referring to any UI element by name, put its name in bold.
+* Include names for buttons, menus, dialogs, windows, list items, or any other feature on the page that has a visible name. 
+* Don't use code font for UI elements, unless it's an element when required. In that case, use both code font and bold. 
+* Don't make an official feature name or product name bold, except when it refers to an element on the page that uses the name, such as a window title or button name. 
+* Use sentence case. 
+| Guidance | Recommended |  Not recommended |
+| -- | -- | -- |
+|Use sentence case for all labels.| In the **New Project** window, select the **New Activity** checkbox, and then click **Next**. | In the New Project window, select "New Activity", and then click the "Next" button.|
+|When a label is all uppercase, use sentence case.| Click (<the refresh icon>) **Refresh**.| Click REFRESH. |
+|When referring to multiple labels that are inconsistently, use sentence case for all of the labels.| Click **New project**, and the click **New activity**.| Click **NEW PROJECT**, and then click **New Activity**. |
 
 
 
-* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1307,8 +1592,9 @@ For example, if the directory already has `lesson_1.jd`, it's okay to add your n
 #### Other exceptions
 * It's okay to have some inconsistency in filenames if it can't otherwise be avoided. For example, sometimes tools that generate reference documentation product filenmaes based on different sytle requirements or based on the design and naming conventions.
 
-####Referring to filenames
+#### Referring to filenames
 When referring to a specific file, do the following:
+
 * Use code font. 
 * Use the exact spelling of  the filename even if it doesn't follow naming guidelines. 
 Recommended: In the following `build.sh` file, modify the default values for all parameters. 
@@ -1361,7 +1647,8 @@ Not recommended: Search's capablities are vast.
 
 
 
-​	  
+
+
 
 
 
@@ -1414,32 +1701,5 @@ Recommended:  To delete the entire document, click `Delete`.
 
 ## API documentation
 * API documentation has traditionally included a brief explanation of REST. As knowledge of REST becomes more widespread, we might be able to assume that readers already know about it, and can remove those brief explanations.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
