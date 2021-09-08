@@ -530,6 +530,7 @@ Recommended: The Cloud Scheduler job publishes a message to a Cloud Pub/Sub topi
   * Or when referring to code that uses camel case. 
 
 #### Capitalization in titles and headings
+
 * Use sentence case in document titles and headings. 
 * Don't put a period at the end of a title or heading. 
 * Capitalize the first word in the following contexts:
@@ -537,7 +538,9 @@ Recommended: The Cloud Scheduler job publishes a message to a Cloud Pub/Sub topi
 	* The first word in a subheading after a colon;
 	* Any proper nouns or other terms that are always capitalized a certain way. 
 
+<a name="reference1">
 #### Capitalization in references to titles and headings
+</a>
 * In references to any title or heading from a document that follows this guide, use sentence case even if the title or heading itself uses title case. 
 * That way, when the title or heading is eventually updated to sentence case, the reference will match. 
 * When you reference the title of any source that doesn't follow this guide, retain the original capitalization. 
@@ -760,7 +763,7 @@ Not recommended: I dedicate this book to my parents, Ayn Rand and God.
 Recommended: Finally, only groups that contain parameters appear in this list. 
 Recommended: Based on the requirements of your game, you can implement this method to update game information. 
 
-#### Commas seperating two independent clauses
+#### Commas separating two independent clauses
 When a coordinating conjunction (*and*, *but*, *or*, *nor*, *for*, *so*, or *yet*) separates two independent clauses, insert a comma after the first clause (before the conjunction) **unless both clauses are very short**.
 Recommended: The libraries make feed creation easier, and they ensure that only valid feeds are produced. 
 Not recommended: The libraries make feed creation easier and they ensure that only valid feeds are produced. 
@@ -1096,14 +1099,7 @@ Recommended: 3 PM.
 		* US and Canada Pacific Daylight Time (UTC-7)
 	* Don't abbreviate the name of the time zone. 
 
-#### Expressing dates
-* In general, spell out the names of months and days of the week in full, Give the full four-digit year, not a two-digit abbreviation. 
-Recommended: January 19, 2017
-* If including the day of the week, add it before the month as follows: Day_OF_WEEK, MONTH_DAY, YEAR
-Recommended: Tuesday, April 27, 2021
-
-##### Partial dates and abbreviations
-* When giving only the month and year, don't use a comma.
+### hen giving only the month and year, don't use a comma.
 Recommended: She was born in January 2017.
 * In most cases, don't abbreviate the day of the week or the month. However, when conserving space, such as in a heading or table, it's okay to abbreviate the month and the day of the week to their three-letter abbreviations. Capitalize the first letter and don't add a period at the end of the abbreviation.
 * If you abbreviate, do so for the entire date. Don't mix written-out forms with abbreviated forms in the same date.
@@ -1245,6 +1241,157 @@ To form the plural of a single letter, italicize the letter and add an apostroph
 Recommended: We called tech support because the printer wasn't printing uppercase *B*'s or lowercase *P*'s. 
 Recommended: Mind your *P*'s and *Q*‘s. 
 
+## Linking
+### Cross-references
+* In general, cross-references link to nonessential information that adds to the reader's understanding. To get more information, read [Capitalization in references to titles and heading](#reference1).
+* **This markdown syntax can only be interpreted by haroopad.**
+
+#### References to other documents
+Recommended: To begin coding right away, read [Building your first app](www.bing.com)
+Not recommended: See [this blog post]().
+Not recommended: Click [here]().
+* Don't force links to open in a new tab or window. Let the reader decide how to open links. 
+<a href="/style/accessibility" target="_blank">Accessible content</a>
+<a href="/style/accessibility" target="_blank">Accessible content (opens in a new tab)</a>
+* In the rare situation that a link needs to open in a new tab or window, let the reader know that the link opens differently than expected. 
+Recommended:
+<a href="/style/accessibility" target="_blank">Accessible content (opens in a new tab)</a>
+Not recommended:
+<a href="/style/accessibility" target="_blank">Accessible content</a>
+* When the link text doesn't clearly indicate why you're referring the reader to this information, then give an explanation, but don't repeat the link text. 
+Recommended: For more information about authentication and authorization, see [Using OAuth 2.0 to access Google APIs]().
+* If a link downloads a file, then make that clear in the link text, and mention the file type. 
+Recommended:
+For more information, [download the security features PDF.]() 
+* Click the link to the doloading web*.
+* To avoid link fatigue, don't provide duplicate links to the same document within a given page. It's OK to add a secondary link if you're linking to a particular section of another page. 
+
+#### Wording cross-reference
+When a cross-reference includes information that describe the cross-reference links to, Use *about* instead of *on*.
+Recommended: For more information about indexes, see [Managing indexes]().
+Not recommended: For more information on indexes, see [Managing indexes]().
+
+#### Formatting cross-reference
+* When a cross-reference is a link, don't put the link text in quotation marks.
+Recommended: For more information, see [Meet Android Studio]().
+Recommended: Learn about [what's new in Android Wear 2.0]().
+Not recommended: For more information, see "[Meet Android Studio]()".
+* For an unlinked reference to a document section, or part of a series, such as an episode in a web series, use quotation marks.
+Recommended: For more information, see "Describing system versions" in the following section.
+* For an unlinked reference to the title of a full-length work, such as a book, movie or web series, use italics.
+Recommended: see *The Chicago Manual of Style*.
+
+#### URLs in links to pages on the same server
+* When you're linking to another page on the same server, use a site-relative URL starting with `/`.
+
+#### URLs in links to pages on a different server
+* If the server that you're linking to supports HTTPS, start the URL with `https`. 
+* If the server doesn't support HTTP, start the URL with `http`.
+* Use an external link icon to indicate that the link goes to a different domain or server. 
+Recommended: For more information, see [Links and Hypertext]()(Here is an external link icon).
+
+### Headings as link targets
+#### Add a custom anchor
+You might want to add a custom anchor to a heading for several reasons:
+* You want to use an anchor that's shorter than the automatically generated anchor.
+* Add a custom anchor reduces the likelihood of breaking existing links if the heading text changes later.
+
+#### HTML 
+* Add a `section` element with an `id` attribute, and put hyphens between words. Don't use `<a name>`. 
+Recommended:
+`<section id="reference-to-guide">
+<h2>Reference to guide</h2>
+...
+</section>`
+Acceptable:
+`<h2 id="reference-to-guide">Reference to guide</h2>`
+
+#### Markdown
+* To add an anchor to a heading in MD, replace `ID_OF_ANCHOR` with the ID for this heading. 
+* Use lowercase for `id` values, and put hyphens between words.
+Recommended:
+`## Help conserve habitat for pollinators {: #help-conserve-habitat-for-pollinators}
+
+### Link text
+* To write link text, use descriptive phrases that provide context for the material that you're linking to.
+* Different readers experience links differently. 
+  * Users of screen reader software ofen jump from one link to the next without reading the words.
+  * Other readers visually scan a documentation to find relevant links. 
+  * Effective link text helps to improve accessiblity and scannability.
+  
+#### Structuring link text 
+* To write link text effectively, use one of the following forms:
+  * Make the link text match the title or heading that you're linking to.
+  Recommended: For more information, see [Link text]().
+  
+#### Writing link text
+Apply the following guides when you write link text:
+* When you write a complete sentence that refers the readers to another topic, introduce the link with the phrase *For more information, see...* or *For more information about..., see...*.
+* When you write unique, descriptive link text that makes sense without the surrounding text. Don't use phrases like *click here*, or *click this document*. They're bad for accessibility and scannability.
+Recommended: For more information, see [Care and feeding of your wombat]().
+Not recommended: Want more? [Click here]().
+Not recommended: For more information, see [this document]().
+* Don't use a URL as link text. Instead, use the page title or a description of the page. 
+Recommended: For more information about protocols, see [www.w3.org]
+Not recommended: See the HTTP/1.1 RFC at <a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">http://www.w3.org/Protocols/rfc2616/rfc2616.html</a>.
+* In some legal documents, such as Terms of Service documents, it's okay to use URLs as link text. 
+* When link text is a description of the target page, use the following guidelines to help users can determine if the link is relevant:
+  * Keep link text short where possible. 
+  * Place important words at the begining of the link text. 
+  * Don't use the same link text in the same document for different target pages.
+*  Use expternal link icon appropriately.
+*  If a link downloads a file, write link text that indicates this actions as well as the file type.
+Recommended:
+<a href="/readme.txt">download the README.txt file</a>.	
+* If the text includes an abbreviation in parentheses, include the long form and the abbreviation in the link text. 
+Recommended: [Google Kubernetes Engine (GKE)]()
+Not recommended: [Google Kubernetes Engine]()(GKE)
+
+#### Punctuation with links
+* If you have punctuation immediately before or after a link, put the punctuation outside out the link tags. 
+Recommended: For more information, see <a href="#Test your code</a>.
+Not recommended: For more information, see <a href="#Test your code.</a>
+
+#### Styling link text
+If you write sitewide CSS for your website, apply the following styling guidelines:
+* Contrast link text color and regular text color.
+* Underline link, and don't underline non-link text.
+* Make visited link change color. 
+  
+### Linking to other sites
+* When the information relies on something about third-party, it's better to link to good documentation elsewhere than to try to thoroughly document someone else's standart in out documentation. 
+* Sometimes a few sentences of basic information can save readers a trip to an external site. For example, API documentaion has traditionally included a brief explanation of REST. As knowledge of REST becomes more widespread, we might be able to assume that readers already know about it, and can remove those brief explanations. 
+* Another example. 
+  * If you want to mention one HTTP status code, then decribing it in your document to make sense. 
+  * If you want to make sure that your reader understand the idea of HTTP status codes, then linking them to an external document, such as the HTTP spec, might be a good idea. 
+  * If you might discuss third-party tools or products, in such cases, it's okay to link to a relavant site. 
+  * Make sure that any site that you link to is high quality, reliable, and respectable. 
+  * If the URL has a local indicator, remove it and then test the link. For example, in a Wikipedia link, 
+  change the following:
+  https://en.wikipedia.org/wiki/Oprating-system-level_virtualization
+  to this:
+  https://wikipedia.org/wiki/Oprating-system-level_virtualization
+* Don't force links to open in a new tab or window. Let the reader decide how to open links. 
+  * In the rare situation that a link needs to open in a new tab or window, let the reader know that the link opens differently than expected. 
+  Recommended: 
+  <a href="/style/accessibility" target="_blank">Accessible content (opens in a new tab)</a>   
+* Use an external link icon after the address of the external link.
+  
+### URLs for images
+* When you're including an image that's served from the same domain as your page, use a relative URL starting with `/`. 
+#### HTML
+Insert the URL in the src attribute of your <img> element.
+```
+<img
+  src="/shared/images/arrow-24.png"
+  alt="Alt text description of arrow image."
+/>
+```
+
+#### Markdown
+Insert the URL in parentheses after the image's alt text.
+`![ALT text.](/shared/images/arrow-24.png)`
+
 ## Computer interfaces
 ### API reference code comments
 * When you're documenting an API, provide a complete API reference. 
@@ -1287,9 +1434,7 @@ The following example is the first sentence of the description for Android's `Ac
 	* *A description of the bird. *
 * For boolean parameters for requesting an action, start sentences with "if ture ..." and "if false ..."
 	* *If true, turn traffic lines on. If false, turn them off. *
-* For boolean parameters for setting the state, use "True if ...", for example:
-	* *True if the zoom is set; false otherwise.*
-* Don't put the words "true" and "false" in code font or quotation marks.
+* * Don't put the words "true" and "false" in code font or quotation marks.
 
 #### Return values
 * Be as breif as possible in the return value's description.
@@ -1539,45 +1684,191 @@ Recommended: Go to **File > Tools**.
 Recommended: In the **File** menu, click ** Tools**. 
 
 #####  Windows, pages, dialogs and panes
-* A window is the entire application window in a desktop environment. 
+**Windows**
+* * Most often, a window is the entire application window in a desktop environment, it can also refer to modular application elements that you can open and close. 
+Recommended: In the **MyApp** window, click  **Edit**.
+Not recommended: In the **MyApp** page, click **Edit**.  
+**Pages**
+* Page is referring to a web page in general, and to a sub-page of a console in particular.
+Recommended: In the Google Cloud Console, go to the **Development** page.
+Not recommended: In the Google Cloud Console, go to the **Development** window.
+**Dialogs**
+* A dialog is a smaller window that is detached from the main window and appears in front of the window. 
+Recommended: In the **Welcome** diaglog, click **OK**.
+Not recommended: n the **Welcome** pop-up window, click **OK**.
+**Panes**
+* A pane, originally means a section of a window, 
+* A pane is similar to a window inside of the application. 
+* A pane is tightly coupled to the other UI regions and usually cannot be hidden on its own.
+* Whereas, a window is distinctly seperate and can be hidden. 
+Recommended: In the **Create service account** panel, click **Start**.
+Not recommeneded: In the **Create service account** window, click **Start**.
 
+##### Menu bar
+* The menu bar appears at the top of the window or at the top of the screen, 
+* To tell the reader where to find a command in a menu, use a phrase like *in the **File** menu, select **Open**. 
+Using angle brackets
+* If you use angle brackets, follow these guides:
+	* Put a non-breaking space (`&nbsp;`) before each angle bracket.	
+	* Don't bold each menu name separately; instead, enclose the entire sequence in a single bold element. 	
+	* Wrap the angle bracket with a span tag and add an `aria-label` attribute with *and then* text. Otherwise, some screen readers might read it as greater than.  For example:
+	 `<span arial-label="and then">></span>`
+	In the following example, the text renders as *Select **View > Tools > Developer Tools**. 
+HTML:
+	Select <b>View&nbsp;<span aria-label="and then">></span> Tools&nbsp;<span aria-label="and then">></span> Developer Tools</b>.
+MD:
+	Select **View&nbsp;<span aria-label="and then">></span> Tools <span aria-label="and then">></span> Developer Tools**.
+	* This notation is useful for abbreviation a longer phrase like *in the **File** menu, select **Open**.*
+	* This notation applies only to **menu items**. Don't use it to describe a combination of different UI elements.
+	Recommended: 
+	Select **MyApp>Preferences**, and then select the **Language** preference pane. 
+	Not recommended: 
+	Select **MyApp>Preferences>Languages>+>CSS**. 
 
+##### Toolbar
+* A toolbar is a set of buttons for common user actions. Refer to the toolbar by name if you think that the user needs help finding a button.
+Recommended:
+On the **Dashboard** toolbar, click **Edit**.
+Recommended: Click **Edit**.
 
+##### Buttons and icons
+**Buttons**
+* A button initiates an action when clicked or tapped, in the case of a touchscreen.
+Recommended: Click **OK**. 
+Not recommended: Click the "OK" button.
+**Icon**
+* An icon is a symbol or image that represents an object or a function. 
+* An icon can be a button as well. 
+* If the button includes an icon, write the name of the button as shown in the tooltip, and add the button icon before the name. 
+Recommended: Click  **+** **Add**.
+Not recommended: Click the **+** icon. 
+* If a UI element name ends with an ellipsis(...), leave out the ellipsis. 
+Recommended: Click **Browse**.
+Not recommended: Click **Browse ...**.
+* Don't use directional language to orient the reader, such as *above*, *below*, or *right-hand* side. Phrases like those don't work well for accessibility or for localization. 
+* If a UI element is hard to find, provide a screenshot. 
+Recommended: Click **#** **Menu**.
+Not recommended: In the left-side panel, click the button with three lines. 
 
+##### Tab (标签)
+* A tab is a navigation element that looks like a file tab. To refer to a tab, use the form the `LABEL_NAME` tab. 
+Recommended: Select **Tools > Options**, and then click the **Edit** tab. 
 
+##### Text box
+* A text box is a box that the use can type in, and use the `LABEL_NAME` box.
+* Format the text by using the `<code>` in HTML or by using code formatting (monospace) in other markup. 
+* In Google Cloud docutmentation, use *field* instead of *box*. 
+Recommended: In the **Owner** box, enter your name. 
 
+##### List box, combo box, and spin box
+**List box**
+* A list box is a box that offers the user a list of items. 
+* To refer to a list box, use the form the `LABEL_NAME` list or the `LABLE_NAME` box. 
+Recommended: In the **Item** list, select **Desktop**.
+**Combo box**
+* A combo box is a combination of a text box and a list box. 
+* To refer to a combo box, use the form the `LABEL_NAME` box. 
+* To refer to entering a value into a combo box, use the verbs *type* or *select* or *enter*. 
+Recommended: 
+In the **Font** box, type or select the font that you want to use.
+**Spin box**
+* A spin box is a box that lets the user choose a value by clicking arrows or by typing. 
+* To refer to a spin box, use the form the `LABEL_NAME` box. 
+* To refer to entering a value into a spin box, use the verb *enter*. 
+Recommended: 
+In the **Font size** box, enter a font size. 
 
+##### Checkbox
+* A checkbox is a small box that indicates whether an option is on or off. 
+* To refer to a checlbox, use the form the `LABEL_NAME` checkbox. 
+* Be wary of using the verbs *check* and *uncheck*, which can be ambiguous; It's often best to use *select* and *clear* instead. 
+Recommended:
+Select the **Automatically check for updates** checkbox. 
+Recommended: Clear the **Bookmarks** checkbox. 
 
+##### Radio button
+* A radio button is a small button used to choose one item from a group of mutually exclusive options.
+* To refer to a radio button, use the radio button's label, or refer to the group of buttons by it's label. 
+Recommended:
+Select **Do not remember passwords**.
+Recommended:
+Choose your preferred **Startup mode**. 
 
+##### Expand arrow
+* An expan arrow is the UI element used to expand or collapse a section of navigation or content. 
+* Avoid referring to these explicitly in documenation, but when you do, use the terms *expander arrow* and *expandable section* rather than terms like *expando* or *zippy*. 
+Recommended: To expand the **Advanced options** section, click the [arrow button] expander arrow. 
+Not recommended; To expand the **Advanced options** section, click the zippy. 
 
+##### Toggle
+* A toggle is the UI element that switches back or forth between on and off states. 
+* To refer to a toggle, can use the words of toggle as a verb. 
+Recommended:
+You can toggle Magic Mode in the **Settings** window. 
+Recommended:
+To enable the setting, click the Wi-Fi toggle. 
 
+##### Pressing and typing keyboard keys
+* To indicate that the user should press a given keyboard key or combination, use the `<kbd>` element.
+Recommended: `Press <kbd>Control+C</kbd>.
+* If you're working with non-HTM markup, use monospace formatting, which is how <kbd> renders. 
+* In MD,  enclose the key name in backticks(`). 
+* To refer to key that the user types to enter that key's value as text input, use the `<code>` element, not the `<kbd>` element. 
+* To refer to a keyboard key, use the key's name. If that's ambiguous, use the form the `KEY_NAME` .
+Recommended: Press `Esc`.
+Recommended: Press the `Esc`key. 
+* Spell out the name of modifier keys, such as Command, Control, Option, and Shift. To refer to a key combination, use the form `MODIFIER+KEY_NAME`.
+* Don't use the symbols for those keys. 
+* To refer to a key or combination that uses the Shift key, use the form `MODIFIER+SHIFT_KEY_NAME`. 
+Recommended: Press `Control+Shift+?`.
+* Spell out the name of characters that could be confusing in keyboard shortcut, such as comma, hyphen, period, and plus. 
+* To refer to pressing a key or combination to cause an action to occur, use the verb *press*. 
+* To refer to typing a key or combination as part of text, use the verb *enter* or *type*. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##### Prepositions
+* When documenting the UI, use the following prepositions. 
+  | Preposition | UI element | Recommended |
+  | ----------- | ---------- | ----------- |
+  |in |dialogs, field, lists, menus, panes, windows, panes|In the **Alert** dialog, click **OK**. In the **Name** field, enter `wsfc-1`. In the **File** menu, click **Tools**.|
+  |on|pages, tabs, toolbars|On the **Edit** tab, click **Save**. On the **Dashboard** toolbar, click **Edit**.|
+  
+##### Verbs in procedures
+* To describe an action on the page, use the following verbs. 
+	* Click
+		* Use *click* not *click on*.
+		Recommended: Click **OK**.
+		Not recommended: Click on **OK**.
+		Use hyphenate *right-click*, *left-click*, and doube-click.
+	* Drag
+		* Use drag, not *click and drag* and not *drag and drop*, although you can use drag-and-drop as an adjective. 
+		Recommended: Drag the USER to the **Authorized** box. 
+	* Enable
+		* For turing on or activation an option or feature, use *enable* or *turn on*. 
+		Recommended: To enable the API, click the toggle. 
+		* For making it feasible to do something, use *lets you*.
+		Recommended: The API lets you detect features in images.
+			Not recommended: The API enables you detect features in images.		
+			Not recommended: The API allows you detect features in images.			
+	* Tap
+		* Tap capacitive and on-screen buttons.				
+	* Enter
+		* Use to refer to the user entering text. 
+		* *Type* is also okay.
+		Recommended: In the **Owner** box, enter your name. 
+			Recommended: In the **Size** box, type a font size. 		
+	* Press
+		* For mechanical button, use *press*.	 
+	* Select
+		* Use to describe choosing an item from among multiple options, selecting text, or marking a checkbox. 
+		Recommended: Select **Automatically check for updates**.
+		Not Recommended: Check  **Automatically check for updates**. 
+        * Don't use *unselect*. Instead, use *clear* for checkboxes, and *deselect* for other UI elements. 
+          Recommended; Clear **Automatically check for updates**.
+          Not recommended: Deselect / Uncheck **Automatically check for updates**.	
+	* Turn on, turn off
+		* For turning on or activating an option or feature, use *turn on* or *enable* consistently between procedures and the surrounding text. 
+		Recommended: To turn on Magic Mode, follow these steps. 
+		Recommended: You can toggle Magic Mode in the **Setting** window. 
 
 ## HTML and CSS
 ### HTML formatting

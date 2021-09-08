@@ -539,7 +539,7 @@ It is the most higest isolation level, no Dirty Read, Unrepeatable Read and Phan
 
 ## Common Command Lines
 ### Check Constraint Foreign Keys
-Use `show create table <table name> to check the structure of the table including constratint foreign key.
+Use `show create table <table name>` to check the structure of the table including constratint foreign key.
 
 ### Delete Constraint Foreign Keys
 Use 'alter table <table name> drop foreign key <constraint name>;'
@@ -564,10 +564,30 @@ For example, to select informatoin in ascending name order and in descending sal
 `DISTINCT` clause is used to remove duplicate records from the table and fetch only the unique records.
 **The DISTINCT clause is only used with the SELECT statement.**
 
+## Mysql functions
+### RANk() function
+The RANK() function displays the rank of a row. This rank of a row is defined within its partition, and this rank has gaps in-between. 
+#### Syntax
+* The RANK() function is used along with the 'over' clause, 'partition by' clause, and 'order by' clause. 
+* The 'partition by' clause is optional, when the RANK() function can be performed on the small set of the result, in this case, the 'partition by' clause is a must. 
+* The syntax is as follows:
+> Select column_name, 
+> RANK() over (
+> PARTITION BY {expression}[{,expression}]
+> ORDER BY {expression} [ASC|DESC]) [{,expression}]
+> ) from table_name;
+* PARTITION BY {expression}-this part of the query does the partiton according to the expression provided in the clause. 
+  
+### DENSE_RANK() function
+* Compare with the RANK() function, the DENSE_RANK() function to understand the ranking without gaps.
 
+#### Syntax
+The syntax of the DENSE_RANK() is same with the RANK() function.
 
-
-
+### ROW_NUMBER() function 
+The ROW_NUMBER() function is a function that returns a number for each row in sequence or serial, begining from 1. 
+#### Syntax
+> row_number() over (order by {expression} [ASC|DESC], [{,expression}]);
 
 
 
