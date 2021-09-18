@@ -251,6 +251,9 @@ For example:
 #### Having clause
 The Having clause is often used with the Group By clause to filter gropus bases on specific conditions, which is like WHERE clause. 
 
+#### Limit clause
+The limit clause is used to restrict the number of rows retrieved in the result of the query, which can make a certain number of the records on each page. 
+
 
 ### Practices
 ![](https://github.com/Kimwangqing/pictures/blob/master/group%20practice1.jpg?raw=true)
@@ -588,6 +591,9 @@ The syntax of the DENSE_RANK() is same with the RANK() function.
 The ROW_NUMBER() function is a function that returns a number for each row in sequence or serial, begining from 1. 
 #### Syntax
 > row_number() over (order by {expression} [ASC|DESC], [{,expression}]);
+
+
+
 
 
 
