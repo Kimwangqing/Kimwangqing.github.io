@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "SQL Study Notes "
+title: "MySQL Study Notes "
 date: 2020-09-10
-excerpt: "SQL Study Notes"
+excerpt: "MySQL Study Notes"
 tags: [sample post, images, test]
 comments: true
 mermaid: true

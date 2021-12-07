@@ -1342,7 +1342,7 @@ Not recommended: See the HTTP/1.1 RFC at <a href="http://www.w3.org/Protocols/rf
 *  Use expternal link icon appropriately.
 *  If a link downloads a file, write link text that indicates this actions as well as the file type.
 Recommended:
-<a href="/readme.txt">download the README.txt file</a>.	
+	<a href="/readme.txt">download the README.txt file</a>.	
 * If the text includes an abbreviation in parentheses, include the long form and the abbreviation in the link text. 
 Recommended: [Google Kubernetes Engine (GKE)]()
 Not recommended: [Google Kubernetes Engine]()(GKE)

@@ -14,7 +14,7 @@ Here is the primary reference source: [Reference](https://blog.csdn.net/weixin_4
 3. Download Pycharm Community Edition (2020.3.5).
 4. Download CUDA (NVIDIA Nsight Compute 2020.2.0). 
    Here are CUDA installation conditions: 
-![]   (https://github.com/Kimwangqing/pictures/blob/master/CUDA%20installation%20conditions.png?raw=true)
+![](../pic/DBFace Light Detection/CUDA%20installation%20conditions.png?raw=true)
    Here is the download source: [Download](https://developer.nvidia.com/zh-cn/cuda-downloads)    
 5. Create a virtual environment with Anaconda,  
 	1. In which python version is 3.6 or above.
@@ -40,5 +40,5 @@ Here is the primary reference source: [Reference](https://blog.csdn.net/weixin_4
 12. Check the result in `detect_result`. 
 
 ## 测试与结果展示
-![successful vertification](https://github.com/Kimwangqing/pictures/blob/master/CUDA%20successful%20%20vertification.png?raw=true)
+![](../pic/DBFace Light Detection/CUDA%20successful%20%20vertification.png?raw=true)
 
