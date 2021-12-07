@@ -63,7 +63,7 @@ Two or more than two columns are allowed to be set as primary keys called Compos
 
 ### Foreign Key (外键)
 The Column associating to another form is called a foreign key. 
-![](https://github.com/Kimwangqing/pictures/blob/master/foreign%20key.jpg?raw=true)
+![](../pic/MySQL study notes/foreign key.jpg)
 
 * Delete foreign keys through `ALTER TABLE student`（表名） and  `DROP FOREIGN KEY fk_class_id`（外键名）. It doesn't mean to delete the foreign key column by deleting the foreign key constraints. To delete the column with the foreign key constraint by using `DROP COLUMN ...`
 * D and  COLUMN(column name)`. 
@@ -104,16 +104,16 @@ or can be added a unique constraint to the column to keep the uniqueness of the 
 * Enter the password.
 * Run `source d:\init-test-data.sql` to upload the source to mysql (or init-test-data if the name doesn't includ the suffix but the saved format is sql.)
 * Get the result as shown in the following pic.
-![](https://github.com/Kimwangqing/pictures/blob/master/init-test-data.jpg?raw=true)
+![](../pic/MySQL study notes/init-test-data.jpg?raw=true)
 *  (To fix mess data)
-    ![](https://github.com/Kimwangqing/pictures/blob/master/variable%20value.jpg?raw=true)
+    ![](../pic/MySQL study notes/variable%20value.jpg?raw=true)
   * Use `show variables like 'char%'` (单、双引号都可以） to check the variable value. 
   	* The source script use `CHARSET=utf8` 
   	* Find the inconsistance between `character_set_client | gbk` and ` character_set_server | utf8mb4`
   	* Run `set character_set_client = utf8` &  `set character_set_server = utf8` to make them consistant.
   	* Run `source d:\init-test-data;` to import the database again.
   	* Run `SELECT * FROM students`, and then the misdata is fixed. 
-    ![](https://github.com/Kimwangqing/pictures/blob/master/fixinconsistance.jpg?raw=true)
+    ![](../pic/MySQL study notes/fixinconsistance.jpg?raw=true)
     
 ## Query Data
 * Query language: `SELECT * FROM <the name of the table>
@@ -156,7 +156,7 @@ If don't use brackets (), conditions to be performed by the priority from `NOT`,
 `show variables like 'char%'`(单、双引号都可以）
 
 ### Practice
-![](https://github.com/Kimwangqing/pictures/blob/master/query-practice.jpg?raw=true)
+![](../pic/MySQL study notes/query-practice.jpg?raw=true)
 
 ## Query Projections
 * Use query projections to select specified column. 
@@ -184,9 +184,9 @@ For example, `SELECT id, score, name FROM students WHERE gender = 'M';
 
 * If there are same data occourred, to order them by adding the column name. 
   For example, `SELECT id, name, gender, score FROM students ORDER BY score DESC;` 
-  ![](https://github.com/Kimwangqing/pictures/blob/master/score%20order%20without%20gender.jpg?raw=true)
+  ![](../pic/MySQL study notes/score%20order%20without%20gender.jpg?raw=true)
   (Male is prior to Female by default.)
-  ![](https://github.com/Kimwangqing/pictures/blob/master/score%20order%20with%20gender.jpg?raw=true)
+  ![](../pic/MySQL study notes/score%20order%20with%20gender.jpg?raw=true)
   (Female is prior to Male by adding the  gender in ORDER BY.)
   
 * `SELECT class_id, gender, score FROM test.students GROUP BY class_id, gender ORDER BY score DESC;`
@@ -213,7 +213,7 @@ For example, `SELECT class_id, gender, name, max(score) from test.students group
 * `LIMIT <M> OFFSET <N>` can be simplified as `LIMIT <N>,<M>;` 
 
 * Use `SELECT COUNT(*) FROM students;` to get the total number of records of the table. 
-  ![](https://github.com/Kimwangqing/pictures/blob/master/count(id).jpg?raw=true)
+  ![](../pic/MySQL study notes/count(id).jpg?raw=true)
 
 ## Aggregate Selection
 * Use `SELECT COUNT(*) FROM xxx` to count the total number of records and to get a two-dimentional table not only a number. 
@@ -233,7 +233,7 @@ For example, `SELECT class_id, gender, name, max(score) from test.students group
 |MIN|Get the minimum value of the column. Not limited to be numbers. For strings will get the last row. For example,`SELECT MIN(name) FROM students;`|
 
 * Use `SELECT CEILING(COUNT(id)/<limit number>) FROM xxx;` or `SELECT CEILING(COUNT(*)/<limit number>) FROM xxx;` to get the total number of the splitted pages. 
-  ![](https://github.com/Kimwangqing/pictures/blob/master/ceiling(count(id).jpg?raw=true) 
+  ![](../pic/MySQL study notes/ceiling(count(id).jpg?raw=true) 
   (**CEILING(X) or CEIL(X) means to get the integer upward（向上取整）.**)
 For example, 
   `select class_id [班级], gender [性别], max(score) [最高分]  from students
@@ -246,7 +246,7 @@ For example,
 * Use `GROUP BY` to instead WHERE condition, because it doesn't need write WHERE when each condition changed, and get each group of result instead of only one result. 
 * As usual, `group by` at the last of the syntax. 
 For example:
-![](https://github.com/Kimwangqing/pictures/blob/master/group%20by%20classid.jpg?raw=true)
+![](../pic/MySQL study notes/group%20by%20classid.jpg?raw=true)
 
 #### Having clause
 The Having clause is often used with the Group By clause to filter gropus bases on specific conditions, which is like WHERE clause. 
@@ -256,8 +256,8 @@ The limit clause is used to restrict the number of rows retrieved in the result 
 
 
 ### Practices
-![](https://github.com/Kimwangqing/pictures/blob/master/group%20practice1.jpg?raw=true)
-![](https://github.com/Kimwangqing/pictures/blob/master/group%20practice2.jpg?raw=true)
+![](../pic/MySQL study notes/group%20practice1.jpg?raw=true)
+![](../pic/MySQL study notes/group%20practice2.jpg?raw=true)
 
 ## Select from Muti-table (no suggest to use)
 * SELECT * FROM table1, table2;
@@ -289,7 +289,7 @@ To simplify:
 ### Select Multiple Tables with WHERE
 Multi-table Selection with WHERE
 For example:
-![](https://github.com/Kimwangqing/pictures/blob/master/multitable%20with%20WHERE.jpg?raw=true)
+![](../pic/MySQL study notes/multitable%20with%20WHERE.jpg?raw=true)
 
 ### Select Multiple Tables from a Database Connection 
 When connecting to multiple tables, you can only select a single table as a principle table to be a ResultSet, and then select rows from other tables which have relationship to the principle table connecting to the ResultSet. 
@@ -517,13 +517,12 @@ It is the lowest isolation level, in which a transaction can read another transa
 Practise:
 Open two MYSQL clients, one is command client, another is workbench. 
 to perform as the following steps:
-![](https://github.com/Kimwangqing/pictures/blob/master/read%20committed%20level.png?raw=true)
+![](../pic/MySQL study notes/read%20committed%20level.png?raw=true)
 
 ### Read Committed
 The isolation level can read another transaction upates after committed. 
 Open two MYSQL Clients, one is command cliend, another is workbench, to perform as the following steps:
-![]
-(https://github.com/Kimwangqing/pictures/blob/master/read%20uncommitted%20level.png?raw=true)
+![](../pic/MySQL study notes/read%20uncommitted%20level.png?raw=true)
 
 ### Repeatable Read
 Under the repeatable read isolation level, a transaction may meet Phantom Read.
