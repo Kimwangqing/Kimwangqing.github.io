@@ -594,6 +594,10 @@ The ROW_NUMBER() function is a function that returns a number for each row in se
 ### Concat function （多个字段拼接）
 The Concat function is used when dealing with string in a database that can be in any format, colmn values, variables or literal values in the string that helps to append two or more such string values to each other to ceate a new string value. 
 
+### Sum(case...when... then 1 else 0 end)
+* case attribute when attribute 
+* then 1 else 0: 1 = true, 0 = false
+
 
 
 
