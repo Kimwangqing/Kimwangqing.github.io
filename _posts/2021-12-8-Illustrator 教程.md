@@ -6,7 +6,6 @@ excerpt: "Illustrator 教程"
 tags: [sample post, images, test]
 comments: true
 ---
-
 ## 快捷键
 **“编辑” 下方的 “键盘快捷键” 进行编辑快捷方式 
 **快捷键要在英文模式下才能实现**
@@ -292,3 +291,4 @@ comments: true
 
 ### 案例-绘制扑克图标
 ![](../pic/Illustrator 教程/扑克图标.png)
+
