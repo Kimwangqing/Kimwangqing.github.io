@@ -298,3 +298,9 @@ comments: true
 * 设置图标绘制
 ![](../pic/Illustrator 教程/设置图标绘制.png)
 ![](../pic/Illustrator 教程/时钟图标绘制.png)
+
+### 描边的多样代设定
+* 配置文件是宽度工具的延伸
+![](../pic/Illustrator 教程/配置文件.png)
+* 还可将此时的宽度设置添加到配置文件
+![](../pic/Illustrator 教程/保存配置文件.png)
